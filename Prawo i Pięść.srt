@@ -229,7 +229,7 @@ Do you know this building?
 
 56
 00:06:44,700--> 00:06:45,290
-Little bit
+A bit
 
 57
 00:06:46,000--> 00:06:48,290
@@ -273,7 +273,7 @@ I studied Education.
 
 67
 00:07:35,300--> 00:07:38,000
-Write down your last name, first
+Write down your last name, ... first
 
 68
 00:07:44,000--> 00:07:45,000
