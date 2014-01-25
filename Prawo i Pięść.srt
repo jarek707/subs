@@ -326,7 +326,7 @@ could you ration me a pair of pants
 
 79
 00:08:31,000--> 00:08:33,800
-could you help us organize our Education
+will you help us organize our Education?
 
 80
 00:08:34,000--> 00:08:35,800
@@ -350,7 +350,7 @@ Which camp were you in?
 
 85
 00:09:06,800--> 00:09:10,300
-In Auschwitz, and later in Dachau
+In Auschwitz, ... and later in Dachau
 
 86
 00:09:10,900--> 00:09:16,000
@@ -402,7 +402,7 @@ Here is your letter of authority
 
 99
 00:10:08,000--> 00:10:14,000
-There are all kinds of folks around here,
+There are all kinds of people around here,
 trust is most important
 
 100
@@ -418,7 +418,7 @@ maybe there is a spot for him with our group
 102
 00:10:35,300--> 00:10:42,000
 I have a feeling that this man 
-is only concerned with material gains
+is only concerned with material matters
 But for us, we are looking for something more
 
 103
@@ -458,8 +458,8 @@ What is your name?
 Andrzej Kenig
 
 111
-00:11:02,710--> 00:11:03,800
-German Collaborator?
+00:11:02,710--> 00:11:04,800
+Volksdeutsche <font size="28px">(German Collaborator)</font>?
 
 112
 00:11:03,910--> 00:11:06,500
@@ -496,7 +496,7 @@ Ahhh, ...
 
 120
 00:11:20,910--> 00:11:25,200
-I think Mr. Kenig can go (<i>with the rest of you</i>)
+I think Mr. Kenig can go <font size="28px"><i>(with the rest of you)</i></font>
 
 121
 00:11:26,910--> 00:11:28,200
@@ -508,7 +508,7 @@ Graustadt, in polish Siwowo
 
 123
 00:11:33,110--> 00:11:38,200
-Small town located off the main road,
+Small town located off the main highway,
 no telephone service
 
 124
@@ -520,7 +520,7 @@ by retreating german troops
 00:11:43,310--> 00:11:52,000
 You are an operational group 
 that must secure the town for repatriates,
-organize the government and health services
+organize the government, activate health services
 
 126
 00:11:52,100--> 00:11:59,700
@@ -650,21 +650,25 @@ I drink to the success of our cause
 
 155
 00:14:48,020--> 00:14:50,100
-And you in a round-up? (caught by the Nazis)
+And you in a round-up? <font size="28px"><i>(caught by the Nazis)</i></font>
 
 155
 00:14:50,120--> 00:14:51,800
 No, during the uprising
 
 156
-00:14:52,120--> 00:14:52,800
-To <b><i>Kacet</i></b>
+00:14:52,120--> 00:14:53,120
+To <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
 
 157
 00:14:53,120--> 00:15:00,400
 I was lucky as it was, 
 they would usually blow our guys out,
 I didn't make it through Wisła
+
+156
+00:14:53,120--> 00:14:56,400
+To <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
 
 158
 00:15:00,420--> 00:15:06,800
@@ -681,8 +685,11 @@ Building reduced to powder
 I started to dig, destroyed my pants
 
 161
-00:15:15,420--> 00:15:19,900
-What for anyway, ... let them lay there
+00:15:15,420--> 00:15:16,900
+What for anyway?
+
+00:15:18,220--> 00:15:19,900
+let them lay there
 
 162
 00:15:21,020--> 00:15:23,800
@@ -796,7 +803,7 @@ but we are here to protect public property
 Turn around, now...now...now...now
 
 185
-00:20:28,720--> 00:20:30,300
+00:20:28,720--> 00:20:30,700
 Boss, let's take these girls
 
 186
@@ -809,7 +816,7 @@ Just for fun
 
 188
 00:20:32,700--> 00:20:35,000
-Without girls it will be lame, why suffer?
+Without girls, it will be lame, why suffer?
 
 189
 00:20:35,010--> 00:20:37,000
@@ -922,7 +929,7 @@ Wounded?
 
 292
 00:25:12,700--> 00:25:14,300
-Drunk as hell
+Drunk as a skunk
 
 293
 00:25:19,500--> 00:25:20,500
@@ -938,7 +945,7 @@ You, ... you, get up
 
 296
 00:25:40,000--> 00:25:41,500
-<font color="yellow">Open your eyes
+<font color="yellow">Open your eyes</font>
 
 296
 00:25:42,300--> 00:25:44,500
@@ -955,27 +962,23 @@ You, ... you, get up
 299
 00:25:59,100--> 00:26:03,500
 <font color="yellow">Good Day, Ladies and Gentlemen
-I am Schaeffer
-</font>
+I am Schaeffer</font>
 
 300
 00:26:05,100--> 00:26:08,500
 <font color="yellow">
 Reservations and service supervision 
-at hotel Tivoli
-</font>
+at hotel Tivoli</font>
 
 301
 00:26:12,000--> 00:26:13,800
 <font color="yellow">
-Please forgive my appearance
-</font>
+Please forgive my appearance</font>
 
 302
 00:26:14,000--> 00:26:16,800
 <font color="yellow">
-Did you operate the radio?
-</font>
+Did you operate the radio?</font>
 
 303
 00:26:18,600--> 00:26:20,800
@@ -993,8 +996,7 @@ Will you do it?
 
 306
 00:26:26,700--> 00:26:29,800
-The town was empty 
-and it should remain empty
+The town was empty and it should remain empty
 
 307
 00:26:30,000--> 00:26:31,600
@@ -1002,15 +1004,11 @@ Take him to the hotel
 
 308
 00:26:34,700--> 00:26:37,900
-<font color="yellow">
-Get up, ... GET UP!!!
-</font>
+<font color="yellow">Get up, ... GET UP!!!</font>
 
 309
 00:26:41,900--> 00:26:43,200
-<font color="yellow">
-To the hotel
-</font>
+<font color="yellow">To the hotel</font>
 
 310
 00:26:49,300--> 00:26:53,200
@@ -1019,7 +1017,7 @@ you can look for some pants for yourself
 
 311
 00:26:53,600--> 00:26:57,200
-And you ladies can also choose some clothing
+And you ladies can also look for some clothing
 
 312
 00:27:21,100--> 00:27:25,200
@@ -1060,7 +1058,7 @@ Why not?
 
 321
 00:27:50,700--> 00:27:52,500
-I'd be affraid to
+I'd be affraid
 
 322
 00:27:57,100--> 00:28:01,200
@@ -1173,8 +1171,8 @@ Broad with no taste,
 her waist had to be three times my size
 
 341
-00:29:44,510--> 00:29:46,500
-You can see this 'broad with no taste'
+00:29:44,510--> 00:29:46,900
+You can take a look at this 'broad with no taste'
 
 342
 00:29:55,210--> 00:30:01,500
@@ -1210,20 +1208,21 @@ and that of the town
 
 349
 00:31:28,100--> 00:31:30,800
-Ah, and Doctor, repatriates are waiting.
+Ah, and Doctor, repatriates are waiting
 
 350
 00:31:31,100--> 00:31:33,300
-Thank you, Thank you, everything will be taken care of
+Thank you, Thank you
+everything will be taken care of
 
 351
 00:31:33,400--> 00:31:34,700
-And when are you returning
+And when are you returning?
 
 352
 00:31:34,800--> 00:31:38,500
 Ah, no, no, no, the Supervisor asks
-that I remain here with you sir
+that I remain here with you, sir
 
 353
 00:31:39,800--> 00:31:44,300
@@ -1236,12 +1235,12 @@ Will do
 
 355
 00:31:45,500--> 00:31:47,500
-Well, take your room and wash yourself
+Well, take a room and wash yourself
 
 356
 00:31:48,800--> 00:31:53,000
 It wasn't easy getting here, 
-I barely found a path 
+I barely found a way
 
 357
 00:31:53,100--> 00:31:58,100
@@ -1250,8 +1249,8 @@ I was worried that something happened to you
 the truck is just sitting there, nobody around
 
 358
-00:32:00,400--> 00:32:10,800
-This town is great, ... yes, ... nice here
+00:32:00,400--> 00:32:11,800
+This town is great, ... yes, ... it is nice here
 people will have <i><shot></i>
 
 359
@@ -1260,7 +1259,7 @@ What did you do with yourself?
 
 360
 00:32:38,400--> 00:32:39,800
-I attempted to comb my hair
+I tried to comb my hair
 
 361
 00:32:45,900--> 00:32:48,000
@@ -1273,7 +1272,7 @@ Really?
 363
 00:32:53,200--> 00:33:00,000
 Do you not feel some kind of distaste, 
-... scrupuls
+... scrupuls?
 
 364
 00:33:04,300--> 00:33:05,400
@@ -1286,7 +1285,7 @@ Because they took away my husband?
 
 366
 00:33:13,000--> 00:33:16,200
-Tourtured and when I was half-dead
+Tourtured, and when I was half-dead
 filled my mouth with gypsium
 
 367
@@ -1319,11 +1318,11 @@ about the decor
 
 373
 00:34:28,400--> 00:34:30,700
-Ladies did not forget about the our evening
+Ladies, you did not forget about the our evening?
 
 374
 00:34:30,810--> 00:34:33,300
-Of course, we will be dressed to kill
+Of course not, we will be dressed to kill
 
 375
 00:34:33,500--> 00:34:35,800
@@ -1353,7 +1352,7 @@ we are in better shape than I expected
 381
 00:34:49,810--> 00:34:56,800
 We drink to the success of our cause, 
-... our success
+... to our success
 
 382
 00:35:04,010--> 00:35:08,800
@@ -1362,12 +1361,12 @@ bring everything of higher value to the hotel
 
 383
 00:35:08,810--> 00:35:11,800
-Kenig and Smółka will inspect shoe stores
+Kenig and Smółka will inspect the shoe stores
 
 384
 00:35:12,010--> 00:35:17,300
 you, photoshops and optical,
-and then, ... the rest
+and then, in turn, the rest
 
 385
 00:35:24,010--> 00:35:26,000
@@ -1547,8 +1546,8 @@ Why?
 property of the nation
 
 425
-00:37:35,810--> 00:37:37,590
-the nation won't suffer (from its loss)
+00:37:35,810--> 00:37:38,590
+the nation won't suffer <font size="28px"><i>(from its loss)</i></font>
 
 426
 00:37:38,810--> 00:37:40,590
@@ -1572,7 +1571,7 @@ Put it away
 inside, or it will get damaged
 
 431
-00:38:14,410--> 00:38:16,890
+00:38:14,410--> 00:38:18,890
 What's up, ... in a hurry to meet your maker
 
 432
@@ -1593,7 +1592,7 @@ Weak, ... I am still weak
 
 436
 00:40:17,010--> 00:40:19,700
-Where is that damn book
+Where is that damn book?
 
 437
 00:40:22,010--> 00:40:24,700
@@ -1639,7 +1638,7 @@ repatriots, wounded,
 what will happen with them
 
 446
-00:41:07,810--> 00:41:10,900
+00:41:07,810--> 00:41:11,900
 Just wait, you will be condemned
 
 447
@@ -1704,7 +1703,7 @@ Nah, I have to ask Boss
 You won't tell him anything
 
 462
-00:42:28,710--> 00:42:32,100
+00:42:28,710--> 00:42:32,800
 Damnation, ... dark
 
 463
@@ -1781,7 +1780,7 @@ truly, fervently and gently
 
 00:44:01,810--> 00:44:08,100
 <i>I know how to love,
-passionately, willingly and madly<???>
+passionately, willingly and madly
 ...
 </i>
 
@@ -1966,7 +1965,8 @@ Connect me with police in Gorzów
 <font color="blue">Are you a criminal?</font>
 
 00:48:55,400--> 00:48:58,880
-Yes, and will start shooting if you don't connect me immediately
+Yes, and will start shooting 
+if you don't connect me immediately
 
 00:48:59,000--> 00:49:01,480
 <font color="blue">I will try, rigth away</font>
@@ -2136,7 +2136,7 @@ Doctor, ... I've grown to like this place
 I would like to stay here
 
 00:53:36,800--> 00:53:37,880
-for ever?
+forever?
 
 00:53:42,800--> 00:53:45,880
 you make a career
@@ -2144,7 +2144,7 @@ you make a career
 00:53:49,000--> 00:54:04,880
 Doctor, 
 will give me a bit of time to think,
-the whole night ahead of us
+whole night ahead of us
 
 00:54:09,600--> 00:54:19,880
 <i>Where are you now? 
@@ -2158,13 +2158,16 @@ telepathy and reincarnation of souls
 anyway, a there was a similar case in Kraków
 I remember one of the professors invited us ...</font>
 
-00:54:41,000--> 00:54:48,880
+00:54:41,000--> 00:54:46,880
 don't cry, don't cry, don't cry, DON'T CRY !!!
 
-00:55:07,000--> 00:55:08,380
+00:54:47,000--> 00:54:48,880
+leave me alone
+
+00:55:07,600--> 00:55:09,080
 Where is Anna?
 
-00:55:08,800--> 00:55:13,880
+00:55:09,100--> 00:55:13,880
 I dunno, she doesn't want me, why?
 
 00:55:15,000--> 00:55:15,880
@@ -2178,7 +2181,7 @@ I ran away from Smółka
 
 00:55:34,000--> 00:55:42,480
 wants to get married
-promisses a farm and respect, very nice
+promisses a farm and respect, he's very nice
 
 00:55:44,000--> 00:55:45,880
 you know it's funny
@@ -2188,7 +2191,10 @@ but in the camp,
 sometimes when I used to think about freedom
 
 00:55:52,000--> 00:55:55,880
-my dreams used to hover around something like that
+my dreams would hover around something like that
+
+00:55:56,000--> 00:55:57,880
+I didn't dare to expect anything
 
 00:56:07,600--> 00:56:09,280
 he will tell him now
@@ -2203,7 +2209,7 @@ Andrzej, what is going on here?
 well, make it short
 
 00:56:21,500--> 00:56:26,880
-Boss, those Doctor contraptions, 
+Boss, those medical contraptions, 
 we shouldn't be taking them
 
 00:56:28,300--> 00:56:30,480
@@ -2232,7 +2238,7 @@ exagerration
 00:56:52,300--> 00:56:59,480
 Doctor, ... sin, this is for the wounded
 
-00:56:59,600--> 00:57:04,080
+00:56:59,600--> 00:57:05,080
 Smółka, don't rack your brains over this
 it is not for you
 
@@ -2258,16 +2264,16 @@ no, those contraptions must not be taken
 00:57:36,000--> 00:57:37,880
 buddy, go to bed, you are drunk
 
-00:57:37,900--> 00:57:40,080
+00:57:37,900--> 00:57:41,080
 THOSE CONTRAPTIONS MUST NOT BE TAKEN !!! 
 
-00:57:40,900--> 00:57:45,480
+00:57:41,700--> 00:57:45,480
 It is said 'thou shalt not steal', right?
 
 00:57:44,580--> 00:57:46,680
 you are right
 
-00:57:48,180--> 00:57:49,680
+00:57:48,180--> 00:57:50,680
 you are right
 
 00:57:51,180--> 00:57:55,680
@@ -2277,7 +2283,7 @@ but it is also said 'thou shalt not kill'
 yes
 
 00:58:00,880--> 00:58:03,680
-and, ... what have you got there?
+and, what have you got there?
 
 00:58:05,180--> 00:58:06,680
 a pistol
@@ -2286,7 +2292,7 @@ a pistol
 for killing?
 
 00:58:22,780--> 00:58:24,680
-must not be taken
+... must not be taken ...
 
 00:58:25,780--> 00:58:30,880
 ok, ok, ok, buddy, go to your room,
@@ -2296,27 +2302,27 @@ get some sleep
 I can't, I can't
 
 00:59:37,180--> 00:59:40,080
-and it was going to be such a lovely evening
+and it was going to be such a joyous evening
 
 00:59:44,180--> 00:59:48,080
 where did they go, all those wonderful men
 
 00:59:48,980--> 00:59:53,080
-where is my <???>, where is that street?
+where is my neighbourhood, where is that street?
 
 00:59:53,180--> 00:59:55,080
 where is that house?
 
 00:59:56,180--> 00:59:59,080
-and you always carry on about this Petersburg
+you always carry on about this Petersburg
 
 01:00:00,080--> 01:00:04,080
 I've never been there
 
 01:00:07,080--> 01:00:14,080
-I am Dubikowska from Lublin area
+I am Dubikowska from the Lublin area, 
 with my husband, 
-we danced away a few beautiful farms
+we chased away a few beautiful farms
 
 01:00:21,080--> 01:00:26,080
 didn't work out, no keys to the car
@@ -2325,16 +2331,16 @@ and other vehicles are without gas
 01:00:27,080--> 01:00:28,080
 careful
 
-01:01:05,080--> 01:01:11,080
+01:01:04,780--> 01:01:11,080
 we are posting guards, Czesiek
 you will guard the hall till 3:00am 
 then wake up Wijas
 the last one on duty Rudłowski
 
-01:01:11,100--> 01:01:12,080
-and what about Smółka, he is Saint?
+01:01:11,100--> 01:01:12,780
+and what about Smółka, he is a Saint?
 
-01:01:12,180--> 01:01:14,080
+01:01:12,800--> 01:01:14,080
 drunk, he is sleeping
 
 01:01:14,180--> 01:01:15,580
@@ -2346,14 +2352,14 @@ I don't wish to deprive Ms. Anna of your company
 01:01:20,280--> 01:01:24,580
 Just in case, it is safer to not leave the hotel, please
 
-01:01:24,680--> 01:01:26,580
+01:01:24,680--> 01:01:27,580
 I wish you, ladies and gentlemen, a good night
 
 01:01:52,680--> 01:01:56,580
-I found a stamp collection, should we take a look
+I found a stamp collection, should we take a look?
 
 01:02:01,980--> 01:02:04,580
-na spiaco<???>
+in bed?
 
 01:02:06,680--> 01:02:08,580
 What is your room number?
@@ -2367,14 +2373,14 @@ wait there
 01:02:28,280--> 01:02:30,180
 we wanted to look at the moon
 
-01:02:30,280--> 01:02:31,180
+01:02:30,280--> 01:02:31,880
 what's so interesting about it
 
 01:02:32,080--> 01:02:33,180
 that it's so pale
 
 01:02:33,480--> 01:02:35,180
-surely, from fear
+surely from fear
 
 01:02:35,480--> 01:02:39,880
 I congratulate the young couple
@@ -2417,7 +2423,7 @@ phone office is on the second floor
 but we are the only two who know about it
 
 01:03:24,800--> 01:03:27,080
-can't make up your mind?
+can't you make up your mind?
 
 01:03:30,300--> 01:03:36,080
 I've sent Janka to the Post Office, 
@@ -2446,7 +2452,7 @@ I want to stay here
 What are you expecting here?
 
 01:04:19,500--> 01:04:22,080
-Normal life
+normal life
 
 01:04:23,700--> 01:04:25,180
 here?
@@ -2505,7 +2511,7 @@ Janka
 01:06:02,000--> 01:06:03,000
 Where were you tramping around? 
 
-01:06:03,000--> 01:06:06,000
+01:06:03,000--> 01:06:06,700
 Eh, watch your language, mister handsome
 and keep your hands to yourself
 
@@ -2525,7 +2531,7 @@ someone must have been there, phone is broken
 Mister, how do you do it?
 
 01:06:27,800--> 01:06:29,900
-I promisse marriage
+I promise marriage
 
 01:06:37,000--> 01:06:39,000
 I know everything
