@@ -2,24 +2,24 @@
 the law and the fist
 
 00:00:19,396 --> 00:00:22,190
-<font color="orange"><i>From corners of the earth</i></font>
+<font color="#00ff00"><i>From corners of the earth</i></font>
 
 00:00:22,396 --> 00:00:25,190
 <font color="orange"><i>from rowan sheltered ways</i></font>
 
 00:00:25,196 --> 00:00:30,190
-<font color="orange"><i>where cindered forest, wind exhausted,
+<font color="orange"><i>where cindered forest, wind exhausted
 night and front</i></font>
 
 00:00:30,196 --> 00:00:35,700
-<font color="orange"><i>where wasted harvest fell,
+<font color="orange"><i>where wasted harvest fell
 where hawthorn turned to black</i></font>
 
 00:00:35,710 --> 00:00:41,890
 <font color="orange"><i>day awakes</i></font>
 
 00:00:42,896 --> 00:00:47,190
-<font color="orange"><i>The Sun will embrace us in its hands</i></font>
+<font color="orange"><i>The Sun will embrace us with its hands</i></font>
 
 00:00:47,196 --> 00:00:52,190
 <font color="orange"><i>and look earth has swollen with blood</i></font>
@@ -43,7 +43,7 @@ where hawthorn turned to black</i></font>
 <font color="orange"><i>maybe here</i></font>
 
 00:01:19,396 --> 00:01:32,190
-<font color="orange"><i>Next day, or two, a night or three,
+<font color="orange"><i>Next day, or two, a night or three
 though not today</i></font>
 
 16
@@ -3124,7 +3124,7 @@ Give him a ride
 Yes sir
 
 01:30:52,896 --> 01:30:57,190
-<font color="orange"><i>The Sun will embrace us in its hands</i>
+<font color="orange"><i>The Sun will embrace us with its hands</i>
 
 01:30:57,196 --> 01:31:02,190
 <font color="orange"><i>and look earth has swollen with blood</i>
