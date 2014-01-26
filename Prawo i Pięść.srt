@@ -2,88 +2,89 @@
 the law and the fist
 
 00:00:19,396 --> 00:00:22,190
-<font color="yellow"><i>From corners of the earth</i>
+<font color="orange"><i>From corners of the earth</i>
 
 00:00:22,396 --> 00:00:25,190
-<font color="yellow"><i>from rowan sheltered ways</i>
+<font color="orange"><i>from rowan sheltered ways</i>
 
 00:00:25,196 --> 00:00:30,190
-<font color="yellow"><i>where cindered forest, wind exhausted,
+<font color="orange"><i>where cindered forest, wind exhausted,
 night and front</i>
 
 00:00:30,196 --> 00:00:35,700
-<font color="yellow"><i>where wasted harvest fell,
+<font color="orange"><i>where wasted harvest fell,
 where hawthorn turned to black</i>
 
 00:00:35,710 --> 00:00:41,890
-<font color="yellow"><i>day awakes</i>
+<font color="orange"><i>day awakes</i>
 
 00:00:42,896 --> 00:00:47,190
-<font color="yellow"><i>The Sun will embrace us in its hands</i>
+<font color="orange"><i>The Sun will embrace us in its hands</i>
 
 00:00:47,196 --> 00:00:52,190
-<font color="yellow"><i>and look earth has swollen with blood</i>
+<font color="orange"><i>and look earth has swollen with blood</i>
 
 00:00:52,196 --> 00:00:55,890
-<font color="yellow"><i>once more will bear us a fief of grain</i>
+<font color="orange"><i>once more will bear us a fief of grain</i>
 
 00:00:56,000 --> 00:00:58,090
-<font color="yellow"><i>golden dust</i>
+<font color="orange"><i>golden dust</i>
 
 00:01:01,396 --> 00:01:05,100
-<font color="yellow"><i>Women will take us into thier huts</i>
+<font color="orange"><i>Women will take us into thier huts</i>
 
 00:01:05,396 --> 00:01:10,200
-<font color="yellow"><i>and look at them laugh through their tears</i>
+<font color="orange"><i>and look at them laugh through their tears</i>
 
 00:01:10,396 --> 00:01:14,600
-<font color="yellow"><i>once more a dance tune will ring out loud</i>
+<font color="orange"><i>once more a dance tune will ring out loud</i>
 
 00:01:14,656 --> 00:01:18,490
-<font color="yellow"><i>maybe here</i>
+<font color="orange"><i>maybe here</i>
 
 00:01:19,396 --> 00:01:32,190
-<font color="yellow"><i>Next day, or two, a night or three,
+<font color="orange"><i>Next day, or two, a night or three,
 though not today</i>
 
 16
 00:01:33,396 --> 00:01:37,890
-<font color="yellow"><i>Bread will the ovens bake for us</i>
+<font color="orange"><i>Bread will the ovens bake for us</i>
 
 17
 00:01:38,000 --> 00:01:42,490
-<font color="yellow"><i>and look where smoke vailed everything</i> 
+<font color="orange"><i>and look where smoke vailed everything</i> 
 
 18
 00:01:42,496 --> 00:01:46,190
-<font color="yellow"><i>Flower will bloom in that war scared mark</i>
+<font color="orange"><i>Flower will bloom in that war scared mark</i>
 
 19
 00:01:46,396 --> 00:01:50,190
-<font color="yellow"><i>deep rose tint</i>
+<font color="orange"><i>deep rose tint</i>
 
 20
 00:01:51,796 --> 00:01:56,000
-<font color="yellow"><i>New children will be born to us</i>
+<font color="orange"><i>New children will be born to us</i>
 
 21
 00:01:56,010 --> 00:02:00,690
-<font color="yellow"><i>and look, they are laughing that we</i>
+<font color="orange"><i>and look, they are laughing that we</i>
 
 22
 00:02:00,700 --> 00:02:08,290
-<font color="yellow"><i>still are rehashing that wretched time,
+<font color="orange"><i>still are rehashing that wretched time,
 spell of storms</i>
 
 23
 00:02:09,396 --> 00:02:20,190
-<font color="yellow"><i>Next day, or two, a night or three,
+<font color="orange"><i>Next day, or two, a night or three,
 though not today</i>
 
 24
 00:02:22,796 --> 00:02:33,190
-<font color="yellow"><i>Night's passed, day's gone,
-someday new dawn will rise again
+<font color="orange"><i>Night's passed, day's gone,
+one day new dawn 
+shall wake again
 </i>
 
 25
@@ -97,7 +98,7 @@ HELP, HELP, HELP, ...
 
 27
 00:03:38,296 --> 00:03:40,190
-STAND DOWN
+STAND DOWN !!!
 
 28
 00:03:42,296 --> 00:03:43,890
@@ -113,7 +114,7 @@ Little or big?
 
 31
 00:03:49,096 --> 00:03:50,890
-Medium
+medium
 
 32
 00:03:51,000 --> 00:03:52,490
@@ -187,33 +188,38 @@ Do you have any work around here?
 Come with us, we could use a <i>cowboy</i> like you
 
 47
-00:05:31,100 --> 00:05:31,490
+00:05:31,100 --> 00:05:32,290
 ... and pants
 
 47
-00:05:31,990 --> 00:05:33,200
+00:05:32,400 --> 00:05:33,200
 what?
 
 47
 00:05:33,300 --> 00:05:35,390
-pants, will I get a pair
+pants, will you give me a pair
 
 48
 00:05:36,000 --> 00:05:38,290
 well, not right away
 
 49
-00:05:40,000 --> 00:05:45,290
-I need them, ... new pants
+00:05:40,000 --> 00:05:41,890
+I need them
+
+00:05:43,500 --> 00:05:45,290
+new pants
 
 50
 00:05:50,000 --> 00:05:54,790
-Besides, I am looking for something more quiet
+Besides, I am looking for something ... more quiet
 
 51
-00:05:55,800 --> 00:06:00,890
-Go and see the supervisor, over there, 
-the castle behind the river
+00:05:55,800 --> 00:05:57,890
+Go and see the supervisor
+
+00:05:58,000 --> 00:06:00,890
+over there, in the castle behind the river
 
 52
 00:06:40,200 --> 00:06:41,590
@@ -224,12 +230,12 @@ Good Day
 Good Day
 
 54
-00:06:42,700--> 00:06:44,290
+00:06:42,900--> 00:06:44,290
 Do you know this building?
 
 56
 00:06:44,700--> 00:06:45,290
-A bit
+a bit
 
 57
 00:06:46,000--> 00:06:48,290
@@ -237,23 +243,26 @@ I am looking for the supervisor
 
 58
 00:06:48,500--> 00:06:49,290
-What for?
+what for?
 
 59
 00:06:50,500--> 00:06:52,290
 professional secret
 
 60
-00:06:53,400--> 00:06:57,000
-professional secret?, well, let's go 
+00:06:53,400--> 00:06:54,800
+professional secret?
+
+00:06:55,100--> 00:06:57,000
+Well, let's go 
 
 61
 00:07:15,000--> 00:07:16,000
-please ...
+Please ...
 
 62
 00:07:19,700--> 00:07:20,400
-It is you.
+It is you
 
 63
 00:07:22,600--> 00:07:24,800
@@ -272,16 +281,16 @@ Aha, your profession?
 I studied Education.
 
 67
-00:07:35,300--> 00:07:38,000
+00:07:35,000--> 00:07:38,500
 Write down your last name, ... first
 
 68
 00:07:44,000--> 00:07:45,000
-From <i><b>the camp</b></i>?
+from <i>the camp</i>?
 
 69
 00:07:48,300--> 00:07:50,200
-Can't hide it
+can't hide it
 
 69
 00:07:51,300--> 00:07:53,900
@@ -313,20 +322,23 @@ So, what do you want to do?
 I want to be a forest ranger
 
 76
-00:08:15,800--> 00:08:23,800
-a forest ranger, ... come back in a week
+00:08:15,800--> 00:08:17,800
+A forest ranger
+
+00:08:20,300--> 00:08:23,800
+Come back in a week
 
 77
 00:08:26,000--> 00:08:28,100
-in a week I will be somewhere else
+In a week I will be somewhere else
 
 78
 00:08:28,400--> 00:08:30,300
-could you ration me a pair of pants
+Could you ration me a pair of pants?
 
 79
 00:08:31,000--> 00:08:33,800
-will you help us organize our Education?
+Will you help us organize our Education?
 
 80
 00:08:34,000--> 00:08:35,800
@@ -334,15 +346,15 @@ no
 
 81
 00:08:36,700--> 00:08:38,700
-and a sense of duty, things like that, nothing?
+And a sense of duty, things like that, nothing?
 
 82
 00:08:39,100--> 00:08:40,000
-Good bye
+Good Bye
 
 83
-00:08:58,100--> 00:09:00,000
-Hey, hallo
+00:08:57,800--> 00:09:00,000
+hey, hallo
 
 84
 00:09:03,500--> 00:09:05,000
@@ -350,7 +362,7 @@ Which camp were you in?
 
 85
 00:09:06,800--> 00:09:10,300
-In Auschwitz, ... and later in Dachau
+in Auschwitz, ... and later in Dachau
 
 86
 00:09:10,900--> 00:09:16,000
@@ -362,7 +374,7 @@ You were in Mauthausen also
 
 88
 00:09:22,300--> 00:09:24,000
-That's right, that's right
+that's right, that's right
 
 89
 00:09:28,300--> 00:09:29,300
@@ -393,8 +405,11 @@ I can
 C'mon, I will set it up for you, c'mon, c'mon
 
 96
-00:09:51,000--> 00:09:56,000
-Thank you Doctor, these documents will suffice
+00:09:51,500--> 00:09:53,100
+Thank you Doctor
+
+00:09:54,300--> 00:09:56,300
+these documents will suffice
 
 98
 00:10:01,900--> 00:10:05,400
@@ -411,35 +426,42 @@ We need specialists, people of courage,
 but most importantly honest ones
 
 101
-00:10:28,000--> 00:10:34,000
-Doctor, he can drive,
+00:10:27,700--> 00:10:29,000
+Doctor
+
+00:10:29,000--> 00:10:30,700
+he can drive
+
+00:10:31,000--> 00:10:34,000
 maybe there is a spot for him with our group
 
 102
-00:10:35,300--> 00:10:42,000
+00:10:35,300--> 00:10:40,000
 I have a feeling that this man 
 is only concerned with material matters
+
+00:10:40,100--> 00:10:42,600
 But for us, we are looking for something more
 
 103
 00:10:43,000--> 00:10:44,600
-But I don't want anything more
+but I don't want anything more
 
 103
 00:10:45,010--> 00:10:46,800
-Only to make some money?
+only to make some money?
 
 104
 00:10:47,010--> 00:10:47,990
-Only
+only
 
 105
 00:10:48,710--> 00:10:49,400
-A lot?
+a lot?
 
 106
 00:10:52,510--> 00:10:53,800
-As much as I can 
+as much as I can 
 
 107
 00:10:54,510--> 00:10:56,800
@@ -447,7 +469,7 @@ I am affraid we will be leaving without this man
 
 108
 00:10:56,810--> 00:10:59,800
-But Doctor, he can be of use
+but Doctor, he can be of use
 
 109
 00:11:00,110--> 00:11:01,500
@@ -463,7 +485,7 @@ Volksdeutsche <font size="28px">(German Collaborator)</font>?
 
 112
 00:11:03,910--> 00:11:06,500
-No Way, he is our boy,
+no Way, he is our boy,
 he was in the Auschwitz and Dachau
 
 113
@@ -472,7 +494,7 @@ Do you have any documents?
 
 114
 00:11:08,210--> 00:11:09,200
-no, I don't
+No, I don't
 
 115
 00:11:09,810--> 00:11:10,800
@@ -492,7 +514,7 @@ I am giving you my word of honor
 
 119
 00:11:16,710--> 00:11:18,200
-Ahhh, ...
+ahhh, ...
 
 120
 00:11:20,910--> 00:11:25,200
@@ -517,29 +539,37 @@ The population was probably evacuated
 by retreating german troops
 
 125
-00:11:43,310--> 00:11:52,000
+00:11:43,310--> 00:11:48,000
 You are an operational group 
-that must secure the town for repatriates,
+that must secure the town for repatriates
+
+00:11:48,210--> 00:11:52,000
 organize the government, activate health services
 
 126
-00:11:52,100--> 00:11:59,700
-The matter is urgent, gentlemen
+00:11:52,100--> 00:11:53,700
+The matter is urgent, Gentlemen
+
+00:11:54,700--> 00:11:57,700
 They are sending us wounded for recovery
-We need to put full effort into it.
+
+00:11:58,100--> 00:11:59,700
+We need to put full effort into it
 
 127
-00:11:59,810--> 00:12:06,200
-Well, the task is dangerous, there might be 
-left over german troops in the forest.
+00:11:59,810--> 00:12:02,200
+Well, the task is dangerous
+
+00:12:02,510--> 00:12:06,200
+there might be left over german troops in the forest
 
 128
 00:12:13,210--> 00:12:15,200
-Please sign the requisition order.
+Please sign the requisition order
 
 129
 00:12:19,510--> 00:12:23,200
-gun cases are over there,
+Gun cases are over there,
 choose for yourselves
 
 130
@@ -559,7 +589,7 @@ Wróbel
 Smól, ... Smólka
 
 134
-00:12:59,700--> 00:13:01,200
+00:12:59,400--> 00:13:01,200
 Smółka
 
 135
@@ -571,7 +601,7 @@ Smółka?
 Antoni
 
 137
-00:13:08,000--> 00:13:10,800
+00:13:08,400--> 00:13:09,700
 Rudłowski
 
 138
@@ -579,12 +609,17 @@ Rudłowski
 Kenig, ... please
 
 139
-00:13:17,600--> 00:13:22,800
-Weapons to be used only when absolutely neccessary and in self-defense
+00:13:18,000--> 00:13:20,200
+Weapons to be used only 
+when absolutely neccessary 
+
+00:13:20,400--> 00:13:22,400
+and in self-defense
 
 140
-00:13:34,000--> 00:13:36,800
-Give it to me, I will help you
+00:13:34,000--> 00:13:36,100
+give it to me, 
+I will help you
 
 141
 00:13:39,000--> 00:13:40,000
@@ -592,16 +627,17 @@ What is it, broken?
 
 142
 00:13:40,200--> 00:13:42,300
-No, sir, most likely an infection
+no, sir, most likely an infection
 
 143
 00:13:42,320--> 00:13:46,800
-No, sir, most likely gangrene
-He's got a little scratch
+no, sir, most likely gangrene
+he's got a little scratch
 
 144
 00:13:46,920--> 00:13:48,800
-Thank you very much, Rozłowski
+Thank you very much,
+I am Rozłowski
 
 145
 00:13:48,820--> 00:13:50,100
@@ -614,65 +650,77 @@ let us begin with execution of our tasks.
 
 147
 00:13:54,120--> 00:13:57,000
-One moment gentlemen
+one moment Gentlemen
 
 148
-00:13:58,420--> 00:14:03,000
-Maybe they are poisoned
+00:13:58,420--> 00:14:00,000
+maybe they are poisoned
+
+00:14:01,000--> 00:14:03,000
 the germans used to poison drinks before leaving 
 
 149
-00:14:03,020--> 00:14:06,000
+00:14:03,220--> 00:14:05,100
 I will drink your portion
 
 150
-00:14:08,000--> 00:14:15,000
-Gentlemen, I wish you a few pairs of pants,
-... and material benefits, within reason
+00:14:08,000--> 00:14:11,000
+Gentlemen, I wish you a few pairs of pants
+
+00:14:11,300--> 00:14:15,000
+and material benefits, within reason
 
 151
 00:14:16,020--> 00:14:19,800
-For me, maybe a shirt, size 38
+for me, maybe a shirt, size 38
 
 152
-00:14:20,620--> 00:14:25,800
-Most importantly, 
-to re-activate health care facilities
+00:14:20,300--> 00:14:21,400
+Most importantly
+
+00:14:21,620--> 00:14:25,800
+to re-activate health facilities
 and to secure public property
 
 153
-00:14:25,820--> 00:14:26,900
+00:14:25,820--> 00:14:27,100
 Best Wishes, Gentlemen
 
 154
-00:14:27,620--> 00:14:31,800
+00:14:27,420--> 00:14:31,800
 I drink to the success of our cause
 
 155
 00:14:48,020--> 00:14:50,100
-And you in a round-up? <font size="28px"><i>(caught by the Nazis)</i></font>
+and you in a round-up? <font size="28px"><i>(caught by the Nazis)</i></font>
 
 155
 00:14:50,120--> 00:14:51,800
-No, during the uprising
+no, during the uprising
 
 156
-00:14:52,120--> 00:14:53,120
-To <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
+00:14:52,120--> 00:14:53,700
+to <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
 
 157
-00:14:53,120--> 00:15:00,400
-I was lucky as it was, 
-they would usually blow our guys out,
-I didn't make it through Wisła
+00:14:53,720--> 00:14:55,600
+I was lucky as it was
+
+00:14:55,720--> 00:14:57,400
+they would usually blow our guys down
+
+00:14:57,520--> 00:15:00,000
+I didn't make it across Wisła
 
 156
-00:14:53,120--> 00:14:56,400
-To <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
+00:14:53,120--> 00:14:55,400
+to <i>Kacet <font size="28px">(Concentration Camp)</font></i>?
 
 158
-00:15:00,420--> 00:15:06,800
+00:15:00,120--> 00:15:02,800
 Most importantly, brother, it is to be alive
+
+00:15:03,420--> 00:15:06,800
 when I got back we broke 5 liters
 
 159
@@ -680,9 +728,14 @@ when I got back we broke 5 liters
 And how was it for you?
 
 160
-00:15:09,320--> 00:15:15,200
+00:15:09,320--> 00:15:10,800
 Building reduced to powder
-I started to dig, destroyed my pants
+
+00:15:11,320--> 00:15:12,800
+I started to dig
+
+00:15:14,320--> 00:15:15,200
+destroyed my pants
 
 161
 00:15:15,420--> 00:15:16,900
@@ -725,10 +778,14 @@ shaking, wind and dust
 You can get off, you will be 'healthy like a bull'
 
 168
-00:16:02,920--> 00:16:12,000
-It is said that that soul is immortal
-and the body is nothing,
-... dust, ... wasted waste
+00:16:02,920--> 00:16:05,700
+It is said that soul is immortal
+
+00:16:05,920--> 00:16:07,800
+and the body is nothing
+
+00:16:07,920--> 00:16:12,000
+dust, ... wasted waste
 
 169
 00:16:12,120--> 00:16:14,000
@@ -739,9 +796,11 @@ God helps those who help themselves
 What if there are no vehicles there?
 
 171
-00:16:17,120--> 00:16:21,700
-They have to be there, 
-they used to leave them everywhere,
+00:16:17,120--> 00:16:19,600
+They have to be there,
+they used to leave them everywhere
+
+00:16:19,720--> 00:16:21,700
 they've been without gasoline lately
 
 172
@@ -765,37 +824,46 @@ Poles?
 kind of
 
 176
-00:19:51,220--> 00:19:53,100
+00:19:51,220--> 00:19:52,700
 What are you doing here?
 
 177
-00:19:53,120--> 00:19:54,800
+00:19:52,720--> 00:19:54,600
 We came here for a little spring picnic
 
 178
-00:19:55,020--> 00:19:56,800
+00:19:54,820--> 00:19:56,800
 And what is this, a bit of loot?
 
 179
-00:19:57,020--> 00:20:02,800
+00:19:57,020--> 00:20:00,000
 A few rags, we got the from the americans
-we've heard it is a great place
+
+00:20:00,420--> 00:20:02,800
+We've heard it is a great place
 
 180
 00:20:03,020--> 00:20:04,900
-Why great? Kościuszko overnighted here?
+Why great? 
+Kościuszko overnighted here?
 
 181
-00:20:05,020--> 00:20:08,900
-Hitler's lover, and she left a lot of underwear
+00:20:05,020--> 00:20:06,400
+Hitler's lover
+
+00:20:06,620--> 00:20:08,900
+and she left a lot of underwear
 
 182
 00:20:09,020--> 00:20:11,900
 I want to find a nice dress
 
 183
-00:20:12,020--> 00:20:18,900
-That won't work, I am very sorry 
+00:20:12,020--> 00:20:13,200
+That won't work my ladies
+
+00:20:13,400--> 00:20:18,900
+I am very sorry 
 but we are here to protect public property
 
 184
@@ -832,7 +900,7 @@ What does that have to do with anything?
 
 192
 00:20:46,810--> 00:20:50,700
-Hey, ... you can stay.
+Hey, ... you can stay
 
 193
 00:20:50,810--> 00:20:52,700
@@ -841,7 +909,7 @@ but we will have some fun, agreed?
 194
 00:20:52,810--> 00:20:57,300
 Fantastic, last time I danced 
-was at a ball in St. Petersburg
+was at a ball in Petersburg
 
 195
 00:20:58,110--> 00:21:04,000
@@ -865,22 +933,30 @@ Keep your mouth shut, women are present
 Not to worry Director, I have a colorful resume
 
 200
-00:21:46,000--> 00:21:48,800
-I will throw it once more
+00:21:46,000--> 00:21:48,200
+I will throw one more
 
 201
-00:21:48,900--> 00:21:52,800
-Cut it out, drop it, 
+00:21:48,600--> 00:21:50,000
+Leave it
+
+00:21:50,100--> 00:21:51,000
+Drop it
+
+00:21:51,500--> 00:21:53,200
 and I don't want to see it again
 
 202
-00:21:53,400--> 00:21:57,800
+00:21:53,400--> 00:21:56,400
 We came here to secure this place, 
-not to break windows, understand?
+not to break windows
+
+00:21:57,000--> 00:21:57,800
+understand?
 
 202
 00:21:58,400--> 00:21:59,800
-Yes, sir, Doctor
+Yes sir, Doctor
 
 203
 00:22:01,600--> 00:22:02,500
@@ -899,17 +975,22 @@ Over there, behind the window
 Comb the city, women must hide
 
 207
-00:22:42,500--> 00:22:44,200
+00:22:42,500--> 00:22:44,400
 I am not hiding, I am going with you
 
 287
-00:22:44,250--> 00:22:45,000
-I do too
+00:22:44,650--> 00:22:45,000
+Me too
 
 288
-00:22:45,250--> 00:22:50,800
-Kenig to movie theater, Rozłowski over there, 
-Smółka, Czesiek this way, ... Wijas
+00:22:45,250--> 00:22:47,800
+Kenig to movie theater, Rozłowski over there
+
+00:22:48,050--> 00:22:49,800
+Smółka, Czesiek this way
+
+00:22:49,990--> 00:22:51,400
+Wijas
 
 289
 00:23:58,400--> 00:24:00,900
@@ -932,11 +1013,11 @@ Wounded?
 Drunk as a skunk
 
 293
-00:25:19,500--> 00:25:20,500
-We have a German
+00:25:19,500--> 00:25:21,000
+We found a German
 
 294
-00:25:33,500--> 00:25:34,500
+00:25:33,500--> 00:25:34,900
 Drunk beast
 
 295
@@ -945,46 +1026,41 @@ You, ... you, get up
 
 296
 00:25:40,000--> 00:25:41,500
-<font color="yellow">Open your eyes</font>
+<font color="orange">Open your eyes</font>
 
 296
 00:25:42,300--> 00:25:44,500
-<font color="yellow">Can you see us</font>
+<font color="orange">Can you see us</font>
 
 297
 00:25:44,600--> 00:25:48,900
-<font color="yellow">Wretched sun, wretched dream</font>
+<font color="orange">Wretched sun, wretched dream</font>
 
 298
 00:25:49,100--> 00:25:51,500
-<font color="yellow">We are Polish
+<font color="orange">We are Polish
 
 299
 00:25:59,100--> 00:26:03,500
-<font color="yellow">Good Day, Ladies and Gentlemen
+<font color="orange">Good Day Ladies and Gentlemen,
 I am Schaeffer</font>
 
 300
-00:26:05,100--> 00:26:08,500
-<font color="yellow">
-Reservations and service supervision 
+00:26:04,600--> 00:26:08,500
+<font color="orange">Reservations and service supervision 
 at hotel Tivoli</font>
 
 301
 00:26:12,000--> 00:26:13,800
-<font color="yellow">
-Please forgive my appearance</font>
+<font color="orange">Please forgive my appearance</font>
 
 302
 00:26:14,000--> 00:26:16,800
-<font color="yellow">
-Did you operate the radio?</font>
+<font color="orange">Did you operate the radio?</font>
 
 303
-00:26:18,600--> 00:26:20,800
-<font color="yellow">
-That is possible.
-</font>
+00:26:18,600--> 00:26:20,600
+<font color="orange">That is possible</font>
 
 304
 00:26:21,600--> 00:26:23,200
@@ -1004,15 +1080,15 @@ Take him to the hotel
 
 308
 00:26:34,700--> 00:26:37,900
-<font color="yellow">Get up, ... GET UP!!!</font>
+<font color="orange">Get up, ... GET UP!!!</font>
 
 309
 00:26:41,900--> 00:26:43,200
-<font color="yellow">To the hotel</font>
+<font color="orange">To the hotel</font>
 
 310
 00:26:49,300--> 00:26:53,200
-Well, Kenig, 
+Well Kenig, 
 you can look for some pants for yourself
 
 311
@@ -1062,95 +1138,76 @@ I'd be affraid
 
 322
 00:27:57,100--> 00:28:01,200
-<font color="yellow">
-I wanted to spread the rugs on the floor
-</font>
+<font color="orange">I wanted to spread the rugs on the floor</font>
 
 323
 00:28:01,400--> 00:28:04,200
-<font color="yellow">
-... but I didn't have time
-</font>
+<font color="orange">but I didn't have time</font>
 
 324
-00:28:06,400--> 00:28:13,200
-<font color="yellow">
-Difficult to do anything 
-... when you have too much time
-</font>
+00:28:06,400--> 00:28:09,700
+<font color="orange">Hard to do anything 
+
+00:28:10,000--> 00:28:13,200
+<font color="orange">when you have too much time</font>
 
 325
 00:28:13,400--> 00:28:15,500
-<font color="yellow">
-Why did you stay?
-</font>
+<font color="orange">Why did you stay?</font>
 
 326
 00:28:15,700--> 00:28:17,800
-<font color="yellow">
-I don't know, I got drunk.
-</font>
+<font color="orange">I don't know, I got drunk</font>
 
 327
 00:28:18,000--> 00:28:19,900
-<font color="yellow">
-What were you during your stay here?
-</font>
+<font color="orange">What were you during your stay here?</font>
 
 328
-00:28:20,400--> 00:28:25,200
-<font color="yellow">
-Nothing big, ... I drank, opened doors
-I opened almost all of them
-</font>
+00:28:20,400--> 00:28:21,200
+<font color="orange">Nothing big</font>
+
+00:28:22,000--> 00:28:25,200
+<font color="orange">I drank, opened doors, I opened almost all of them</font>
 
 329
 00:28:27,000--> 00:28:27,400
-<font color="yellow">
-Please allow yourself ...
-</font>
+<font color="orange">Please allow yourself ...</font>
 
 330
 00:28:27,410--> 00:28:29,800
-<font color="yellow">
-Are there any trucks in town?
-</font>
+<font color="orange">Are there any trucks in town?</font>
 
 331
 00:28:31,510--> 00:28:32,800
-<font color="yellow">
-Trucks?
-</font>
+<font color="orange">Trucks?</font>
 
 332
 00:28:33,310--> 00:28:37,800
-<font color="yellow">
-Listen, I am the new mayor here. Understood?
-</font>
+<font color="orange">Listen, I am the new mayor here,
+Understood?</font>
 
 333
 00:28:37,910--> 00:28:38,800
-<font color="yellow">
-Yes sir.
-</font>
+<font color="orange">Yes sir</font>
 
 334
-00:28:39,010--> 00:28:43,800
-<font color="yellow">
-I am very pleased to meet you mister mayor.
-There are trucks.
-</font>
+00:28:39,010--> 00:28:41,700
+<font color="orange">I am very pleased to meet you Mister Mayor</font>
+
+00:28:41,910--> 00:28:43,800
+<font color="orange">There are trucks</font>
 
 335
-00:28:45,310--> 00:28:51,800
-<font color="yellow">
-Here, the keys to the cellar at Tivoli.
-Best supplied cellar in Graustadt
-</font>
+00:28:45,310--> 00:28:48,300
+<font color="orange"> Here, the keys to the cellar at Tivoli</font>
+
+00:28:48,710--> 00:28:51,800
+<font color="orange">Best supplied cellar in Graustadt</font>
 
 336
 00:29:01,310--> 00:29:06,900
-I am sleeping, not a worry in the world 
+I am sleeping, not a worry in the world,
 I am sleeping
 
 336
@@ -1180,13 +1237,16 @@ September last year,
 they were just finishing us off in Warszawa
 
 343
-00:30:03,610--> 00:30:09,500
-Looks like her daughter was similar to you 
-in size, you should look in the other room
+00:30:03,610--> 00:30:07,500
+Looks like her daughter 
+was similar to you in size
+
+00:30:07,810--> 00:30:09,500
+You need to look in the other room
 
 344
 00:31:01,610--> 00:31:05,000
-Look at this, this is serious money
+Just look at it, this is serious money
 
 345
 00:31:17,910--> 00:31:18,600
@@ -1243,15 +1303,22 @@ It wasn't easy getting here,
 I barely found a way
 
 357
-00:31:53,100--> 00:31:58,100
+00:31:53,100--> 00:31:55,900
 Everybody hid somewhere, 
 I was worried that something happened to you
+
+00:31:56,100--> 00:31:58,100
 the truck is just sitting there, nobody around
 
 358
-00:32:00,400--> 00:32:11,800
-This town is great, ... yes, ... it is nice here
-people will have <i><shot></i>
+00:32:00,400--> 00:32:03,800
+This town is great, ... yes
+
+00:32:04,400--> 00:32:05,800
+it is nice here
+
+00:32:09,000--> 00:32:11,800
+people will have ...
 
 359
 00:32:35,000--> 00:32:37,800
@@ -1289,9 +1356,11 @@ Tourtured, and when I was half-dead
 filled my mouth with gypsium
 
 367
-00:33:17,000--> 00:33:25,200
-To hell with all of their posessions,
-... to hell with them all
+00:33:17,000--> 00:33:19,200
+To hell with all of their posessions
+
+00:33:22,800--> 00:33:25,200
+To hell with them all
 
 368
 00:34:09,500--> 00:34:11,000
@@ -1529,8 +1598,10 @@ And this little picture, worth a lot?
 Quite a bit
 
 421
-00:37:25,110--> 00:37:29,590
-So, take it, 
+00:37:25,110--> 00:37:26,590
+So, take it
+
+00:37:27,710--> 00:37:29,590
 take the picture and will take these scribbles
 
 422
@@ -1551,16 +1622,18 @@ the nation won't suffer <font size="28px"><i>(from its loss)</i></font>
 
 426
 00:37:38,810--> 00:37:40,590
-<b>Leave it !!!</b>
+LEAVE IT !!!
 
 427
 00:37:50,010--> 00:37:51,590
 Give it to me
 
 428
-00:37:52,010--> 00:37:57,590
-Doctor would finish you off,
-... and I will just beat the crap out of you
+00:37:52,010--> 00:37:54,590
+Doctor would finish you off
+
+00:37:55,010--> 00:37:57,590
+and I will just beat the crap out of you
 
 429
 00:37:57,910--> 00:37:59,490
@@ -1600,7 +1673,7 @@ Darn, it is dark
 
 438
 00:40:27,210--> 00:40:33,700
-Smółka, it is said 'thou shalt not steal'
+Smółka, ... it is said 'thou shalt not steal'
 
 439
 00:40:33,710--> 00:40:35,700
@@ -1632,8 +1705,10 @@ Hospital Equipment?
 Everything
 
 446
-00:40:59,810--> 00:41:06,400
-And those who will come here, 
+00:40:59,810--> 00:41:01,800
+And those who will come here
+
+00:41:02,110--> 00:41:06,400
 repatriots, wounded, 
 what will happen with them
 
@@ -1650,9 +1725,11 @@ We are not stealing
 This belongs to no one
 
 449
-00:41:17,210--> 00:41:22,800
-God will remember, ... who resisted 
-and who followed the voice of evil
+00:41:17,210--> 00:41:18,800
+God will remember
+
+00:41:19,310--> 00:41:22,800
+who resisted and who followed the voice of evil
 
 450
 00:41:23,010--> 00:41:25,200
@@ -1668,11 +1745,11 @@ Who else is with you?
 
 453
 00:41:36,010--> 00:41:37,300
-you
+You are
 
 454
 00:41:40,010--> 00:41:41,300
-Me?
+I am?
 
 455
 00:41:43,010--> 00:41:44,300
@@ -1723,10 +1800,15 @@ And now you drunken mugs
 What will be drinking next
 </i>
 
-00:42:49,110--> 00:43:03,800
+00:42:48,710--> 00:42:49,400
+<i>Rum</i>
+
+00:42:49,710--> 00:42:56,800
 <i>Rum, we'll drink by glasses rum
 For even bigger buzz, for even louder noise
-We will be drinking rum, damned rum
+
+00:42:57,110--> 00:43:03,800
+<i>Rum, we'll be drinking damned rum
 Till dawn, till sleep will take its hold, that deadly chum
 </i>
 
@@ -1744,17 +1826,17 @@ earth has enough of gold
 00:43:18,210--> 00:43:24,800
 <i>Wine, rivers flowing with wine
 Children, let them drink wine, 
-wine only makes you sad
+wine only gets you down 
 </i>
 
 00:43:26,210--> 00:43:32,800
 <i>Gin we will drink, murderous gin
 hang ups leave with a spin 
-let it torch devil's heir <???>
+let it torch devil's heir
 </i>
 
 00:43:29,610--> 00:43:31,100
-<font color="yellow">silly story</font>
+<font color="orange">silly story</font>
 
 00:43:33,210--> 00:43:36,800
 <i>Gin we will drink, murderous gin
@@ -1765,7 +1847,7 @@ let it torch devil's heir <???>
 Why are you laughing?
 
 00:43:39,210--> 00:43:41,100
-(smiling) to you
+<font size="28px">(smiling)</font> to you
 
 00:43:42,210--> 00:43:56,100
 <i>There is one and one only
@@ -1789,13 +1871,13 @@ passionately, willingly and madly
 quitetly ...  </i>
 
 00:44:15,810--> 00:44:17,400
-<font color="yellow">Not a single clean glass</font>
+<font color="orange">Not a single clean glass</font>
 
 00:44:18,510--> 00:44:20,800
 Alcohol disinfects
 
 00:44:21,510--> 00:44:23,800
-Can you take a good look at there, will you
+Can you take a good look at her, will you
 
 00:44:24,510--> 00:44:25,500
 sure
@@ -1841,32 +1923,35 @@ Lots to talk about
 Quit wrecking the mood, brother, leave it
 
 00:45:09,980--> 00:45:11,300
-You are affraid
+You are scared
 
 00:45:11,380--> 00:45:12,400
 You drank too much
 
 00:45:12,980--> 00:45:13,800
-You are affraid
+You are scared
 
 00:45:14,080--> 00:45:15,400
 Yeah, yeah
 
 00:45:19,580--> 00:45:21,400
-<font color="yellow">Where is the post office?</font>
+<font color="orange">Where is the post office?</font>
 
 00:45:21,500--> 00:45:22,800
-<font color="yellow">On the Post street
+<font color="orange">On the Post street
 </font>
 
 00:45:23,500--> 00:45:27,800
-<font color="yellow">Go to the square and turn right 
+<font color="orange">Go to the square and turn right 
 then take the first left
 </font>
 
 00:45:28,500--> 00:45:33,800
 Listen, occupy Smółka with a conversation, ok?
 I will be right back
+
+00:45:47,500--> 00:45:49,800
+<font size="28px">I won't drink vodka, no</font>
 
 00:45:55,500--> 00:45:57,800
 Will you have a drink with me?
@@ -1881,22 +1966,25 @@ What is your name?
 00:46:08,200--> 00:46:10,800
 I've been watching you since the morning
 
-00:46:18,200--> 00:46:21,800
+00:46:19,500--> 00:46:22,800
 I won't be like that, I will respect you
 
-00:46:23,200--> 00:46:24,800
+00:46:23,200--> 00:46:25,000
 You won't be unhappy with me
 
 00:46:28,200--> 00:46:33,800
 we will have a farm, money,
 you will buy anything you want
 
-00:46:34,200--> 00:46:35,800
+00:46:34,200--> 00:46:36,400
 Money is of no interest to me
 
-00:46:38,500--> 00:46:45,800
-Andrzej told you this, heavenly kingdom, 
-he says, will belong to the poor
+00:46:38,500--> 00:46:40,600
+Andrzej told you this
+
+00:46:41,900--> 00:46:45,800
+heavenly kingdom, he says, 
+will belong to the poor
 
 00:47:58,700--> 00:48:01,100
 And where is our professor?
@@ -1911,19 +1999,19 @@ Probably went to bed
 Oh, alone?
 
 00:48:08,100--> 00:48:09,800
-<font color="yellow">Mister Mayor</font>
+<font color="orange">Mister Mayor</font>
 
 00:48:10,600--> 00:48:13,800
-<font color="yellow">Are you asking about Mr. Kenig?</font>
+<font color="orange">Are you asking about Mr. Kenig?</font>
 
 00:48:13,800--> 00:48:14,200
-<font color="yellow"> Yes</font>
+<font color="orange"> Yes</font>
 
 00:48:14,210--> 00:48:15,800
-<font color="yellow">Professor went to the Post Office</font>
+<font color="orange">Professor went to the Post Office</font>
 
 00:48:16,200--> 00:48:17,200
-<font color="yellow">What?</font>
+<font color="orange">What?</font>
 
 00:48:19,200--> 00:48:20,580
 Czesiek
@@ -2041,7 +2129,7 @@ There is signal, damn
 00:50:45,600--> 00:50:47,380
 We gotta have the whole thing ...
 
-00:51:02,300--> 00:51:03,780
+00:51:02,300--> 00:51:04,180
 What is this foolin' around?
 
 00:51:04,600--> 00:51:05,780
@@ -2050,12 +2138,14 @@ I am practicing
 00:51:12,400--> 00:51:13,780
 I am shooting the bottles
 
-00:51:14,000--> 00:51:18,280
+00:51:14,000--> 00:51:15,880
 Easy, quit those stupid pranks
-..., were you at the Post Office
 
-00:51:19,800--> 00:51:21,280
-... at the Post Office, what for?
+00:51:15,900--> 00:51:18,280
+Were you at the Post Office?
+
+00:51:19,800--> 00:51:21,680
+at the Post Office, what for?
 
 00:51:21,700--> 00:51:25,380
 man, can you shoot, holly cow, 
@@ -2073,24 +2163,26 @@ where?
 00:51:31,300--> 00:51:33,080
 in the resistance
 
-00:51:35,300--> 00:51:36,080
+00:51:35,300--> 00:51:36,780
 everything
 
-00:51:36,100--> 00:51:39,080
+00:51:36,800--> 00:51:39,080
 and discipline, didn't they theach you there
 
-00:51:40,300--> 00:51:43,480
+00:51:40,300--> 00:51:43,180
 I beg your pardon, but I do not understand
 
 00:51:43,600--> 00:51:46,080
 I will explain it to you
 
-00:51:49,500--> 00:51:57,380
-You see, 
-we can even get by without talented people
+00:51:49,500--> 00:51:51,380
+You see 
+
+00:51:52,500--> 00:51:57,380
+without talented people, we can even get by 
 
 00:51:58,600--> 00:52:04,080
-We only need ones that are obedient
+We only need those who are obedient
 
 00:52:10,100--> 00:52:12,080
 and how much am I going to get for it
@@ -2114,7 +2206,7 @@ ten percent, Kenig, hmm?
 of the whole thing
 
 00:52:55,000--> 00:52:58,380
-will we have to split abroad
+Will we have to run away abroad?
 
 00:53:00,000--> 00:53:02,380
 not out of the question
@@ -2141,9 +2233,13 @@ forever?
 00:53:42,800--> 00:53:45,880
 you make a career
 
-00:53:49,000--> 00:54:04,880
-Doctor, 
-will give me a bit of time to think,
+00:53:48,400--> 00:53:50,000
+Doctor
+
+00:53:54,800--> 00:54:00,080
+will give me a bit of time to think
+
+00:54:00,700--> 00:54:03,400
 whole night ahead of us
 
 00:54:09,600--> 00:54:19,880
@@ -2167,11 +2263,14 @@ leave me alone
 00:55:07,600--> 00:55:09,080
 Where is Anna?
 
-00:55:09,100--> 00:55:13,880
-I dunno, she doesn't want me, why?
+00:55:09,100--> 00:55:12,380
+I dunno, she doesn't want me
 
-00:55:15,000--> 00:55:15,880
-<font color="yellow">you snitch</font>
+00:55:12,400--> 00:55:13,880
+why?
+
+00:55:15,000--> 00:55:16,880
+<font color="orange">you snitch</font>
 
 00:55:29,100--> 00:55:30,880
 what are you doing here?
@@ -2186,14 +2285,14 @@ promisses a farm and respect, he's very nice
 00:55:44,000--> 00:55:45,880
 you know it's funny
 
-00:55:46,000--> 00:55:51,880
+00:55:46,600--> 00:55:51,880
 but in the camp,
 sometimes when I used to think about freedom
 
 00:55:52,000--> 00:55:55,880
 my dreams would hover around something like that
 
-00:55:56,000--> 00:55:57,880
+00:55:56,800--> 00:55:58,900
 I didn't dare to expect anything
 
 00:56:07,600--> 00:56:09,280
@@ -2208,46 +2307,51 @@ Andrzej, what is going on here?
 00:56:18,500--> 00:56:20,880
 well, make it short
 
-00:56:21,500--> 00:56:26,880
+00:56:21,500--> 00:56:27,180
 Boss, those medical contraptions, 
 we shouldn't be taking them
 
-00:56:28,300--> 00:56:30,480
-who told you this?
+00:56:28,900--> 00:56:30,480
+Who told you this?
 
-00:56:30,900--> 00:56:32,880
+00:56:30,600--> 00:56:32,900
 nobody, I by myself
 
 00:56:34,900--> 00:56:35,880
 Kenig, eh?
 
-00:56:36,000--> 00:56:39,880
+00:56:36,000--> 00:56:40,400
 Not Kenig, what does he understand?
 he just wants to earn a lot
 
-00:56:40,000--> 00:56:41,380
+00:56:40,500--> 00:56:41,800
 you didn't figure it out by yourself !!!
 
-00:56:42,000--> 00:56:47,380
+00:56:41,880--> 00:56:45,100
 what, do you think that I am nothing
-I also have my own mind, NO !!!
+
+00:56:45,180--> 00:56:46,880
+I also have my own mind
+NO !!!
 
 00:56:47,000--> 00:56:48,480
 exagerration
 
-00:56:52,300--> 00:56:59,480
-Doctor, ... sin, this is for the wounded
+00:56:52,800--> 00:56:59,480
+Doctor, ... sin, ... this is for the wounded
 
 00:56:59,600--> 00:57:05,080
 Smółka, don't rack your brains over this
 it is not for you
 
-00:57:07,600--> 00:57:09,080
+00:57:05,600--> 00:57:09,480
 Listen only to me, you will be better off
 
-00:57:10,600--> 00:57:20,080
-You will have money, you will build a house,
-you will buy a pair of horses, cows, plow ...
+00:57:10,200--> 00:57:14,080
+You will have money, you will build a house
+
+00:57:16,000--> 00:57:20,080
+you will buy a pair of horses, cows, plow
 
 00:57:21,200--> 00:57:22,080
 motor bike
@@ -2255,10 +2359,10 @@ motor bike
 00:57:22,200--> 00:57:26,080
 and a motor bike, you will live
 
-00:57:26,700--> 00:57:29,780
+00:57:26,400--> 00:57:29,780
 you will live, like a count
 
-00:57:30,900--> 00:57:35,180
+00:57:30,900--> 00:57:35,680
 no, those contraptions must not be taken
 
 00:57:36,000--> 00:57:37,880
@@ -2291,7 +2395,7 @@ a pistol
 00:58:07,880--> 00:58:10,680
 for killing?
 
-00:58:22,780--> 00:58:24,680
+00:58:22,780--> 00:58:25,280
 ... must not be taken ...
 
 00:58:25,780--> 00:58:30,880
@@ -2307,22 +2411,24 @@ and it was going to be such a joyous evening
 00:59:44,180--> 00:59:48,080
 where did they go, all those wonderful men
 
-00:59:48,980--> 00:59:53,080
+00:59:48,480--> 00:59:52,080
 where is my neighbourhood, where is that street?
 
-00:59:53,180--> 00:59:55,080
+00:59:52,100--> 00:59:55,080
 where is that house?
 
-00:59:56,180--> 00:59:59,080
+00:59:55,880--> 00:59:59,080
 you always carry on about this Petersburg
 
-01:00:00,080--> 01:00:04,080
+01:00:00,080--> 01:00:02,080
 I've never been there
 
-01:00:07,080--> 01:00:14,080
-I am Dubikowska from the Lublin area, 
+01:00:07,480--> 01:00:09,800
+I am Dubikowska from the Lublin area
+
+01:00:10,000--> 01:00:13,080
 with my husband, 
-we chased away a few beautiful farms
+we danced away a few beautiful farms
 
 01:00:21,080--> 01:00:26,080
 didn't work out, no keys to the car
@@ -2331,13 +2437,18 @@ and other vehicles are without gas
 01:00:27,080--> 01:00:28,080
 careful
 
-01:01:04,780--> 01:01:11,080
-we are posting guards, Czesiek
+01:01:04,780--> 01:01:06,080
+we are posting guards, 
+Czesiek
+
+01:01:06,780--> 01:01:08,880
 you will guard the hall till 3:00am 
 then wake up Wijas
+
+01:01:09,180--> 01:01:10,780
 the last one on duty Rudłowski
 
-01:01:11,100--> 01:01:12,780
+01:01:10,800--> 01:01:12,780
 and what about Smółka, he is a Saint?
 
 01:01:12,800--> 01:01:14,080
@@ -2382,11 +2493,13 @@ that it's so pale
 01:02:33,480--> 01:02:35,180
 surely from fear
 
-01:02:35,480--> 01:02:39,880
+01:02:35,480--> 01:02:37,880
 I congratulate the young couple
+
+01:02:38,080--> 01:02:40,180
 you are very nice, although silent
 
-01:02:39,980--> 01:02:43,880
+01:02:40,380--> 01:02:43,880
 you have no idea what chore it is
 to listen to all of that
 
@@ -2400,16 +2513,15 @@ Janka
 will you do something for me?
 
 01:02:51,780--> 01:02:53,880
-for you, anything
+for you anything
 
 01:02:53,900--> 01:02:58,180
 you must somehow get out of here,
 but please continue smiling at me, ok
 
 01:03:00,200--> 01:03:05,180
-you will go to the Post Office
-right from the square, then the first
-cross street to the left
+you will go to the Post Office right from the square,
+then the first cross street to the left
 
 01:03:07,200--> 01:03:08,180
 and then
@@ -2418,25 +2530,34 @@ and then
 from there you will make a phone call to wherever,
 and, in my name, request that they send police
 
-01:03:14,800--> 01:03:20,180
+01:03:14,800--> 01:03:16,980
 phone office is on the second floor
+
+01:03:17,500--> 01:03:20,180
 but we are the only two who know about it
 
 01:03:24,800--> 01:03:27,080
-can't you make up your mind?
+Can't you make up your mind?
 
-01:03:30,300--> 01:03:36,080
-I've sent Janka to the Post Office, 
+01:03:30,300--> 01:03:32,380
+I've sent Janka to the Post Office
+
+01:03:32,600--> 01:03:33,880
 maybe she will make a connection
+
+01:03:34,100--> 01:03:36,080
 go to your room
 
 01:03:37,000--> 01:03:39,880
 I will try to get through to Czesiek
 
-01:03:40,000--> 01:03:45,880
-Andzej, ... leave them 
+01:03:40,000--> 01:03:41,280
+Andrzej
 
-01:03:57,500--> 01:04:00,080
+01:03:44,400--> 01:03:46,380
+leave them 
+
+01:03:57,500--> 01:03:59,080
 when are we leaving?
 
 01:04:00,100--> 01:04:01,880
@@ -2445,16 +2566,16 @@ at the break of dawn
 01:04:08,100--> 01:04:10,080
 I am not going
 
-01:04:14,100--> 01:04:16,080
+01:04:14,600--> 01:04:16,080
 I want to stay here
 
-01:04:17,100--> 01:04:19,080
+01:04:16,700--> 01:04:18,580
 What are you expecting here?
 
 01:04:19,500--> 01:04:22,080
 normal life
 
-01:04:23,700--> 01:04:25,180
+01:04:23,500--> 01:04:25,180
 here?
 
 01:04:25,900--> 01:04:27,880
@@ -2467,55 +2588,62 @@ take anything from here
 01:04:36,400--> 01:04:38,880
 who are you saying this to, eh? 
 
-01:04:38,900--> 01:04:42,480
-to you, because I am expecting you will help me
+01:04:38,900--> 01:04:40,000
+to you
 
-01:04:42,200--> 01:04:43,880
-what planet did you fall from, you idiot
+01:04:40,500--> 01:04:42,480
+because I am expecting you will help me
 
-01:04:43,900--> 01:04:49,880
+01:04:42,500--> 01:04:44,280
+what planet did you fall from,
+you idiot
+
+01:04:44,300--> 01:04:46,380
 for 3 years in the camp I was eating turnips
+
+01:04:46,400--> 01:04:49,880
 I told myself, once it is over, if I survive
 I will be somebody, you understand?
 
-01:04:50,000--> 01:04:51,880
+01:04:50,000--> 01:04:51,680
 now I have the right to take everything
 
-01:04:51,900--> 01:04:52,880
+01:04:51,700--> 01:04:52,880
 from whom? 
 
-01:04:52,900--> 01:04:57,980
-tomorrow will arrive bunch of beggars, 
-like you and I
+01:04:53,800--> 01:04:57,980
+tomorrow will arrive bunch of beggars like you and I
 
 01:04:58,200--> 01:05:00,480
 at least they should get what is here
 
-01:05:00,500--> 01:05:02,180
-I did my thinking about the fatherland in the camp
-
-01:05:02,300--> 01:05:08,380
+01:05:00,500--> 01:05:03,780
+I did my thinking about the fatherland during the war 
 now I am thinking about myself
+
+01:05:04,300--> 01:05:08,380
 I want to have money, a house, a woman
 
 01:05:15,400--> 01:05:17,480
 I would like to fall in love
 
-01:05:35,400--> 01:05:41,480
+01:05:37,000--> 01:05:42,480
 and you donkey, walk in your ragged pants
 and quit stirring the pot or you might get it
 
-01:05:58,200--> 01:05:59,000
-Janka
+01:05:57,200--> 01:05:59,000
+I will get it
 
 01:06:02,000--> 01:06:03,000
 Where were you tramping around? 
 
-01:06:03,000--> 01:06:06,700
+01:06:03,000--> 01:06:04,800
 Eh, watch your language, mister handsome
+
+01:06:05,000--> 01:06:06,600
 and keep your hands to yourself
 
-01:06:07,000--> 01:06:09,100
+01:06:06,800--> 01:06:09,100
 you lock me out and then throw an argument
 
 01:06:09,200--> 01:06:10,000
@@ -2550,21 +2678,25 @@ if you sprinkle more you get more,
 you sprinke less then, well, you know
 
 01:07:03,280--> 01:07:05,900
-you gotta have something to sprinkle
+You gotta have something to sprinkle
 
 01:07:06,000--> 01:07:07,900
-you think that a girl did a number on me?
+You think that a girl did a number on me?
 
-01:07:09,000--> 01:07:10,000
-never
+01:07:09,000--> 01:07:10,400
+Never
 
-01:07:11,000--> 01:07:19,800
+01:07:12,000--> 01:07:13,700
 I could also roll like you
+
+01:07:14,400--> 01:07:17,800
 meander like a romantic, that poet Mickiewicz
-but what for?
+
+01:07:18,100--> 01:07:19,800
+But what for?
 
 01:07:20,000--> 01:07:23,800
-why do you wear gloves?
+Why do you wear gloves?
 
 01:07:24,000--> 01:07:26,800
 eh ..., I have, you see, ugly hands, and ...
@@ -2575,14 +2707,14 @@ Good Night, sir
 01:07:32,280--> 01:07:33,800
 Good Night
 
-01:07:39,580--> 01:07:42,400
+01:07:39,880--> 01:07:42,400
 It looks like I am on my own
 
 01:07:42,580--> 01:07:44,800
 I expected that
 
 01:07:47,080--> 01:07:48,800
-what will you do?
+What will you do?
 
 01:07:50,000--> 01:07:51,100
 I don't know
@@ -2590,7 +2722,7 @@ I don't know
 01:07:51,400--> 01:07:53,700
 I beg you leave it all
 
-01:07:54,900--> 01:07:57,700
+01:07:54,900--> 01:07:57,300
 What time is it?
 
 01:08:00,500--> 01:08:01,700
@@ -2609,17 +2741,22 @@ clearly, you won't stop them all by yourself
 01:08:17,500--> 01:08:18,800
 I don't know
 
-01:08:19,000--> 01:08:23,800
-Andrzej, ... I am affraid
+01:08:19,000--> 01:08:20,000
+Andrzej
+
+01:08:22,000--> 01:08:23,100
+I am affraid
 
 01:08:24,500--> 01:08:26,800
-Can you not understand that?
+Can't you understand that?
 
-01:08:36,500--> 01:08:39,000
+01:08:37,000--> 01:08:39,000
 I am hoping I will manage somehow
 
-01:08:39,100--> 01:08:44,800
+01:08:39,100--> 01:08:41,000
 AND I DON'T WANT TO !!!
+
+01:08:42,700--> 01:08:44,800
 I don't want to, understand?
 
 01:08:47,100--> 01:08:50,800
@@ -2630,14 +2767,15 @@ Can't you see what they turned me into?
 I am affraid
 
 01:08:56,100--> 01:08:59,000
-I've been affraid for six years, everyday
+I've been affraid for six years,
+everyday
 
-01:09:00,000--> 01:09:07,000
+01:08:59,500--> 01:09:07,000
 I despise those macho faces of yours,
 those guns of yours, all this heroism
 
 01:09:07,010--> 01:09:11,800
-That is exactly why I need to purge this trash,
+That's why I need to purge this trash,
 to regain peace
 
 01:09:12,510--> 01:09:16,900
@@ -2654,16 +2792,15 @@ leave me
 leave me
 
 01:09:46,910--> 01:09:52,600
-<font color="yellow">I am not a snitch, professor.
-Mayor is Mayor, we need to obey authorities</font>. 
+<font color="orange">I am not a snitch, professor
+Mayor is Mayor, we need to obey authorities</font>
 
-01:09:54,010--> 01:09:56,900
-<font color="yellow">Mielecki is no Mayor. 
-Understand? !!!</font>. 
+01:09:53,610--> 01:09:57,200
+<font color="orange">Mielecki is no Mayor
+Understand? !!!</font>
 
 01:10:03,810--> 01:10:05,900
-<font color="yellow">
-Oh my dear God.</font>. 
+<font color="orange">Oh my dear God</font>
 
 01:10:35,010--> 01:10:35,900
 Anna?
@@ -2671,8 +2808,11 @@ Anna?
 01:11:01,510--> 01:11:03,000
 Are you angry with me?
 
-01:12:02,710--> 01:12:06,700
-They are leaving, ... and you
+01:12:02,410--> 01:12:04,000
+They are leaving
+
+01:12:05,410--> 01:12:06,700
+and you?
 
 01:12:07,410--> 01:12:08,700
 I am staying
@@ -2683,38 +2823,41 @@ Where are you going?
 01:12:21,910--> 01:12:23,700
 get something to eat
 
-01:12:23,310--> 01:12:24,700
-<font color="yellow">Professor</font>. 
+01:12:23,710--> 01:12:24,700
+<font color="orange">Professor</font>
 
 01:12:24,910--> 01:12:25,700
-<font color="yellow">I am hungry</font>. 
+<font color="orange">I am hungry</font>
 
 01:12:25,910--> 01:12:27,700
-<font color="yellow">Professor, I would like to show you something</font>. 
+<font color="orange">Professor, I would like to show you something</font>
 
 01:12:27,910--> 01:12:29,700
-<font color="yellow">You are drunk again</font>
+<font color="orange">You are drunk again</font>
 
 01:12:29,910--> 01:12:32,700
-<font color="yellow">I am not drunk, follow me</font>
+<font color="orange">I am not drunk, follow me</font>
 
 01:12:40,410--> 01:12:43,700
 get ready girls, we are leaving soon
 
 01:13:22,010--> 01:13:24,700
-<font color="yellow">What am I supposed to do with it, Professor</font>
+<font color="orange">What am I supposed to do with it, Professor</font>
 
 01:13:47,010--> 01:13:48,200
 Andrzej
 
 01:13:48,610--> 01:13:50,000
-Andrzej
+Andrzej !!!
 
 01:13:56,210--> 01:14:01,000
 Antek, ... Smółka, ... SMÓŁKA !!!
 
-01:14:24,810--> 01:14:28,600
-It had to hurt, ... punctured lungs
+01:14:24,810--> 01:14:26,000
+It had to hurt
+
+01:14:26,810--> 01:14:28,600
+punctured lungs
 
 01:14:28,910--> 01:14:30,600
 This is horrible, let's get out of here
@@ -2724,27 +2867,32 @@ Who did this?
 
 01:14:32,910--> 01:14:35,900
 I don't know, I don't know anything,
-I was sleeping
+I was sleeping all that time
 
-01:14:37,910--> 01:14:41,400
+01:14:37,910--> 01:14:41,000
 They are bandits, we have to stop them
 
-01:14:41,410--> 01:14:42,900
-but, why me?
+01:14:41,010--> 01:14:42,200
+but why me?
 
-01:14:43,110--> 01:14:44,400
+01:14:42,400--> 01:14:44,400
 so you can look at your face in the mirror
 
-01:14:44,510--> 01:14:48,400
-they will kill us, I don't want to,
+01:14:44,510--> 01:14:45,900
+they will kill us, I don't want to
+
+01:14:46,210--> 01:14:48,400
 I don't know anything, I don't know any...
 
 01:14:58,510--> 01:15:03,400
 You won't let them get away with it, right,
 you will arrest them, call the police
 
-01:15:13,510--> 01:15:18,000
-Doctor, ... I agree to the terms, I am coming with you
+01:15:13,010--> 01:15:15,000
+Doctor
+
+01:15:15,310--> 01:15:18,000
+I agree to the terms, I am coming with you
 
 01:15:18,010--> 01:15:20,000
 Right, I understand it.
@@ -2764,7 +2912,7 @@ this is where we part ways, Good Bye
 but ... 
 
 01:15:31,410--> 01:15:32,400
-which truck
+Which truck?
 
 01:15:32,410--> 01:15:32,900
 this one
@@ -2779,13 +2927,13 @@ ok
 get in
 
 01:15:37,010--> 01:15:37,900
-and you?
+And you?
 
 01:15:38,010--> 01:15:38,900
-what about me?
+What about me?
 
 01:15:39,010--> 01:15:39,900
-which truck are you taking?
+Which truck are you taking?
 
 01:15:40,410--> 01:15:41,400
 Opel
@@ -2797,10 +2945,12 @@ Good Bye, ... beauties
 Mielecki, step away from the trucks
 
 01:17:12,510--> 01:17:15,000
-step away from the trucks
+Step away from the trucks
 
-01:17:17,010--> 01:17:22,000
-hide, God dam'it !!!
+01:17:17,010--> 01:17:19,000
+Hide, God dam'it !!!
+
+01:17:19,310--> 01:17:22,000
 right now, to the hotel
 
 01:20:14,010--> 01:20:17,000
@@ -2830,7 +2980,7 @@ We are offering your survival and money</font>
 <font color="blue">Andrzej Kenig, surrender</font>
 
 01:21:01,880--> 01:21:07,700
-Drop your weapon, surrender,
+<font size="28px">Drop your weapon, surrender,
 we are offering your survival and money,
 you will die otherwise, Andrzej Kenig
 
@@ -2862,31 +3012,35 @@ you hear me, enough shooting
 01:23:00,010--> 01:23:03,800
 And was it all worth it, Kenig?
 
-01:23:04,010--> 01:23:17,100
+01:23:04,010--> 01:23:09,900
 I told you, without talented people we can get by
+
+01:23:12,510--> 01:23:17,100
 we only need obedient ones
 
 01:25:50,010--> 01:25:53,100
 Mielecki is dead, don't shoot
 
-01:25:56,010--> 01:25:58,100
+01:25:56,010--> 01:25:58,800
 don't shoot, Mielecki is dead
 
 01:25:59,710--> 01:26:00,700
-shoot
+shoot !!!
 
 01:26:02,110--> 01:26:03,700
-shoot
+shoot !!!
 
 01:26:05,210--> 01:26:06,700
-shoot
+shoot !!!
 
-01:26:10,310--> 01:26:18,700
-oh you, ... you rag, ... coward, ... ah you, 
+01:26:10,310--> 01:26:15,700
+oh you, ... you rag, ... coward, ... ah you
+
+01:26:16,010--> 01:26:18,700
 give me the machine gun
 
 01:26:18,810--> 01:26:19,700
-give me the machine gun
+give me the machine gun !!!
 
 01:27:10,010--> 01:27:11,700
 I was protecting myself
@@ -2904,10 +3058,10 @@ get in !!!
 get in the trailer
 
 01:27:42,110--> 01:27:43,300
-what do you want?
+What do you want?
 
 01:27:43,410--> 01:27:46,700
-unload the truck, immediately
+Unload the truck, immediately
 
 01:27:50,110--> 01:27:52,000
 shoot 
@@ -2919,20 +3073,25 @@ shoot
 Gestapo didn't kill me, then you finish me off
 
 01:28:05,410--> 01:28:07,700
-you murderer
+You murderer
 
 01:28:12,410--> 01:28:14,700
 That's what I survived the camp for 
 
-01:28:16,410--> 01:28:24,700
-You can kill me you bastard, 
-... you flea bag, ... piece of shit
+01:28:16,410--> 01:28:18,400
+You can kill me you bastard
+
+01:28:18,910--> 01:28:21,100
+you flea bag
+
+01:28:21,410--> 01:28:24,700
+piece of shit
 
 01:29:46,010--> 01:29:48,700
 God Damn, we got your message too late
 
 01:29:49,410--> 01:29:52,100
-But I see that you've managed
+But I see you've managed
 
 01:29:52,410--> 01:29:54,700
 You've accomplished a great feat
@@ -2944,12 +3103,12 @@ I killed, ... three
 In self-defense
 
 01:30:11,810--> 01:30:13,500
-I am not certain
+I am not sure
 
 01:30:13,610--> 01:30:16,000
 Defending public property
 
-01:30:16,610--> 01:30:22,000
+01:30:16,610--> 01:30:23,000
 Supervisor wants you to become ... a Mayor here
 
 01:30:27,110--> 01:30:28,500
@@ -2968,32 +3127,36 @@ Give him a ride
 Yes sir
 
 01:30:52,896 --> 01:30:57,190
-<font color="yellow"><i>The Sun will embrace us in its hands</i>
+<font color="orange"><i>The Sun will embrace us in its hands</i>
 
 01:30:57,196 --> 01:31:02,190
-<font color="yellow"><i>and look earth has swollen with blood</i>
+<font color="orange"><i>and look earth has swollen with blood</i>
 
 01:31:02,196 --> 01:31:05,890
-<font color="yellow"><i>once more will bear us a fief of grain</i>
+<font color="orange"><i>once more will bear us a fief of grain</i>
 
 01:31:06,000 --> 01:31:08,090
-<font color="yellow"><i>golden dust</i>
+<font color="orange"><i>golden dust</i>
 
 01:31:11,296 --> 01:31:15,600
-<font color="yellow"><i>New children will be born to us</i>
+<font color="orange"><i>New children will be born to us</i>
 
 01:31:15,610 --> 01:31:20,290
-<font color="yellow"><i>and look, they are laughing that we</i>
+<font color="orange"><i>and look, they are laughing that we</i>
 
 01:31:20,300 --> 01:31:28,290
-<font color="yellow"><i>still are rehashing that wretched time,
+<font color="orange"><i>still are rehashing that wretched time,
 spell of storms</i>
 
 01:31:29,096 --> 01:31:40,190
-<font color="yellow"><i>Next day, or two, a night or three,
+<font color="orange"><i>Next day, or two, a night or three,
 though not today</i>
 
-01:31:42,796 --> 01:31:53,190
-<font color="yellow"><i>Night's passed, day's gone,
-someday new dawn will rise again
+01:31:42,796 --> 01:31:55,190
+<font color="orange"><i>Night's passed, day's gone,
+one day new dawn 
+shall wake again
 </i>
+
+01:31:55,796 --> 01:32:05,190
+THE END
