@@ -2,90 +2,90 @@
 the law and the fist
 
 00:00:19,396 --> 00:00:22,190
-<font color="orange"><i>From corners of the earth</i>
+<font color="orange"><i>From corners of the earth</i></font>
 
 00:00:22,396 --> 00:00:25,190
-<font color="orange"><i>from rowan sheltered ways</i>
+<font color="orange"><i>from rowan sheltered ways</i></font>
 
 00:00:25,196 --> 00:00:30,190
 <font color="orange"><i>where cindered forest, wind exhausted,
-night and front</i>
+night and front</i></font>
 
 00:00:30,196 --> 00:00:35,700
 <font color="orange"><i>where wasted harvest fell,
-where hawthorn turned to black</i>
+where hawthorn turned to black</i></font>
 
 00:00:35,710 --> 00:00:41,890
-<font color="orange"><i>day awakes</i>
+<font color="orange"><i>day awakes</i></font>
 
 00:00:42,896 --> 00:00:47,190
-<font color="orange"><i>The Sun will embrace us in its hands</i>
+<font color="orange"><i>The Sun will embrace us in its hands</i></font>
 
 00:00:47,196 --> 00:00:52,190
-<font color="orange"><i>and look earth has swollen with blood</i>
+<font color="orange"><i>and look earth has swollen with blood</i></font>
 
 00:00:52,196 --> 00:00:55,890
-<font color="orange"><i>once more will bear us a fief of grain</i>
+<font color="orange"><i>once more will bear us a fief of grain</i></font>
 
 00:00:56,000 --> 00:00:58,090
-<font color="orange"><i>golden dust</i>
+<font color="orange"><i>golden dust</i></font>
 
 00:01:01,396 --> 00:01:05,100
-<font color="orange"><i>Women will take us into thier huts</i>
+<font color="orange"><i>Women will take us into thier huts</i></font>
 
 00:01:05,396 --> 00:01:10,200
-<font color="orange"><i>and look at them laugh through their tears</i>
+<font color="orange"><i>and look at them laugh through their tears</i></font>
 
 00:01:10,396 --> 00:01:14,600
-<font color="orange"><i>once more a dance tune will ring out loud</i>
+<font color="orange"><i>once more a dance tune will ring out loud</i></font>
 
 00:01:14,656 --> 00:01:18,490
-<font color="orange"><i>maybe here</i>
+<font color="orange"><i>maybe here</i></font>
 
 00:01:19,396 --> 00:01:32,190
 <font color="orange"><i>Next day, or two, a night or three,
-though not today</i>
+though not today</i></font>
 
 16
 00:01:33,396 --> 00:01:37,890
-<font color="orange"><i>Bread will the ovens bake for us</i>
+<font color="orange"><i>Bread will the ovens bake for us</i></font>
 
 17
 00:01:38,000 --> 00:01:42,490
-<font color="orange"><i>and look where smoke vailed everything</i> 
+<font color="orange"><i>and look where smoke vailed everything</i></font>
 
 18
 00:01:42,496 --> 00:01:46,190
-<font color="orange"><i>Flower will bloom in that war scared mark</i>
+<font color="orange"><i>Flower will bloom in that war scared mark</i></font>
 
 19
 00:01:46,396 --> 00:01:50,190
-<font color="orange"><i>deep rose tint</i>
+<font color="orange"><i>deep rose tint</i></font>
 
 20
 00:01:51,796 --> 00:01:56,000
-<font color="orange"><i>New children will be born to us</i>
+<font color="orange"><i>New children will be born to us</i></font>
 
 21
 00:01:56,010 --> 00:02:00,690
-<font color="orange"><i>and look, they are laughing that we</i>
+<font color="orange"><i>and look, they are laughing that we</i></font>
 
 22
 00:02:00,700 --> 00:02:08,290
 <font color="orange"><i>still are rehashing that wretched time,
-spell of storms</i>
+spell of storms</i></font>
 
 23
 00:02:09,396 --> 00:02:20,190
 <font color="orange"><i>Next day, or two, a night or three,
-though not today</i>
+though not today</i></font>
 
 24
 00:02:22,796 --> 00:02:33,190
 <font color="orange"><i>Night's passed, day's gone,
 one day new dawn 
 shall wake again
-</i>
+</i></font>
 
 25
 00:02:39,896 --> 00:02:57,190
@@ -299,7 +299,7 @@ You are the first teacher
 70
 00:07:54,800--> 00:07:59,000
 You realize that we need to 
-start organizing everything from the beginning
+start organizing everything from the start 
 
 71
 00:07:59,010--> 00:08:00,000
@@ -646,7 +646,7 @@ Kenig
 146
 00:13:50,120--> 00:13:54,000
 Mister Supervisor, 
-let us begin with execution of our tasks.
+let us begin with execution of our tasks
 
 147
 00:13:54,120--> 00:13:57,000
@@ -782,7 +782,7 @@ You can get off, you will be 'healthy like a bull'
 It is said that soul is immortal
 
 00:16:05,920--> 00:16:07,800
-and the body is nothing
+and body is nothing
 
 00:16:07,920--> 00:16:12,000
 dust, ... wasted waste
@@ -891,11 +891,11 @@ Without girls, it will be lame, why suffer?
 Boss
 
 190
-00:20:39,010--> 00:20:41,000
+00:20:39,010--> 00:20:41,800
 Six of us, four of them, what do you think?
 
 191
-00:20:42,010--> 00:20:43,900
+00:20:42,010--> 00:20:44,400
 What does that have to do with anything?
 
 192
@@ -998,7 +998,7 @@ Please wait here
 
 290
 00:24:55,400--> 00:24:56,900
-Careful
+careful
 
 291
 00:25:10,400--> 00:25:11,500
@@ -1038,7 +1038,7 @@ You, ... you, get up
 
 298
 00:25:49,100--> 00:25:51,500
-<font color="orange">We are Polish
+<font color="orange">We are Polish</font>
 
 299
 00:25:59,100--> 00:26:03,500
@@ -1146,14 +1146,14 @@ I'd be affraid
 
 324
 00:28:06,400--> 00:28:09,700
-<font color="orange">Hard to do anything 
+<font color="orange">Hard to do anything</font>
 
 00:28:10,000--> 00:28:13,200
 <font color="orange">when you have too much time</font>
 
 325
 00:28:13,400--> 00:28:15,500
-<font color="orange">Why did you stay?</font>
+<font color="orange">Why did you stay behind?</font>
 
 326
 00:28:15,700--> 00:28:17,800
@@ -1415,8 +1415,7 @@ Mr. Kenig, please join us
 
 380
 00:34:45,210--> 00:34:48,900
-Gentlemen, 
-we are in better shape than I expected
+Gentlemen, we are in better shape than I expected
 
 381
 00:34:49,810--> 00:34:56,800
@@ -1439,19 +1438,19 @@ and then, in turn, the rest
 
 385
 00:35:24,010--> 00:35:26,000
-old icon, where did you find it?
+Old icon, where did you find it?
 
 386
 00:35:26,010--> 00:35:27,400
-in the cellar
+In the cellar
 
 387
 00:35:28,410--> 00:35:29,400
-where there more?
+Where there more?
 
 388
 00:35:30,110--> 00:35:33,400
-they are there, really dark in there
+They are there, really dark in there
 
 389
 00:35:33,810--> 00:35:34,800
@@ -1464,7 +1463,7 @@ naked bodies together with figures of saints
 
 391
 00:35:42,310--> 00:35:43,200
-sin
+Sin
 
 392
 00:35:43,410--> 00:35:44,800
@@ -1497,15 +1496,15 @@ ahh, enough time
 
 397
 00:36:21,010--> 00:36:22,400
-museum collection
+Museum collection
 
 398
 00:36:23,010--> 00:36:24,100
-what?
+What?
 
 399
 00:36:24,210--> 00:36:25,100
-museum (stuff)
+Museum <font size="28px'>(stuff)</font>
 
 400
 00:36:25,910--> 00:36:28,500
@@ -1852,8 +1851,8 @@ Why are you laughing?
 00:43:42,210--> 00:43:56,100
 <i>There is one and one only
 whom I love the most
-I will sacrifice all for her
-all days and nights
+I will give all for her
+all my days and my nights
 </i>
 
 00:43:57,210--> 00:44:01,800
@@ -1938,13 +1937,11 @@ Yeah, yeah
 <font color="orange">Where is the post office?</font>
 
 00:45:21,500--> 00:45:22,800
-<font color="orange">On the Post street
-</font>
+<font color="orange">On the Post street</font>
 
 00:45:23,500--> 00:45:27,800
 <font color="orange">Go to the square and turn right 
-then take the first left
-</font>
+then take the first left</font>
 
 00:45:28,500--> 00:45:33,800
 Listen, occupy Smółka with a conversation, ok?
@@ -2005,7 +2002,7 @@ Oh, alone?
 <font color="orange">Are you asking about Mr. Kenig?</font>
 
 00:48:13,800--> 00:48:14,200
-<font color="orange"> Yes</font>
+<font color="orange">Yes</font>
 
 00:48:14,210--> 00:48:15,800
 <font color="orange">Professor went to the Post Office</font>
@@ -2237,7 +2234,7 @@ you make a career
 Doctor
 
 00:53:54,800--> 00:54:00,080
-will give me a bit of time to think
+will you give me a bit of time to think
 
 00:54:00,700--> 00:54:03,400
 whole night ahead of us
@@ -2273,7 +2270,7 @@ why?
 <font color="orange">you snitch</font>
 
 00:55:29,100--> 00:55:30,880
-what are you doing here?
+What are you doing here?
 
 00:55:31,000--> 00:55:32,480
 I ran away from Smółka
@@ -2500,7 +2497,7 @@ I congratulate the young couple
 you are very nice, although silent
 
 01:02:40,380--> 01:02:43,880
-you have no idea what chore it is
+you have no idea what a chore it is
 to listen to all of that
 
 01:02:44,580--> 01:02:45,580
@@ -2754,10 +2751,10 @@ Can't you understand that?
 I am hoping I will manage somehow
 
 01:08:39,100--> 01:08:41,000
-AND I DON'T WANT TO !!!
+AND I DON'T WANT THAT!!!
 
 01:08:42,700--> 01:08:44,800
-I don't want to, understand?
+I don't want that, understand?
 
 01:08:47,100--> 01:08:50,800
 I was thinking I would regain my peace
@@ -2853,7 +2850,7 @@ Andrzej !!!
 01:13:56,210--> 01:14:01,000
 Antek, ... Smółka, ... SMÓŁKA !!!
 
-01:14:24,810--> 01:14:26,000
+01:14:24,810--> 01:14:26,400
 It had to hurt
 
 01:14:26,810--> 01:14:28,600
@@ -2895,7 +2892,7 @@ Doctor
 I agree to the terms, I am coming with you
 
 01:15:18,010--> 01:15:20,000
-Right, I understand it.
+Right, I understand it
 
 01:15:20,110--> 01:15:21,400
 come down
@@ -2924,7 +2921,7 @@ Rudłowski with me
 ok
 
 01:15:35,010--> 01:15:35,900
-get in
+Get in
 
 01:15:37,010--> 01:15:37,900
 And you?
