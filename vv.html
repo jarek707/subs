@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#video-active").on(
+                "timeupdate", 
+                function(event){ onTrackedVideoFrame(this.currentTime); }
+           )});
+
+        var lI = 0;
+        var outEl = null;
+
+        function findFrame(stT) {
+            var a = false;
+            var b = false;
+            var w = false;
+            while (lI < lines.length) {
+                a = stT > lines[lI][1];
+                b = stT < lines[lI][0];
+                if (a) console.log('above');
+                console.log(stT > lines[lI][1]);
+                console.log(stT + "  " + lines[lI][0] + "  " + lines[lI][1] + "  " + lines[lI+1][0] + "  "+ lI.toString());
+                if (a && lines[lI+1][0]>stT) break;
+                console.log('no break');
+
+                if (b && lI>0) lI--;
+                if (a) lI++;
+            }
+
+            if (!a && !b)
+                outEl.innerText = lines[lI][2] + "  " + stT + "  " +lines[lI][0] + "  " + lI.toString();
+        }
+
+        function onTrackedVideoFrame(currentTime){
+            var st = currentTime.toString();
+            var stA = st.split('.');
+            var hrs  = '00';
+            var mins = '00';
+            var secs = '00';
+            var ths  = stA[1];
+            if (stA[0] > 60) {
+                mins = Math.floor(stA[0] / 60);
+                secs = parseInt(stA[0] - (mins*60)).toString();
+            } else {
+                secs = stA[0];
+            }
+
+            if (secs.length==1) secs = '0' + secs;
+            if (mins.length==1) mins = '0' + mins;
+
+            var stamp = hrs + ":" + mins + ":" + secs + "," + ths.substring(0,3);
+            findFrame(stamp);
+            $("#current").text(stamp);
+        }
+
+        function back(jumpInt) {
+            var vid = document.getElementById('video-active');
+            console.log( vid );
+            vid.currentTime -= jumpInt;
+            vid.pause();
+        }
+
+    </script>
+
+    <style>
+        #controls > * {
+                position:relative;
+                float:left;
+                margin:4px;
+                border:1px solid black;
+                padding:3px;
+        }
+        #controls div  {
+            position:relative;
+            float:left;
+            margin-left:20px;
+        }
+
+        #list {
+                position:relative;
+                float:left;
+                clear:both;
+                margin-top:33px;
+                border-top:1px solid red;
+        }
+        
+    </style>
+
+    <body>
+        <video id="video-active" controls poster="akLogo.jpeg" style="width:50%">
+            <source src="v.mp4" />
+            <track src="EZ.vtt" default kind="captions" srclang="en"/>
+        </video>
+
+        <div id="controls">
+            <a onclick="back(0.3)">back 300</a>
+            <a onclick="back(-0.3)">forward 300</a>
+            <div id="current">0:00</div>
+        </div>
+
+        <input type="file" id="fileInput" />
+        <output id="list"></output>
+
+        <script>
+            outEl = document.getElementById('list');
+            var contents = "";
+            var byLine = [];
+            var lines = [];
+            var fileInput = document.getElementById('fileInput');
+            var fileDisp  = document.getElementById('list');
+            fileInput.addEventListener('change', function(e) {
+                var file= fileInput.files[0];
+                var textType = /text.*/;
+                if (true) {
+                //if (file.type.match(textType)) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        //fileDisp.innerText = reader.result;
+                        contents = reader.result;
+                        parse(reader.result);
+                    };
+
+                    reader.readAsText(file);
+                } else {
+                    fileDisp.innerText= " file not supported " + file.type;
+                }
+            });
+
+            function parse(cont) {
+                byLine = cont.split('\n\n');
+                for (var i=0; i<byLine.length; i++) {
+                    var l = byLine[i].split('\n');
+                    var ll = l[0].split('-->');
+                    lines.push([ll[0], ll[1], l[1], l[2], l[3], l[4]]);
+                }
+            }
+
+            function toMs(inS) {
+                var sA = inS.split(',');
+                var mils = sA.pop();
+                var tA = sA.split(':');
+
+                return parseInt(tA[0]*3600 + tA[1]*60 + tA[1] + mils);
+            }
+                                                                                                </script>
+    </body>
+</html>
