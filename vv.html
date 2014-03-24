@@ -12,6 +12,10 @@
         var end         = null;
         var frameNo     = null;
         var pauseOnJump = false;
+        var lI          = 0;
+        var lines       = [];
+
+        function LG() { console.log(arguments); }
 
         $(document).ready(function(){
             video       = document.getElementById('video-active');
@@ -21,85 +25,67 @@
             end         = document.getElementById('end');
             frameNo     = document.getElementById('frameNo');
 
-            $("#video-active").on(
-                "timeupdate", 
-                function(event){ onTrackedVideoFrame(this.currentTime); }
-            );
+            $("#video-active").on( "timeupdate", function(event){ 
+                onTrackedVideoFrame(this.currentTime); 
+            });
             
             fileInput.addEventListener('change', function(e) {
                 var file= fileInput.files[0];
                 fileName = file.name;
                 document.getElementById('saveFileName').value = fileName.substr(0,fileName.length-4);
-                var textType = /text.*/;
-                if (true) {
-                //if (file.type.match(textType)) {
-                    var reader = new FileReader();
-                    reader.readAsText(file);
-                    reader.onload = function(e) { Parse(reader.result); };
-                } else {
-                    ta.value = " file not supported " + file.type;
-                }
+                var reader = new FileReader();
+                reader.readAsText(file);
+                reader.onload = function(e) { Parse(reader.result); };
             });
         });
 
+        function setCT(stamp) { video.currentTime = stamp; } 
 
-        function setCT(stamp) {
-            var vid = document.getElementById('video-active');
-            vid.currentTime = stamp;
-        } 
+        function onTrackedVideoFrame(currentTime){
+            if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
+                findFrame(currentTime*1000);
+                $("#current").text(fromMs(currentTime*1000));
+            }
+        }
 
-        function frameChange(el, nextVal) {
-            if (typeof nextVal != 'undefined')
-                lI += parseInt(nextVal);
-            else
-                lI = lines.length-2;
-
-            if (lI >- lines.length)
-                lines.push([0,0,'']);
-            if (lines[lI][0] > 0 && lines[lI][1] > 0) {
-                var vid = document.getElementById('video-active');
-                vid.currentTime = lines[lI][0]/1000 + 1;
+        function frameChange(arg) {
+            switch (typeof arg) {
+                case 'number'   : lI += parseInt(arg); break;
+                case 'boolean'  : lI = lines.length - 2; break;
+                default         : lI = parseInt(arg.value);
             }
 
-            setTimeout( function() { loadFrame(lI, true); }, 200);
+            if (lI >= lines.length) { lines.push([0,0,'']); }
+            if (lines[lI][0] > 0)   { video.currentTime = lines[lI][0]/1000 + 0.001; }
         }
 
         function loadFrame(id, inFrame) {
             if (typeof inFrame == 'undefined') inFrame = true;
-            inFrame = true;
+            $('#activeCaption').text(inFrame ? lines[id][2] : "");
 
-            ta.value = inFrame ? lines[id][2] : "";
-            start.value = inFrame ? fromMs(lines[id][0]) : "";
-            end.value = inFrame ? fromMs(lines[id][1]) : "";
-            frameNo.value = inFrame ? id : "";
+            ta.value = lines[id][2];
+            start.value = fromMs(lines[id][0]);
+            end.value = fromMs(lines[id][1]);
+            frameNo.value = id;
 
             if (id>0) {
-                //$('#prevEnd').text(fromMs(lines[id-1][1]));
                 $('#prevEnd').text(fromMs(Math.abs(lines[id][0] - lines[id-1][1])).substr(6));
-                if (lines[id][0]<lines[id-1][1]) 
-                    $('#prevEnd').addClass("overlap");
-                else
-                    $('#prevEnd').removeClass("overlap");
+                
+                if (lines[id][0]<lines[id-1][1])    $('#prevEnd').addClass("overlap");
+                else                                $('#prevEnd').removeClass("overlap");
             }
 
             if (id<lines.length-1) {
                 $('#nextStart').text(fromMs(Math.abs(lines[id+1][0] - lines[id][1])).substr(6));
-                if (lines[id][1]>lines[id+1][0]) 
-                    $('#nextStart').addClass("overlap");
-                else
-                    $('#nextStart').removeClass("overlap");
+
+                if (lines[id][1]>lines[id+1][0])    $('#nextStart').addClass("overlap");
+                else                                $('#nextStart').removeClass("overlap");
             }
         }
 
-        var lI = 0;
-        var byLine = [];
-        var lines = [];
-
         function findFrame(stT) {
-            if (lines[lI][0] == 0) {
-                loadFrame(lI, true);
-                return false;
-            }
+            if (lines[lI][0] == 0) { loadFrame(lI, true); return false; }
+
             var i=lI;
             var inFrame = false;
             if (lines.length >= lI) lI = 0;
@@ -113,14 +99,14 @@
                             break;
                         }
                     }
-            else
-                for (i=lI; i<lines.length ; i++) {
-                    if (stT < lines[i][1] || lines[i][1] == 0) {
-                        inFrame = stT > lines[i][0];
-                        lI = i;
-                        break;
+                else
+                    for (i=lI; i<lines.length ; i++) {
+                        if (stT < lines[i][1] || lines[i][1] == 0) {
+                            inFrame = stT > lines[i][0];
+                            lI = i;
+                            break;
+                        }
                     }
-                }
             } catch (e) {
                 console.log(e);
                 console.log(lines[lI] + "  " +  lI + "  " + lines.length);
@@ -133,37 +119,44 @@
             loadFrame(lI, inFrame);
         }
 
-        function onTrackedVideoFrame(currentTime){
-            if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
-                findFrame(currentTime*1000);
-                $("#current").text(fromMs(currentTime*1000));
-            }
-        }
-
         function jump(jumpInt) {
-            var vid = document.getElementById('video-active');
-            vid.currentTime -= jumpInt;
+            video.currentTime -= jumpInt;
             if (pauseOnJump) vid.pause();
         }
 
         function Parse(cont) {
-            if (cont == '') {
-                lines = [[0,0,'start here']];
-            }
-            byLine = cont.split('\n\n');
-            for (var i=0; i<byLine.length; i++) {
-                var l = byLine[i].split('\n');
-                var subs = "";
+            if (cont != '') {
+                var byLine = cont.split('\n');
+                var line = '';
+                var idx  = -1;
+                var isNote = false;
+                for (var i=0; i<byLine.length; i++) {
+                    line = byLine[i].trim();
 
-                var ll = l[0].split('-->');
-                if (ll.length > 1) {
-                    for (var j=1; j<l.length; j++) subs += '\n' + l[j];
-                    lines.push([toMs(ll[0].toString()), toMs(ll[1].toString()), subs.substring(1)]);
-                } else {
-                    for (var j=0; j<l.length; j++) subs += '\n' + l[j];
-                    lines.push([toMs("00:00:00,000"), toMs("00:00:00,000"), subs.substring(1)]);
+                    var parts = line.match(/(^.*\d\d:\d\d[,.]\d\d\d.*-->.*\d\d:\d\d[,.]\d\d\d)(.*)/);
+                    if ( parts ) {
+                        var times = parts[1].split('-->');
+                        lines[++idx] = [toMs(times[0]), toMs(times[1]), "", parts[2]];
+                        isNote = false;
+                    } else {
+                        if (line.indexOf('NOTE') > -1) {
+                            isNote = true;
+                            lines[++idx] = [-1, -1, "", parts[2]];
+                        } else {
+                            if ( typeof lines[idx] != 'undefined' && lines[idx].length > 2) {
+                                if (lines[idx][2] != '') lines[idx][2] += '\n';
+                                lines[idx][2] += line;
+                            }
+                        }
+                    }
                 }
             }
+            if (false)
+                for (var i=0;i <lines.length; i++)  {
+                    console.log( i );
+                    console.log(lines[i]);
+                   }
+
         }
 
         function toMs(inS) {
@@ -212,11 +205,6 @@
             updateFrame();
         }
 
-        function pushEnd() {
-            end.value = fromMs(lines[lI][1] + 1000);
-            updateFrame();
-        }
-
         function updateFrame() {
             if (lines.length == 0) Parse('');
             lines[lI][0] = toMs(start.value);
@@ -226,6 +214,7 @@
         }
 
         function getLine(i, isVtt) {
+            console.log(i);
             var out =  
                 fromMs(lines[i][0], isVtt) + " --> " 
                 + fromMs(lines[i][1], isVtt) + "\n" + lines[i][2] + "\n\n";
@@ -233,8 +222,6 @@
         }
 
         function save(){
-            console.log( getLine );
-            console.log( getLine(2, true));
             var outVtt = "WEBVTT\n\n";
             var outSrt = "";
             for (var i=0; i<lines.length; i++)
@@ -256,8 +243,13 @@
             pom.click();
         }
 
-        function toStart() {
-            setCT(toMs(start.value)/1000);
+        function syncCT(arg) {
+            if (typeof arg != 'undefined' && arg) {
+                setCT(toMs(start.value)/1000 + 0.001);
+            } else {
+                console.log( 'sync end ', end.value);
+                setCT(toMs(end.value)/1000 - 0.001);
+            }
         }
 
         function toggleJumpPause() {
@@ -268,7 +260,15 @@
         }
 
         function initNew(el) {
+            $('#fileInput').hide();
             if ($(el).is(':checked')) Parse("");
+        }
+
+        function getStuff(el) {
+            console.log(el);
+            //el.setAttribute('href', 'data:text/vtt;charset=utf-8,' + encodeURIComponent('abc'));
+            //el.setAttribute('download', filename + '.' +  fType);
+            return "abc to save";
         }
 
         function togglePlay() {
@@ -284,8 +284,6 @@
         function loadFromParams() {
                 $('#video-active').find('source').attr('src', $('#vidName').val());
                 $('#video-active').find('track').attr('src',  $('#vttName').val());
-                console.log('loaded');
-                console.log($('#video-active').find('source'));
                 video.load();
         }
 
@@ -310,7 +308,7 @@
         #controls > * {
                 position:relative;
                 float:left;
-                margin:2px 6px;
+                margin:2px 8px;
                 border:1px solid black;
                 padding:3px;
                 border-radius:4px;
@@ -320,10 +318,12 @@
             position:relative;
             float:left;
             margin-left:4px;
-            padding:1px 3px;
-            font-size:0.90em;
-            width:84px;
+            padding:0;
+            font-size:1.2em;
+            width:134px;
             border:1px solid red;
+            text-align:center;
+            font-family:monospace;
         }
 
         .wrap input[type="radio"], 
@@ -331,6 +331,17 @@
         #controls div input[type="radio"], 
         #controls div input[type="checkbox"] {
             width:20px !important;
+        }
+
+        #controls #activeCaption {
+            width:568px;
+            border:none;
+            margin-top:-38px;
+            opacity:0.6;
+            background:black;
+            color:white;
+            font-size:1.2em;
+            height:36px;
         }
 
         video,
@@ -392,6 +403,11 @@
             width:20px;
         }
 
+        input.timers {
+            font-family:monospace;
+            font-size:1em;
+            width:100px;
+        }
         .timers {
             border:1px solid red;
             border-radius:3px;
@@ -418,6 +434,7 @@
             background: #eee;
         }
 
+
     </style>
 
     <body>
@@ -437,6 +454,7 @@
         </video>
 
         <div id="controls">
+            <div id='activeCaption'></div>
             <button  onclick="jump(5)">-5s</button>
             <button  onclick="jump(1)">-1s</button>
             <button onclick="jump(0.3)">-300ms</button>
@@ -447,15 +465,15 @@
             <button  id='togglePause' onclick="toggleJumpPause()"><span>Pause On Jump<span></button>
         </div>
             <div class="timeControls">
-                <button id="toStart" onclick="toStart(true)">!</button>
                 <span id="prevEnd">00,000</span>
                 <input type="text" id='start' class='timers'/>
+                <button id="toStart" onclick="syncCT(true)">&#8593</button>
                 <button class='upd' id="startUpd" onclick="syncTm(true)">&#9668;&#9496;</button>
 
                 <button class='upd' id="endUpd" onclick="syncTm()">&#9492;&#9658;</button>
+                <button id="nextFrame" onclick="syncCT(false)">&#8593</button>
                 <input type="text" id='end' class='timers' />
                 <span id="nextStart" >00,000</span>
-                <button id="nextFrame" onclick="pushEnd()">+</button>
 
                 <button id="updTimes" onclick='updateFrame()'>Update Frame</button>
             </div>
@@ -466,21 +484,17 @@
 
             <div class="framePager">
                 <label for="frameNo">Frame:</label>
-                <button id="prevFrame" onclick="frameChange(this,-1)">-</button>
+                <button id="prevFrame" onclick="frameChange(-1)">-</button>
                 <input type="text" id='frameNo' onchange="frameChange(this)" />
-                <button id="nextFrame" onclick="frameChange(this,1)">+</button>
-                <button id="lastFrame" onclick="frameChange(this)">Last</button>
+                <button id="nextFrame" onclick="frameChange(1)">+</button>
+                <button id="lastFrame" onclick="frameChange(true)">Last</button>
                 <input type="text" id="timeArgs" style="width:392px; border-radius:4px;" />
             </div>
 
-            <textarea class='timers' id='caption'></textarea>
+            <textarea class='timers' id='caption' onblur="updateFrame()"></textarea>
             <button id="updTimes" onclick='updateFrame()'>Update Frame</button>
             <button id="updTimes" onclick='save()'>Save To File:</button>
-            <input type="text" id="saveFileName" value="AAEZ" style='width:270px;' />
-            <div class='wrapper'>
-                <label for="isVtt">VTT</label><input name="vidFormat" type="radio" id="isVtt" value="vtt">
-                <label for="isSrt">SRT</label><input name="vidFormat" type="radio" id="isSrt" value="srt" checked>
-            </div>
+            <input type="text" id="saveFileName" value="a_new_file" style='width:270px;' />
         </div>
 
         <script>
