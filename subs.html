@@ -36,6 +36,7 @@
                 var reader = new FileReader();
                 reader.readAsText(file);
                 reader.onload = function(e) { Parse(reader.result); };
+                $('#fileOver').addClass('chosen');
             });
         });
 
@@ -121,7 +122,7 @@
 
         function jump(jumpInt) {
             video.currentTime -= jumpInt;
-            if (pauseOnJump) vid.pause();
+            if (pauseOnJump) video.pause();
         }
 
         function Parse(cont) {
@@ -150,7 +151,10 @@
                         }
                     }
                 }
+            } else {
+                lines = [[0, 0, '', '']];
             }
+
             if (false)
                 for (var i=0;i <lines.length; i++)  {
                     console.log( i );
@@ -256,12 +260,7 @@
             var el =  $("#togglePause span");
                 
             pauseOnJump = el.text().substring(0,1) == 'P';
-            el.text((pauseOnJump ? "Continue" : "Pause") + " On Jump");
-        }
-
-        function initNew(el) {
-            $('#fileInput').hide();
-            if ($(el).is(':checked')) Parse("");
+            el.text((pauseOnJump ? "Cont" : "Pause") + " On Jump");
         }
 
         function getStuff(el) {
@@ -285,6 +284,8 @@
                 $('#video-active').find('source').attr('src', $('#vidName').val());
                 $('#video-active').find('track').attr('src',  $('#vttName').val());
                 video.load();
+                if (lines.length == 0) Parse('');
+                $('#workArea').show();
         }
 
     </script>
@@ -336,7 +337,7 @@
         #controls #activeCaption {
             width:568px;
             border:none;
-            margin-top:-38px;
+            margin-top:-68px;
             opacity:0.6;
             background:black;
             color:white;
@@ -434,67 +435,104 @@
             background: #eee;
         }
 
+        #workArea { display:none; }
+
+        div.projectParams input[type="text"] { width:120px; }
+        div.projectParams input[type="file"] { width:320px; }
+
+        #fileOver, #fileInput {
+            width:280px;
+            height:16px;
+            position:relative;
+            float:left;
+            padding:4px;
+        }
+
+        #fileOver {
+            border:1px solid #ddd;
+            border-radius:5px;
+            clear:both;
+            background : #faa;
+        }
+
+        #fileOver.chosen {
+            background : #dfd;
+        }
+        
+        #fileInput {
+            opacity:0;
+            margin-left:-289px;
+            cursor:pointer;
+            background:red;
+        }
 
     </style>
+    <script>
+        function newProject() {
+            loadFromParams();
+            console.log('new ');
+        }
+    </script>
 
     <body>
-        <div class='wrap'>
-            <label for="srtName">SRT</label><input id="srtName" type="text" value="v.srt" />
-            <input type="file" id="fileInput" />
-            <label for="newFile">New Project</label>
-            <input type='checkbox' id='newFile' onclick="initNew(this);"></input>
-            <label for="vidName">Video</label><input id="vidName" type="text" value="bench.mp4" />
-            <label for="vttName">VTT</label><input id="vttName" type="text" value="bench.vtt" />
-            <button id="loadVid" onclick="loadFromParams()">Load</button>
-        </div>
+            <div class='projectParams'>
+                <div id='fileOver'>Click Here To Select SRT/VTT Work file</div><input type="file" id="fileInput" /><br /><br />
+                <label for="vidName">Enter Video File Name: </label><input id="vidName" type="text" value="bench.mp4" />
+                <label for="vttName">Enter Subtitles File Name (.vtt optional):</label><input id="vttName" type="text" value="" />
+                <button id="loadVid" onclick="loadFromParams()">Load Video and Subtitles</button>
+            </div>
 
-        <video id="video-active" controls>
-            <source src="" />
-            <track src="" default kind="subtitles" srclang="en"/>
-        </video>
+        <div id='workArea'>
+            <div id='vidContainer'>
+                <video id="video-active" controls>
+                    <source src="" />
+                    <track src="" default kind="subtitles" srclang="en"/>
+                </video>
+            </div>
 
-        <div id="controls">
-            <div id='activeCaption'></div>
-            <button  onclick="jump(5)">-5s</button>
-            <button  onclick="jump(1)">-1s</button>
-            <button onclick="jump(0.3)">-300ms</button>
-            <div class="timers" id="current">00:00:00,000</div>
-            <button  onclick="jump(-0.3)">+300ms</button>
-            <button  onclick="jump(-1)">+1s</button>
-            <button  onclick="jump(-5)">+5s</button>
-            <button  id='togglePause' onclick="toggleJumpPause()"><span>Pause On Jump<span></button>
-        </div>
-            <div class="timeControls">
-                <span id="prevEnd">00,000</span>
-                <input type="text" id='start' class='timers'/>
-                <button id="toStart" onclick="syncCT(true)">&#8593</button>
-                <button class='upd' id="startUpd" onclick="syncTm(true)">&#9668;&#9496;</button>
+            <div id="controls">
+                <div id='activeCaption'></div>
+                <button  onclick="jump(5)">-5s</button>
+                <button  onclick="jump(1)">-1s</button>
+                <button onclick="jump(0.3)">-300ms</button>
+                <div class="timers" id="current">00:00:00,000</div>
+                <button  onclick="jump(-0.3)">+300ms</button>
+                <button  onclick="jump(-1)">+1s</button>
+                <button  onclick="jump(-5)">+5s</button>
+                <button  id='togglePause' onclick="toggleJumpPause()"><span>Pause On Jump<span></button>
+            </div>
+                <div class="timeControls">
+                    <span id="prevEnd">00,000</span>
+                    <input type="text" id='start' class='timers'/>
+                    <button id="toStart" onclick="syncCT(true)">&#8593</button>
+                    <button class='upd' id="startUpd" onclick="syncTm(true)">&#9668;&#9496;</button>
 
-                <button class='upd' id="endUpd" onclick="syncTm()">&#9492;&#9658;</button>
-                <button id="nextFrame" onclick="syncCT(false)">&#8593</button>
-                <input type="text" id='end' class='timers' />
-                <span id="nextStart" >00,000</span>
+                    <button class='upd' id="endUpd" onclick="syncTm()">&#9492;&#9658;</button>
+                    <button id="nextFrame" onclick="syncCT(false)">&#8593</button>
+                    <input type="text" id='end' class='timers' />
+                    <span id="nextStart" >00,000</span>
 
+                    <button id="updTimes" onclick='updateFrame()'>Update Frame</button>
+                </div>
+
+            <div id='bigPlayButton' onclick='togglePlay()'>Play/Pause</div>
+
+            <div class="wrap">
+
+                <div class="framePager">
+                    <label for="frameNo">Frame:</label>
+                    <button id="prevFrame" onclick="frameChange(-1)">-</button>
+                    <input type="text" id='frameNo' onchange="frameChange(this)" />
+                    <button id="nextFrame" onclick="frameChange(1)">+</button>
+                    <button id="lastFrame" onclick="frameChange(true)">Last</button>
+                    <input type="text" id="timeArgs" style="width:392px; border-radius:4px;" />
+                </div>
+
+                <textarea class='timers' id='caption' onblur="updateFrame()"></textarea>
                 <button id="updTimes" onclick='updateFrame()'>Update Frame</button>
+                <button id="updTimes" onclick='save()'>Save To File:</button>
+                <input type="text" id="saveFileName" value="a_new_file" style='width:270px;' />
             </div>
-
-        <div id='bigPlayButton' onclick='togglePlay()'>Play/Pause</div>
-
-        <div class="wrap">
-
-            <div class="framePager">
-                <label for="frameNo">Frame:</label>
-                <button id="prevFrame" onclick="frameChange(-1)">-</button>
-                <input type="text" id='frameNo' onchange="frameChange(this)" />
-                <button id="nextFrame" onclick="frameChange(1)">+</button>
-                <button id="lastFrame" onclick="frameChange(true)">Last</button>
-                <input type="text" id="timeArgs" style="width:392px; border-radius:4px;" />
-            </div>
-
-            <textarea class='timers' id='caption' onblur="updateFrame()"></textarea>
-            <button id="updTimes" onclick='updateFrame()'>Update Frame</button>
-            <button id="updTimes" onclick='save()'>Save To File:</button>
-            <input type="text" id="saveFileName" value="a_new_file" style='width:270px;' />
         </div>
 
         <script>
