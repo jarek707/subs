@@ -12,8 +12,10 @@
         var end         = null;
         var frameNo     = null;
         var pauseOnJump = false;
-        var lI          = 0;
         var lines       = [];
+        var inFrame     = false;
+        var lI          = 0;
+        var frameHold   = false;
 
         function LG() { console.log(arguments); }
 
@@ -40,8 +42,6 @@
             });
         });
 
-        function setCT(stamp) { video.currentTime = stamp; } 
-
         function onTrackedVideoFrame(currentTime){
             if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
                 findFrame(currentTime*1000);
@@ -49,80 +49,104 @@
             }
         }
 
+        function getCT()                { return video.currentTime; }
+        function getCTInt()             { return video.currentTime * 1000; }
+        function setCT(stamp, offset)   { video.currentTime = stamp + offset; } 
+        function ctInFrame(ct)          { return inFrame = lI>=0 && lines[lI][0]<=ct && lines[lI][1]>=ct; }
+
+        function holdFrame(el) {
+            frameHold = !frameHold;
+            $(el).text(frameHold ? "Release Frame" : "Hold Frame");
+        }
+
         function frameChange(arg) {
+            if (frameHold) return false;
+
             switch (typeof arg) {
                 case 'number'   : lI += parseInt(arg); break;
                 case 'boolean'  : lI = lines.length - 2; break;
                 default         : lI = parseInt(arg.value);
             }
 
-            if (lI >= lines.length) { lines.push([0,0,'']); }
-            if (lines[lI][0] > 0)   { video.currentTime = lines[lI][0]/1000 + 0.001; }
+            if (lI < 0)             lI = 0;
+            if (lI >= lines.length) lI = lines.length - 1;
+            if (lines[lI][0] >= 0)   setCT(lines[lI][0]/1000, 0.001);
         }
 
-        function loadFrame(id, inFrame) {
-            if (typeof inFrame == 'undefined') inFrame = true;
-            $('#activeCaption').text(inFrame ? lines[id][2] : "");
+        function findFrame(currentTm) {
+            if (!frameHold) {
+                if (!ctInFrame(currentTm)) {
+                    if (lines[lI][0] > currentTm) 
+                        while (lI >= 0 && lines[lI][0] > currentTm) lI--;
 
-            ta.value = lines[id][2];
-            start.value = fromMs(lines[id][0]);
-            end.value = fromMs(lines[id][1]);
-            frameNo.value = id;
+                    if (lI<0) lI = 0; 
 
-            if (id>0) {
-                $('#prevEnd').text(fromMs(Math.abs(lines[id][0] - lines[id-1][1])).substr(6));
+                    if (lines[lI][1] < currentTm)
+                        while (lI < lines.length && lines[lI][0] < currentTm) lI++;
+
+                    if (lI >= 0 && lI >= lines.length-1)    appendFrame();
+                } 
+                 
+                ta.value        = lines[lI][2];
+                start.value     = fromMs(lines[lI][0]);
+                end.value       = fromMs(lines[lI][1]);
+                frameNo.value   = lI;
+                $('#activeCaption').text(inFrame ? lines[lI][2] : "");
+
+                setOverlaps();
+            }
+        }
+
+        function setOverlaps() {
+            if (lI > 0) {
+                $('#prevEnd').text(fromMs(Math.abs(lines[lI][0] - lines[lI-1][1])).substr(6));
                 
-                if (lines[id][0]<lines[id-1][1])    $('#prevEnd').addClass("overlap");
+                if (lines[lI][0]<lines[lI-1][1])    $('#prevEnd').addClass("overlap");
                 else                                $('#prevEnd').removeClass("overlap");
             }
 
-            if (id<lines.length-1) {
-                $('#nextStart').text(fromMs(Math.abs(lines[id+1][0] - lines[id][1])).substr(6));
+            if (lI < lines.length-1) {
+                $('#nextStart').text(fromMs(Math.abs(lines[lI+1][0] - lines[lI][1])).substr(6));
 
-                if (lines[id][1]>lines[id+1][0])    $('#nextStart').addClass("overlap");
+                if (lines[lI][1]>lines[lI+1][0])    $('#nextStart').addClass("overlap");
                 else                                $('#nextStart').removeClass("overlap");
-            }
-        }
-
-        function findFrame(stT) {
-            if (lines[lI][0] == 0) { loadFrame(lI, true); return false; }
-
-            var i=lI;
-            var inFrame = false;
-            if (lines.length >= lI) lI = 0;
-
-            try {
-                if (stT < lines[lI][0] && lI > 0)
-                    for (i=lI; i>=0 ; i--) {
-                        if (stT > lines[i][0] || lines[i][0] == 0) {
-                            inFrame = stT < lines[i][1];
-                            lI = i;
-                            break;
-                        }
-                    }
-                else
-                    for (i=lI; i<lines.length ; i++) {
-                        if (stT < lines[i][1] || lines[i][1] == 0) {
-                            inFrame = stT > lines[i][0];
-                            lI = i;
-                            break;
-                        }
-                    }
-            } catch (e) {
-                console.log(e);
-                console.log(lines[lI] + "  " +  lI + "  " + lines.length);
-                console.log(lines);
             }
 
             if (inFrame) $('.timers').addClass('isIn');
-            else $('.timers').removeClass('isIn');
+            else  $('.timers').removeClass('isIn');
+        }
 
-            loadFrame(lI, inFrame);
+        function appendFrame() {
+            lines.push([lines[lines.length-1][1] + 200, 10000000, lI.toString() +  ' frame', '']);
+            lI = lines.length-1;
+            return false;
         }
 
         function jump(jumpInt) {
             video.currentTime -= jumpInt;
             if (pauseOnJump) video.pause();
+        }
+
+        function syncCT(arg) {
+            if (typeof arg != 'undefined' && arg) {
+                console.log('setting start', toMs(start.value));
+                setCT(toMs(start.value)/1000, 0.001);
+            } else {
+                setCT(toMs(end.value)/1000, -0.001);
+            }
+        }
+
+        function syncTm(which) {
+            var curEl = document.getElementById("current");
+            if (typeof which == 'undefined') {
+                end.value = curEl.innerText;
+            } else {
+                start.value = curEl.innerText;
+                if (end.value == "00:00:00,000")
+                    end.value = "23:59:59,999";
+            }
+            updateFrame();
+            setOverlaps();
         }
 
         function Parse(cont) {
@@ -152,7 +176,7 @@
                     }
                 }
             } else {
-                lines = [[0, 0, '', '']];
+                lines = [[0, 36000000, 'New Project - first frame', '']];
             }
 
             if (false)
@@ -197,28 +221,14 @@
                             : hurs + ":" + mins + ":" + secs + "," + mils;
         }
 
-        function syncTm(which) {
-            var curEl = document.getElementById("current");
-            if (typeof which == 'undefined') {
-                end.value = curEl.innerText;
-            } else {
-                start.value = curEl.innerText;
-                if (end.value == "00:00:00,000")
-                    end.value = "23:59:59,999";
-            }
-            updateFrame();
-        }
-
         function updateFrame() {
             if (lines.length == 0) Parse('');
             lines[lI][0] = toMs(start.value);
             lines[lI][1] = toMs(end.value);
             lines[lI][2] = ta.value;
-            console.log(lines[lI]);
         }
 
         function getLine(i, isVtt) {
-            console.log(i);
             var out =  
                 fromMs(lines[i][0], isVtt) + " --> " 
                 + fromMs(lines[i][1], isVtt) + "\n" + lines[i][2] + "\n\n";
@@ -247,27 +257,11 @@
             pom.click();
         }
 
-        function syncCT(arg) {
-            if (typeof arg != 'undefined' && arg) {
-                setCT(toMs(start.value)/1000 + 0.001);
-            } else {
-                console.log( 'sync end ', end.value);
-                setCT(toMs(end.value)/1000 - 0.001);
-            }
-        }
-
         function toggleJumpPause() {
             var el =  $("#togglePause span");
                 
             pauseOnJump = el.text().substring(0,1) == 'P';
             el.text((pauseOnJump ? "Cont" : "Pause") + " On Jump");
-        }
-
-        function getStuff(el) {
-            console.log(el);
-            //el.setAttribute('href', 'data:text/vtt;charset=utf-8,' + encodeURIComponent('abc'));
-            //el.setAttribute('download', filename + '.' +  fType);
-            return "abc to save";
         }
 
         function togglePlay() {
@@ -468,10 +462,6 @@
 
     </style>
     <script>
-        function newProject() {
-            loadFromParams();
-            console.log('new ');
-        }
     </script>
 
     <body>
@@ -525,6 +515,7 @@
                     <input type="text" id='frameNo' onchange="frameChange(this)" />
                     <button id="nextFrame" onclick="frameChange(1)">+</button>
                     <button id="lastFrame" onclick="frameChange(true)">Last</button>
+                    <button id="lastFrame" onclick="holdFrame(this)">Hold This Frame</button>
                     <input type="text" id="timeArgs" style="width:392px; border-radius:4px;" />
                 </div>
 
