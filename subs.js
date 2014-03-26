@@ -1,21 +1,44 @@
-var reader = new FileReader();
-
+// Globall DOM Els
 var video       = null;
-var fileName    = null;
 var fileInput   = null
 var ta          = null;
 var start       = null;
 var end         = null;
 var frameNo     = null;
-var pauseOnJump = false;
+
 var lines       = [];
 var inFrame     = false;
 var lI          = 0;
-var frameHold   = false;
-var lastTm      = 86399999;
-var rollBack    = 400;
+
+// Local Storage Test TODO
+var locStor     = {};
+var lsS         = "";
+
+var Config = {
+    frameNo     : null,
+    lines       : [],
+    lI          : 0,
+    rollBack    : 000,
+    lastTm      : 86399999,
+    baseName    : 'bench',
+    vidName     : 'bench.mp4',
+    autoLoad    : true,
+    autoPlay    : true,
+
+    minFrameLength : 600
+}
 
 function LG() { console.log(JSON.stringify(arguments)); }
+
+for ( var i in localStorage) {
+    if (i.substr(0, 7) == 'subTool') {
+        locStor[i.substr(8)] = localStorage.getItem(i);
+        lsS += "<option value='" + i.substr(8) + "'>" + i.substr(8) + '</option>';
+    }
+}
+
+console.log(localStorage);
+console.log( locStor );
 
 $(document).ready(function(){
     video       = document.getElementById('video-active');
@@ -30,15 +53,62 @@ $(document).ready(function(){
     });
     
     fileInput.addEventListener('change', function(e) {
-        var file= fileInput.files[0];
-        fileName = file.name;
-        document.getElementById('saveFileName').value = fileName.substr(0,fileName.length-4);
+        var file = fileInput.files[0];
         var reader = new FileReader();
         reader.readAsText(file);
         reader.onload = function(e) { Parse(reader.result); };
         $('#fileOver').addClass('chosen');
     });
+
+    Init();
 });
+
+function Init() {
+    var config = localStorage.getItem("subTool:Config");
+
+    if (config != null) {
+        Config = $.extend(Config, JSON.parse(config));
+
+        $('#vidName').val(Config.vidName);
+        $('#baseName').val(Config.baseName);
+        $('#rollBack').val(Config.rollBack);
+
+        $('#autoLoad').attr('checked', Config.autoLoad);
+        $('#autoPlay').attr('checked', Config.autoPlay);
+
+        if (Config.autoLoad) {
+            loadFromParams();
+            if (Config.autoPlay) video.play();
+        }
+    }
+}
+
+function loadFromParams() {
+        $(video).find('source').attr('src', Config.vidName);
+        //$(video).find('track').attr('src', Config.baseName + '.vtt');
+        Parse(localStorage.getItem("subTool:" + Config.baseName + '.vtt'));
+        //if (lines.length == 0) Parse(localStorage.getItem('bench.vtt'));
+        video.load();
+        $('#workArea').show();
+}
+
+function saveConfig(key, value) {
+    if (typeof value == 'object')
+        switch ($(value).attr('type')) {
+            case "text" : value = value.value; break;
+            case "checkbox" : value = $(value).is(":checked");
+            default : ;
+        }
+    
+    Config[key] = value;
+    if (key == 'vidName') {
+        Config.baseName = value.substr(0, value.length-4);
+        $('#baseName').val(Config.baseName);
+    }
+
+
+    localStorage.setItem('subTool:Config', JSON.stringify(Config));
+}
 
 function onTrackedVideoFrame(currentTime){
     if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
@@ -53,8 +123,6 @@ function setCT(stamp, offset)   { if (stamp > 0) video.currentTime = stamp + off
 function ctInFrame(ct)          { return inFrame = lI>=0 && lines[lI][0]<=ct && lines[lI][1]>=ct; }
 
 function frameChange(arg) {
-    if (frameHold) return false;
-
     switch (typeof arg) {
         case 'number'   : lI += parseInt(arg); break;
         case 'boolean'  : lI = arg ? 0 : lines.length - 1; break;
@@ -69,23 +137,47 @@ function frameChange(arg) {
 }
 
 function findFrame(currentTm) {
-    if (!frameHold) {
         if (!ctInFrame(currentTm)) {
-            if (lines[lI][0] > currentTm) 
-                while (lI >= 0 && lines[lI][0] > currentTm) lI--;
-
-            if (lI<0) lI = 0; 
-
             if (lines[lI][1] < currentTm)
-                while (lI < lines.length && lines[lI][0] < currentTm) lI++;
-
-            if (lI >= 0 && lI >= lines.length-1)
+                while (lI < lines.length && lines[lI][1] < currentTm) lI++;
+            if (lines.length<=lI) {
                 appendFrame();
+            } else {
+                if (lI>0 && lines[lI-1][0] > currentTm)
+                    while (lI >= 0 && lines[lI][0] > currentTm) lI--;
+
+                if (lI<0) lI = 0; 
+            }
         } 
 
         setFrame();
         setOverlaps();
+}
+
+function appendFrame() {
+    if (lines[lI-1][0] > 0) {
+        lines.push([getCT()*1000, Config.lastTm, 'frame ' + lI.toString() , '']);
+        lI = lines.length-1;
+        $('.timers').attr('class', 'timers isNew');
+    } else {
+        lI--;
     }
+    return false;
+}
+
+function updateFrame() {
+    if (lines.length == 0) Parse(''); // Safety, lines should have at least one element by now
+
+    var startTm = toMs(start.value);
+    var endTm   = toMs(end.value);
+
+    if (endTm - startTm < Config.minFrameLength) // Enforce min frame length
+        endTm = startTm + Config.minFrameLength;
+
+    lines[lI][0] = startTm;
+    lines[lI][1] = endTm;
+    lines[lI][2] = ta.value;
+    lines[lI][3] = $('#timeArgs').val();
 }
 
 function setFrame() {
@@ -95,7 +187,6 @@ function setFrame() {
     frameNo.value   = lI;
     $('#timeArgs').val(lines[lI][3]);
 
-
     var timerClass = 'timers';
     if (inFrame) 
         if (lI == lines.length-1)   timerClass += " isNew";
@@ -103,21 +194,9 @@ function setFrame() {
 
     $('.timers').attr('class', timerClass);
         
-   $('#activeCaption').text(inFrame ? lines[lI][2] : "");
+   $('#activeCaption').html(inFrame ? lines[lI][2] : "");
 
    updateSlider();
-}
-
-function appendFrame() {
-    console.log('APPEND', lI, lines[lI-1][0]);
-    if (lines[lI-1][0] > 0) {
-        lines.push([0, lastTm, '', '']);
-        lI = lines.length-1;
-        $('.timers').attr('class', 'timers isNew');
-    } else {
-        lI--;
-    }
-    return false;
 }
 
 function setOverlaps() {
@@ -138,12 +217,10 @@ function setOverlaps() {
 
 function jump(jumpInt) {
     video.currentTime -= jumpInt;
-    if (pauseOnJump) video.pause();
 }
 
 function syncCT(arg) {
     if (typeof arg != 'undefined' && arg) {
-        console.log('setting start', toMs(start.value));
         setCT(toMs(start.value)/1000, 0.001);
     } else {
         setCT(toMs(end.value)/1000, -0.001);
@@ -155,7 +232,7 @@ function syncTm(which) {
     if (typeof which == 'undefined') {
         end.value = curEl.innerText;
     } else {
-        start.value = fromMs(getCT()*1000 - rollBack);
+        start.value = fromMs(getCT()*1000 - Config.rollBack);
     }
     updateFrame(true);
     setOverlaps();
@@ -163,15 +240,14 @@ function syncTm(which) {
 
 function Parse(cont) {
     lines = [];
-    if (typeof cont != 'undefined' && cont.trim() != '') {
+    if (typeof cont != 'undefined' && cont != null && cont.trim() != '') {
         var byLine = cont.split('\n\n');
         var line = '';
         var idx  = -1;
         var isNote = false;
         for (var i=0; i<byLine.length; i++) {
             line = byLine[i].trim();
-            if (line.trim() != '') {
-
+            if (line.trim() != '' && line.trim() != 'WEBVTT' ) {
                 var parts = line.match(/(^.*\d\d:\d\d[,.]\d\d\d.*-->.*\d\d:\d\d[,.]\d\d\d)(.*\r?\n)((.|\r?\n)*)/);
                 if ( parts ) {
                     var times = parts[1].split('-->');
@@ -182,18 +258,17 @@ function Parse(cont) {
                         isNote = true;
                         lines[++idx] = [-1, -1, line, ''];
                     } else {
-                        lines[++idx] = [0, lastTm, line, ''];
+                        lines[++idx] = [0, Config.lastTm, line, ''];
                     }
 
                 }
             }
         }
     } else {
-        lines = [[0, lastTm, 'New Project - first frame', '']];
+        lines = [[0, Config.lastTm, 'New Project - first frame', '']];
         $('#fileOver').removeClass('chosen');
     }
     lI = 0;
-    LG( lines);
     setFrame();
 
     if (false)
@@ -238,13 +313,6 @@ function fromMs(stamp, isVtt) {
                     : hurs + ":" + mins + ":" + secs + "," + mils;
 }
 
-function updateFrame(withRoll) {
-    if (lines.length == 0) Parse('');
-    lines[lI][0] = toMs(start.value);
-    lines[lI][1] = toMs(end.value);
-    lines[lI][2] = ta.value;
-}
-
 function updateSlider() {
     var back    = lI > 0 ? lI - 1 : 0;
     var forth   = lI < lines.length -1 ? lI + 1 : lI;
@@ -252,13 +320,13 @@ function updateSlider() {
     var els = [];
     var allEls = 0;
     for (var i = back; i <= forth; i++) {
-        if (lines[i][1] == lastTm)
+        if (lines[i][1] == Config.lastTm)
             els.push(-1);
         else 
             allEls += els[els.push(lines[i][1] - lines[i][0])-1];
 
         if (i != forth )
-            if (lines[i+1][1] == lastTm)
+            if (lines[i+1][1] == Config.lastTm)
                 allEls += els[els.push(300)-1];
             else
                 allEls += els[els.push(lines[i+1][0] - lines[i][1])-1];
@@ -280,7 +348,7 @@ function updateSlider() {
 
         $('#frameSlide').append('<div '
                 + ' style="width:' + perc + '%;'
-                + ' background:' + (odd ? "#bfc" : "green") + '"'
+                + ' background:' + (odd ? "#bfc" : "#9da") + '"'
                 + (i==back  ? " onclick='frameChange(-1)'" : '')
                 + (i==forth ? " onclick='frameChange(1)'" : '')
                 + '>' + idx + '</div>');
@@ -289,9 +357,6 @@ function updateSlider() {
             $('#frameSlide').append( $('<div class="spacer"></div>')
                 .css({"width" :  Math.floor((100 * els.shift())/allEls).toString() + "%"})
             );
-
-            console.log($(inn));
-
         }
         odd = !odd;
     }
@@ -304,7 +369,7 @@ function getLine(i, isVtt) {
     return out;
 }
 
-function save(){
+function save(localOnly){
     var outVtt = "WEBVTT\n\n";
     var outSrt = "";
     for (var i=0; i<lines.length; i++)
@@ -314,9 +379,14 @@ function save(){
             outSrt += getLine(i, false);
         }
     }
-    var fileName = document.getElementById('saveFileName').value;
-    download(fileName, "vtt", outVtt);
-    download(fileName, "srt", outSrt);
+
+    if (typeof localOnly != 'undefined' && localOnly) {
+        localStorage.setItem("subTool:" + Config.baseName + '.vtt', outVtt);
+        LG( localStorage);
+    } else {
+        download(Config.baseName, "vtt", outVtt);
+        download(Config.baseName, "srt", outSrt);
+    }
 }
 
 function download(filename, fType, text) {
@@ -324,13 +394,6 @@ function download(filename, fType, text) {
     pom.setAttribute('href', 'data:text/' + fType + ';charset=utf-8,' + encodeURIComponent(text));
     pom.setAttribute('download', filename + '.' +  fType);
     pom.click();
-}
-
-function toggleJumpPause() {
-    var el =  $("#togglePause span");
-        
-    pauseOnJump = el.text().substring(0,1) == 'P';
-    el.text((pauseOnJump ? "Cont" : "Pause") + " On Jump");
 }
 
 function togglePlay() {
@@ -343,19 +406,7 @@ function togglePlay() {
     }
 }
 
-function loadFromParams() {
-        $('#video-active').find('source').attr('src', $('#vidName').val());
-        $('#video-active').find('track').attr('src',  $('#vttName').val());
-        video.load();
-        if (lines.length == 0) Parse('');
-        $('#workArea').show();
-}
-
 function infEnd() {
-    lines[lI][1] = lastTm;
+    lines[lI][1] = Config.lastTm;
     setFrame();
-}
-
-function setRollBack() {
-    rollBack = $('#rollBack').val();
 }

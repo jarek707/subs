@@ -1,9 +1,18 @@
+body {
+    margin:0 auto;
+    width:620px;
+    overflow:hidden;
+    background:#eff;
+    font-family:monaco;
+}
 button {
     cursor:pointer;
 }
 
 input {
     width:100%;
+    border:1px solid #aaa;
+    border-radius:4px;
 }
 
 #controls {
@@ -18,7 +27,7 @@ input {
         float:left;
         margin:2px 8px;
         border:1px solid black;
-        padding:3px;
+        padding:4px 6px;
         border-radius:4px;
 }
 
@@ -27,9 +36,9 @@ input {
     float:left;
     margin-left:4px;
     padding:0;
-    font-size:1.2em;
-    width:134px;
-    border:1px solid red;
+    font-size:1.5em;
+    width:160px;
+    border:1px solid #888;
     text-align:center;
     font-family:monospace;
 }
@@ -113,14 +122,14 @@ div.wrapper input {
 
 input.timers {
     font-family:monospace;
-    font-size:1em;
+    font-size:1.1em;
     width:100px;
 }
 .timers {
-    border:1px solid red;
+    border:1px solid #999;
     border-radius:3px;
     padding:1px;
-    background:#fcd;
+    background:#bbb;
 }
 
 .timers.isIn {
@@ -152,8 +161,42 @@ input.timers {
 div.projectParams input[type="text"] { width:120px; }
 div.projectParams input[type="file"] { width:320px; }
 
+#configWrap {
+    position:absolute;
+    width:580px;
+    margin:0 auto;
+    font-family: monaco;
+}
+
+#configWrap #subWrap {
+    z-index:1000;
+    width:auto;
+    position:relative;
+    float:right;
+    background:#eee;
+    border-radius:5px;
+    border:1px solid transparent;
+}
+
+#configWrap #subWrap > * {
+    position:relative;
+    float:right;
+    padding:3px;
+}
+
+#configWrap #subWrap input,
+#configWrap #subWrap label 
+{
+    position:relative;
+    float:left;
+    width:auto;
+    margin:3px;
+}
+#configWrap #subWrap label { clear:left; }
+#configWrap #configContent { display:none; float:left; }
+
 #fileOver, #fileInput {
-    width:280px;
+    width:240px;
     height:16px;
     position:relative;
     float:left;
@@ -164,7 +207,7 @@ div.projectParams input[type="file"] { width:320px; }
     border:1px solid #ddd;
     border-radius:5px;
     clear:both;
-    background : #faa;
+    background : #eee;
 }
 
 #fileOver.chosen {
@@ -176,6 +219,7 @@ div.projectParams input[type="file"] { width:320px; }
     margin-left:-289px;
     cursor:pointer;
     background:red;
+    z-index:2000;
 }
 #frameSlide {
     position:relative;
@@ -198,7 +242,7 @@ div.projectParams input[type="file"] { width:320px; }
 }
 
 #frameSlide div.spacer{
-    background:#faa;
+    background:#bbb;
 }
 
 #frameSlide div.current {
