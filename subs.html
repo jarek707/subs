@@ -60,16 +60,16 @@
 
             <div id='bigPlayButton' onclick='togglePlay()'>Play/Pause</div>
 
+            <div id="frameSlide"></div>
             <div class="wrap">
                 <div class="framePager">
-                    <div id="frameSlide"></div>
                     <label for="frameNo">Frame:</label>
                     <button id="lastFrame" onclick="frameChange(true)">First</button>
                     <button id="prevFrame" onclick="frameChange(-1)">-</button>
                     <input type="text" id='frameNo' onchange="frameChange(this)" />
                     <button id="nextFrame" onclick="frameChange(1)">+</button>
                     <button id="lastFrame" onclick="frameChange(false)">Last</button>
-                    <input type="text" id="timeArgs" style="width:320px; border-radius:4px;" />
+                    <input type="text" class='timers' id="timeArgs" style="width:305px;" />
                 </div>
 
                 <textarea class='timers' id='caption' onblur="updateFrame()"></textarea>

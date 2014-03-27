@@ -156,7 +156,7 @@ function findFrame(currentTm) {
 
 function appendFrame() {
     if (lines[lI-1][0] > 0) {
-        lines.push([getCT()*1000, Config.lastTm, 'frame ' + lI.toString() , '']);
+        lines.push([getCT()*1000, Config.lastTm, '', 'position:10%']);
         lI = lines.length-1;
         $('.timers').attr('class', 'timers isNew');
     } else {
@@ -314,51 +314,50 @@ function fromMs(stamp, isVtt) {
 }
 
 function updateSlider() {
-    var back    = lI > 0 ? lI - 1 : 0;
-    var forth   = lI < lines.length -1 ? lI + 1 : lI;
     $('#frameSlide >*').remove();
-    var els = [];
-    var allEls = 0;
-    for (var i = back; i <= forth; i++) {
-        if (lines[i][1] == Config.lastTm)
-            els.push(-1);
-        else 
-            allEls += els[els.push(lines[i][1] - lines[i][0])-1];
+    if (lines.length < 1 || lines[lI][1] == Config.lastTm) return;
 
-        if (i != forth )
-            if (lines[i+1][1] == Config.lastTm)
-                allEls += els[els.push(300)-1];
-            else
-                allEls += els[els.push(lines[i+1][0] - lines[i][1])-1];
+    var back    = lI > 0 ? lI - 1 : 0;
+    var forth   = lI < lines.length - 1 ? lI + 1 : lI;
+    if (lines[forth][1] == Config.lastTm) // Ignore infinite length frames
+        forth--;
+
+    var elCount = 1+(forth-back)*2;
+    var stretch = lines[forth][1] - lines[back][0];
+
+    var els = [];
+    var coords = [];
+    for (var i = back; i <= forth; i++) {
+        els[els.push(lines[i][1] - lines[i][0])-1];
+        coords.push({"t" : i.toString()});
+
+        if (i != forth ) {
+            els[els.push(lines[i+1][0] - lines[i][1])-1];
+            coords.push({"t" : ''});
+        }
     }
 
-    var odd = true;
-    var idx = '';
-    for (var i = back; i <= forth; i++) {
-        var popped = els.shift();
-        if (popped == -1) {
-            allEls += 2000;
-            popped = 2000;
-            idx = '&#8734';
-        } else {
-            idx=i.toString();
-        }
+    var sum = 0;
+    for (var i=0; i<elCount; i++) {
+        coords[i].v = Math.round(100*els[i]/stretch);
+        sum += coords[i].v;
+    }
+     
+    if (sum != 100) coords[i-1].v -= sum - 100;
 
-        var perc = Math.floor((100*popped)/allEls)/2;
-
-        $('#frameSlide').append('<div '
-                + ' style="width:' + perc + '%;'
-                + ' background:' + (odd ? "#bfc" : "#9da") + '"'
-                + (i==back  ? " onclick='frameChange(-1)'" : '')
-                + (i==forth ? " onclick='frameChange(1)'" : '')
-                + '>' + idx + '</div>');
-        var inn = null;
-        if (i < forth) {
+    for (var i=0; i<elCount; i++){
+        var domClass = (i>0 && i<elCount-1) ? "inner" : "outer";
+        if (coords[i].t == '') {
             $('#frameSlide').append( $('<div class="spacer"></div>')
-                .css({"width" :  Math.floor((100 * els.shift())/allEls).toString() + "%"})
+                .css({"width" :  coords[i].v.toString() + "%"})
             );
+        } else {
+            $('#frameSlide').append('<div class="' + domClass + '"'
+                + ' style="width:' + coords[i].v + '%;"'
+                + (i==0 ? " onclick='frameChange(-1)'" : '')
+                + (i==(elCount-1) ? " onclick='frameChange(1)'" : '')
+                + '>' + coords[i].t + '</div>');
         }
-        odd = !odd;
     }
 }
 
@@ -374,7 +373,7 @@ function save(localOnly){
     var outSrt = "";
     for (var i=0; i<lines.length; i++)
     {
-        if (lines[i][0] != 0 && lines[i][1] != 0) {
+        if (lines[i][0] != 0 && lines[i][1] != 0 && lines[i][2] != '') {
             outVtt += getLine(i, true);
             outSrt += getLine(i, false);
         }
