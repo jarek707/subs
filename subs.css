@@ -25,7 +25,7 @@ input {
 #controls > * {
         position:relative;
         float:left;
-        margin:2px 8px;
+        margin:2px 2px;
         border:1px solid black;
         padding:4px 6px;
         border-radius:4px;
@@ -37,7 +37,7 @@ input {
     margin-left:4px;
     padding:0;
     font-size:1.5em;
-    width:160px;
+    width:190px;
     border:1px solid #888;
     text-align:center;
     font-family:monospace;
@@ -72,9 +72,25 @@ video,
     width:607px;
 }
 
+div.framePager #frameSel {
+    position:absolute;
+    width:99%;
+    background:#eee;
+    z-index:20000;
+    border-radius:8px;
+    text-align:center;
+    padding:12px 0;
+    border: 3px solid #aaa;
+    min-height:112px;
+}
+
+.wrap #timeArgs {
+    width:100%;
+}
+
 .wrap textarea {
     width:100%;
-    height:100px;
+    height:86px;
     font-size:14px;
     border-radius:5px;
 }
@@ -82,17 +98,59 @@ video,
 .timeControls {
     position:relative;
     float:left;
-    width:580px;
+    width:100%;
+    height:28px;
 }
+
+.timeControls #rollBackVal {
+    width:100px;
+    font-size:0.7em;
+    text-align:right;
+    padding-top:8px;
+}
+.timeControls.transfer{
+    width:auto;
+    margin-left:75px;
+    height:32px;
+}
+
+.timeControls.transfer button{
+    font-size:1em;
+    background:transparent;
+    font-weight:bold;
+    border:1px solid #ddd;
+    border-radius:5px;
+
+}
+
+.timeControls.transfer #nextFrame{
+    margin-left:4px;
+}
+
+.timeControls.transfer #autoPlay {
+    font-size:0.6em;
+    width:84px;
+    margin-top:8px;
+}
+
+.timeControls > * {
+    position:relative;
+    float:left;
+    font-size:0.8em;
+    margin:2px 4px;
+}
+
+.timeControls > div{
+    padding-top:4px;
+}
+
 
 .timeControls input,
 .wrap input {
     width:80px;
     margin-right:2px;
 }
-.wrap .upd {
-    margin-right:12px;
-}
+
 .wrap input#frameNo {
     width:28px;
 }
@@ -108,9 +166,53 @@ video,
     font-size:0.8em
 }
 
-.timeControls span.overlap {
+.timeControls div.overlap {
     color:red;
     font-weght:bold;
+    width:48px;
+}
+
+.frameControls {
+    margin:0 0 0 46px;
+    position:relative;
+    float:left;
+}
+
+.frameControls div {
+    margin:0 0 0  12px;
+    width:154px;
+}
+
+.frameControls > div {
+    position:relative;
+    float:left;
+}
+
+.frameControls  div.end {
+    margin:0 0px 0 172px;
+    width:198px;
+}
+
+.frameControls .inf {
+    font-size:1em;
+    margin:0px 0 0 2px;;
+    cursor:pointer;
+    background:transparent;
+    color:#f44;
+    border:none;
+}
+
+.timeControls div.both button {
+    padding:2px;
+    margin:-2px 0 0 0;
+}
+
+.frameControls div button {
+    float:left;
+    position:relative;
+    padding:0;
+    margin0;
+    font-size:0.78em;
 }
 
 div.wrapper {
@@ -127,14 +229,15 @@ div.wrapper input {
 
 input.timers {
     font-family:monospace;
-    font-size:1.1em;
-    width:100px;
+    font-size:1.4em;
+    width:152px;
 }
 .timers {
     border:1px solid #999;
     border-radius:3px;
     padding:1px;
     background:#bbb;
+    text-align:center;
 }
 
 .timers.isIn {
@@ -167,26 +270,33 @@ div.projectParams input[type="text"] { width:120px; }
 div.projectParams input[type="file"] { width:320px; }
 
 #configWrap {
-    position:absolute;
-    width:600px;
+    position:relative;
+    width:601px;
     margin:0 auto;
     font-family: monaco;
+    height:36px;
+    float:right;
 }
 
 #configWrap #subWrap {
+    position:absolute;
     z-index:1000;
     width:auto;
     position:relative;
     float:right;
     background:#eee;
-    border-radius:5px;
-    border:1px solid transparent;
+    padding:2px;
+    margin-top:-32px;
 }
 
 #configWrap #subWrap > * {
     position:relative;
     float:right;
     padding:3px;
+}
+
+#configWrap #subWrap #configHead {
+    z-index:30;
 }
 
 #configWrap #subWrap input,
@@ -197,35 +307,60 @@ div.projectParams input[type="file"] { width:320px; }
     width:auto;
     margin:3px;
 }
-#configWrap #subWrap label { clear:left; }
-#configWrap #configContent { display:none; float:left; }
+#configWrap #subWrap label { clear:left; width:180px; }
+#configWrap #configContent { display:none; float:left; margin-right:-54px; padding-left:24px; }
+
+#configWrap #configContent input { 
+    font-size:1em;
+}
+
+#loadVid input, 
+#loadVid button {
+    font-size:1em;
+    border-radius:5px;
+    padding:3px;
+}
+
+#loadVid input {
+    width:314px;
+    height:20px;
+}
 
 #fileOver, #fileInput {
-    width:240px;
+    width:220px;
     height:16px;
     position:relative;
     float:left;
-    padding:4px;
+    padding:2px 2px 4px 2px;;
+    border:3px solid #aaa;
+    border-radius:5px;
+}
+
+.stickTop {
+    border-left:3px solid #aaa;
+    border-right:3px solid #aaa;
+    border-bottom:3px solid #aaa;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
 }
 
 #fileOver {
-    border:1px solid #ddd;
-    border-radius:5px;
     clear:both;
-    background : #eee;
+    background:#aaa;
 }
 
 #fileOver.chosen {
     background : #dfd;
 }
 
-#fileInput {
-    opacity:0;
-    margin-left:-289px;
+#configWrap #subWrap input[type="file"] {
+    opacity:0.0;
+    margin:0 0 0 -244px;
     cursor:pointer;
     background:red;
-    z-index:2000;
+    z-index:20;
 }
+
 #frameSlide {
     position:relative;
     float:left;
@@ -252,3 +387,6 @@ div.projectParams input[type="file"] { width:320px; }
 #frameSlide div.spacer{ background:#bbb; }
 #frameSlide div.inner { background:#e0ffe0; }
 #frameSlide div.outer { cursor:pointer; }
+#frameSlide div.overlap{ background:#fca; }
+#frameSlide div.overlap.cover { background:#F00; }
+

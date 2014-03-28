@@ -24,6 +24,9 @@ var Config = {
     vidName     : 'bench.mp4',
     autoLoad    : true,
     autoPlay    : true,
+    playOnSync  : true,
+    liveUpdate  : true,
+    volume      : 0.8,
 
     minFrameLength : 600
 }
@@ -72,14 +75,18 @@ function Init() {
         $('#vidName').val(Config.vidName);
         $('#baseName').val(Config.baseName);
         $('#rollBack').val(Config.rollBack);
+        $('#rollBackVal').text("Roll Back:" + Config.rollBack);
+        $('#volume').val(Config.volume);
 
         $('#autoLoad').attr('checked', Config.autoLoad);
         $('#autoPlay').attr('checked', Config.autoPlay);
+        $('#liveUpdate').attr('checked', Config.liveUpdate);
 
         if (Config.autoLoad) {
             loadFromParams();
-            if (Config.autoPlay) video.play();
+            if (Config.autoPlay) togglePlay();
         }
+        video.volume = Config.volume;
     }
 }
 
@@ -103,10 +110,13 @@ function saveConfig(key, value) {
     Config[key] = value;
     if (key == 'vidName') {
         Config.baseName = value.substr(0, value.length-4);
-        $('#baseName').val(Config.baseName);
+        if ($('#baseName').val() == '')
+            $('#baseName').val(Config.baseName);
     }
 
+    $('#rollBackVal').text("Roll Back:" + Config.rollBack);
 
+    Config.lI = lI;
     localStorage.setItem('subTool:Config', JSON.stringify(Config));
 }
 
@@ -180,7 +190,9 @@ function updateFrame() {
     lines[lI][3] = $('#timeArgs').val();
 }
 
-function setFrame() {
+function setFrame(newLI) {
+    if (typeof newLI != 'undefined') lI = newLI;
+
     ta.value        = lines[lI][2];
     start.value     = fromMs(lines[lI][0]);
     end.value       = fromMs(lines[lI][1]);
@@ -200,30 +212,69 @@ function setFrame() {
 }
 
 function setOverlaps() {
-    if (lI > 0) {
-        $('#prevEnd').text(fromMs(Math.abs(lines[lI][0] - lines[lI-1][1])).substr(6));
-        
-        if (lines[lI][0]<lines[lI-1][1])    $('#prevEnd').addClass("overlap");
-        else                                $('#prevEnd').removeClass("overlap");
-    }
+    if (Config.liveUpdate || video.paused) {
+        if (lI > 0) {
+            $('#prevEnd').text(fromMs(Math.abs(lines[lI][0] - lines[lI-1][1])).substr(6)).css({"opacity" : 1});
+            
+            if (lines[lI][0]<lines[lI-1][1])    $('#prevEnd').addClass("overlap");
+            else                                $('#prevEnd').removeClass("overlap");
+        } else {
+            $('#prevEnd').text(fromMs(lines[lI][0].toString()).substr(6));
+        }
 
-    if (lI < lines.length-1) {
-        $('#nextStart').text(fromMs(Math.abs(lines[lI+1][0] - lines[lI][1])).substr(6));
+        if (lI < lines.length-1) {
+            $('#nextStart').text(fromMs(Math.abs(lines[lI+1][0] - lines[lI][1])).substr(6)).css({"opacity" : 1});;
 
-        if (lines[lI][1]>lines[lI+1][0])    $('#nextStart').addClass("overlap");
-        else                                $('#nextStart').removeClass("overlap");
+            if (lines[lI][1]>lines[lI+1][0])    $('#nextStart').addClass("overlap");
+            else                                $('#nextStart').removeClass("overlap");
+        } else {
+            $('#nextStart').text('END');
+        }
+    } else {
+            $('#prevEnd').css({"opacity" : 0});
+            $('#nextStart').css({"opacity" : 0});
     }
 }
 
-function jump(jumpInt) {
-    video.currentTime -= jumpInt;
+function jump(jumpInt, which) {
+    if (typeof which == 'undefined') which=-0;
+
+    switch (which) {
+        case -3: lines[lI][0] = 0; break;
+        case -2: lines[lI][1] = Config.lastTm; break;
+        case  0: video.currentTime -= jumpInt; break;
+        case  1: lines[lI][0] -= 1000 * jumpInt; break;
+        case  2: 
+            lines[lI][0] -= 1000 * jumpInt;
+            lines[lI][1] -= 1000 * jumpInt; 
+            break;
+        case  3: lines[lI][1] -= 1000 * jumpInt; break;
+    }
+    if (which>0) video.currentTime = lines[lI][0]/1000;
+    setFrame();
+    setOverlaps();
+}
+
+function setAutoPlay(el) {
+    $(el).text('Auto Play ' + (Config.playOnSync ? 'Off' : 'On'));
+    Config.playOnSync = !Config.playOnSync;
+}
+
+function flashBg(targetEl, cond) {
+    $(targetEl).css({"background" : (cond ? "#afd" : "#faa")});
+    setTimeout( 
+        function() { $(targetEl).css({"background" : "transparent"}); }
+   , 300);
 }
 
 function syncCT(arg) {
-    if (typeof arg != 'undefined' && arg) {
-        setCT(toMs(start.value)/1000, 0.001);
-    } else {
-        setCT(toMs(end.value)/1000, -0.001);
+    var isStart     = typeof arg != 'undefined' && arg;
+
+    setCT(toMs(isStart ? start.value : end.value)/1000, 0);
+
+    if (Config.playOnSync) {
+        flashBg(isStart ? '#toStart' : '#toEnd', video.paused);
+        togglePlay();
     }
 }
 
@@ -233,8 +284,9 @@ function syncTm(which) {
         end.value = curEl.innerText;
     } else {
         start.value = fromMs(getCT()*1000 - Config.rollBack);
+        setCT(start.value/1000,0);
     }
-    updateFrame(true);
+    updateFrame();
     setOverlaps();
 }
 
@@ -265,10 +317,14 @@ function Parse(cont) {
             }
         }
     } else {
-        lines = [[0, Config.lastTm, 'New Project - first frame', '']];
-        $('#fileOver').removeClass('chosen');
+        if (confirm( "This will create a new subtitles file and overwrite existing work if any.\nPlease confirm/cancel."
+                   )) {
+
+            lines = [[0, Config.lastTm, 'New Project - first frame', '']];
+            $('#fileOver').removeClass('chosen');
+            lI = 0;
+        }
     }
-    lI = 0;
     setFrame();
 
     if (false)
@@ -314,50 +370,78 @@ function fromMs(stamp, isVtt) {
 }
 
 function updateSlider() {
-    $('#frameSlide >*').remove();
-    if (lines.length < 1 || lines[lI][1] == Config.lastTm) return;
+    if (Config.liveUpdate || video.paused) {
+        $('#frameSlide >*').remove();
+        if (lines.length < 1 || lines[lI][1] == Config.lastTm) return;
 
-    var back    = lI > 0 ? lI - 1 : 0;
-    var forth   = lI < lines.length - 1 ? lI + 1 : lI;
-    if (lines[forth][1] == Config.lastTm) // Ignore infinite length frames
-        forth--;
+        var back    = lI > 0 ? lI - 1 : 0;
+        var forth   = lI < lines.length - 1 ? lI + 1 : lI;
+        if (lines[forth][1] == Config.lastTm) // Ignore infinite length frames
+            forth--;
 
-    var elCount = 1+(forth-back)*2;
-    var stretch = lines[forth][1] - lines[back][0];
+        var elCount = 1+(forth-back)*2;
+        var stretch = lines[forth][1] - lines[back][0];
 
-    var els = [];
-    var coords = [];
-    for (var i = back; i <= forth; i++) {
-        els[els.push(lines[i][1] - lines[i][0])-1];
-        coords.push({"t" : i.toString()});
+        var els = [];
+        var coords = [];
+        for (var i = back; i <= forth; i++) {
+            els[els.push(lines[i][1] - lines[i][0])-1];
+            coords.push({"t" : i.toString()});
 
-        if (i != forth ) {
-            els[els.push(lines[i+1][0] - lines[i][1])-1];
-            coords.push({"t" : ''});
+            if (i != forth ) {
+                els[els.push(lines[i+1][0] - lines[i][1])-1];
+                coords.push({"t" : ''});
+            }
         }
-    }
 
-    var sum = 0;
-    for (var i=0; i<elCount; i++) {
-        coords[i].v = Math.round(100*els[i]/stretch);
-        sum += coords[i].v;
-    }
-     
-    if (sum != 100) coords[i-1].v -= sum - 100;
-
-    for (var i=0; i<elCount; i++){
-        var domClass = (i>0 && i<elCount-1) ? "inner" : "outer";
-        if (coords[i].t == '') {
-            $('#frameSlide').append( $('<div class="spacer"></div>')
-                .css({"width" :  coords[i].v.toString() + "%"})
-            );
-        } else {
-            $('#frameSlide').append('<div class="' + domClass + '"'
-                + ' style="width:' + coords[i].v + '%;"'
-                + (i==0 ? " onclick='frameChange(-1)'" : '')
-                + (i==(elCount-1) ? " onclick='frameChange(1)'" : '')
-                + '>' + coords[i].t + '</div>');
+        var sum = 0;
+        for (var i=0; i<elCount; i++) {
+            //coords[i].v = Math.round(100*els[i]/stretch);
+            coords[i].v = 100*els[i]/stretch;
+            sum += coords[i].v;
+            if (coords[i].v < 0.4 && coords[i].v>0) {
+                var subtr = coords[i].v;
+                coords[i].v = 0.25;
+                coords[i-1].v -= 0.25 - subtr;
+            }
         }
+         
+        if (sum != 100) coords[i-1].v -= sum - 100;
+
+        for (var i=1; i < elCount; i += 2) {
+            if (coords[i].v < 0) {
+                coords[i].v = -coords[i].v;
+                coords[i+1].v = coords[i+1].v - 2*coords[i].v;
+                coords[i].t = 'overlap';
+                if (coords[i+1].v < 0) {
+                    coords[i].v += coords[i+1].v - 5;
+                    coords[i+1].v=5;
+                    coords[i].t = 'overlap cover';
+                }
+            }
+        }
+
+        for (var i=0; i<elCount; i++){
+            var domClass = (i>0 && i<elCount-1) ? "inner" : "outer";
+            if (coords[i].t == '' || coords[i].t == 'overlap') {
+                $('#frameSlide').append( $('<div class="spacer ' + coords[i].t + '"></div>')
+                    .css({"width" :  coords[i].v.toString() + "%"})
+                );
+            }else if (coords[i].t == 'overlap cover') {
+                $('#frameSlide').append( $('<div class="spacer ' + coords[i].t + '"></div>')
+                    .css({"width" :  coords[i].v.toString() + "%"})
+                );
+            } else {
+                $('#frameSlide').append('<div class="' + domClass + '"'
+                    + ' style="width:' + coords[i].v + '%;"'
+                    + (i==0 ? " onclick='frameChange(-1)'" : '')
+                    + (i==(elCount-1) ? " onclick='frameChange(1)'" : '')
+                    + '>' + coords[i].t + '</div>');
+            }
+        }
+        $('#frameSlide').css({"opacity":1});
+    } else {
+        $('#frameSlide').css({"opacity":0.2});
     }
 }
 
@@ -381,7 +465,6 @@ function save(localOnly){
 
     if (typeof localOnly != 'undefined' && localOnly) {
         localStorage.setItem("subTool:" + Config.baseName + '.vtt', outVtt);
-        LG( localStorage);
     } else {
         download(Config.baseName, "vtt", outVtt);
         download(Config.baseName, "srt", outSrt);
@@ -408,4 +491,15 @@ function togglePlay() {
 function infEnd() {
     lines[lI][1] = Config.lastTm;
     setFrame();
+}
+
+function goToFrame() {
+    if ($('#frameSel button').length == 0)
+        for (var i=0; i< lines.length; i++) {
+            $('#frameSel').append(
+                    '<button onclick="setFrame(' + i + '); syncCT(true); $(\'#frameSel\').slideUp();">' + i.toString() + '</button>'
+                    );
+        }
+    $('#frameSel:visible').slideUp();
+    $('#frameSel:hidden').slideDown();
 }
