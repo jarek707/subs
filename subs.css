@@ -1,6 +1,6 @@
 body {
     margin:0 auto;
-    width:600px;
+    width:640px;
     overflow:hidden;
     background:#eff;
     font-family:monaco;
@@ -74,7 +74,7 @@ video,
 
 div.framePager #frameSel {
     position:absolute;
-    width:99%;
+    width:618px;
     background:#eee;
     z-index:20000;
     border-radius:8px;
@@ -127,7 +127,7 @@ div.framePager #frameSel {
     margin-left:4px;
 }
 
-.timeControls.transfer #autoPlay {
+.timeControls.transfer #autoPlayBtn {
     font-size:0.6em;
     width:84px;
     margin-top:8px;
@@ -265,13 +265,19 @@ input.timers {
 }
 
 #workArea { display:none; }
+#panel { 
+    margin-left:20px; 
+    position:relative;
+    float:left;
+    width:600px;
+}
 
 div.projectParams input[type="text"] { width:120px; }
 div.projectParams input[type="file"] { width:320px; }
 
 #configWrap {
     position:relative;
-    width:601px;
+    width:637px;
     margin:0 auto;
     font-family: monaco;
     height:36px;
@@ -300,14 +306,15 @@ div.projectParams input[type="file"] { width:320px; }
 }
 
 #configWrap #subWrap input,
-#configWrap #subWrap label 
+#configWrap #subWrap label,
+#configWrap #subWrap select
 {
     position:relative;
     float:left;
     width:auto;
     margin:3px;
 }
-#configWrap #subWrap label { clear:left; width:180px; }
+#configWrap #subWrap label { clear:left; width:196px; }
 #configWrap #configContent { display:none; float:left; margin-right:-54px; padding-left:24px; }
 
 #configWrap #configContent input { 
@@ -322,7 +329,7 @@ div.projectParams input[type="file"] { width:320px; }
 }
 
 #loadVid input {
-    width:314px;
+    width:164px;
     height:20px;
 }
 
