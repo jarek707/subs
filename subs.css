@@ -74,7 +74,7 @@ video,
 
 div.framePager #frameSel {
     position:absolute;
-    width:618px;
+    width:600px;
     background:#eee;
     z-index:20000;
     border-radius:8px;
@@ -82,6 +82,8 @@ div.framePager #frameSel {
     padding:12px 0;
     border: 3px solid #aaa;
     min-height:112px;
+    max-height:128px;
+    overflow:auto;
 }
 
 .wrap #timeArgs {
@@ -317,6 +319,26 @@ div.projectParams input[type="file"] { width:320px; }
 #configWrap #subWrap label { clear:left; width:196px; }
 #configWrap #configContent { display:none; float:left; margin-right:-54px; padding-left:24px; }
 
+#configWrap #subWrap input[type="file"] {
+    opacity:0.0;
+    margin:0 0 0 -244px;
+    cursor:pointer;
+    background:red;
+    z-index:20;
+}
+
+#configWrap #subWrap ul,
+#configWrap #subWrap ul > li {
+    position:relative;
+    float:left;
+    clear:both;
+    padding:0;
+    margin:0;
+}
+#configWrap #subWrap ul > li {
+    clear:both;
+}
+
 #configWrap #configContent input { 
     font-size:1em;
 }
@@ -358,14 +380,6 @@ div.projectParams input[type="file"] { width:320px; }
 
 #fileOver.chosen {
     background : #dfd;
-}
-
-#configWrap #subWrap input[type="file"] {
-    opacity:0.0;
-    margin:0 0 0 -244px;
-    cursor:pointer;
-    background:red;
-    z-index:20;
 }
 
 #frameSlide {

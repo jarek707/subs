@@ -34,7 +34,7 @@ function LG() { console.log(JSON.stringify(arguments)); }
 
 
 $(document).ready(function(){
-    VID.player  = document.getElementById('player5');
+    V5S.player  = document.getElementById('player5');
     fileInput   = document.getElementById('fileInput');
     ta          = document.getElementById('caption');
     start       = document.getElementById('start');
@@ -42,39 +42,15 @@ $(document).ready(function(){
     frameNo     = document.getElementById('frameNo');
 
     fileInput.addEventListener('change', function(e) {
-        var file = fileInput.files[0];
         var reader = new FileReader();
-        reader.readAsText(file);
+        reader.readAsText(fileInput.files[0]);
         reader.onload = function(e) { Parse(reader.result); };
         $('#fileOver').addClass('chosen');
     });
-    Init();
-    $('#storedSubs').append(loadLocalSubs());
-});
-function loadLocalSubs() {
-    // TODO SET initial value from config
-    var laS = '';
-    var locStor = {};
-    for ( var i in localStorage) {
-        if (i.substr(0, 7) == 'subTool') {
-            key = i.substr(10);
-            locStor[i] = localStorage.getItem(i);
-            
-            if (key != "Config")
-                laS += "<option value='" + i + "'>" 
-                    + key.replace(':::','/').substr(0, key.length-6)
-                    + '</option>';
-        }
-    }
-    return laS;
-}
+    $('#storedProjs').append(loadProjs());
 
-function loadSubs(subKey) {
-    Parse(localStorage.getItem(subKey));
-    var baseName = subKey.substr(0, subKey.length-4).split(':::').pop();
-    $('#baseName').val(baseName);
-    saveConfig('baseName', baseName);
-}
+    Init();
+});
 
 function Init() {
     var config = localStorage.getItem("subTool:::Config");
@@ -92,13 +68,6 @@ function Init() {
         $('#autoPlay').attr('checked', Config.autoPlay);
         $('#playOnSync').attr('checked', Config.playOnSync);
         $('#liveUpdate').attr('checked', Config.liveUpdate);
-
-        if (Config.autoLoad) {
-            loadFromParams();
-            setTimeout ( function() { if (Config.autoPlay) togglePlay(); } , 500);
-        }
-        setTimeout( function() { VID.volume(Config.volume); } , 1500);
-        setAutoPlay();
     }
 }
 
@@ -106,21 +75,37 @@ function loadFromParams() {
         if (($('#vidName').val().indexOf('.') > -1)) {
             VID = V5S;
             YTS.hide();
+            YTS.unload();
         } else {
+    console.log($('#vidName').val(), Config.vidName );
+            V5S.unload();
             VID = YTS;
             V5S.hide();
+            YTS.vidId = Config.vidName;
         }
-        VID.Init();
 
-        $(video).find('source').attr('src', Config.vidName);
-        YTS.vidId = Config.vidName;
-        //$(video).find('track').attr('src', Config.baseName + '.vtt');
-        loadSubs("subTool:::" + Config.vidName + ":::" + Config.baseName + '.vtt');
-        //if (lines.length == 0) Parse(localStorage.getItem('bench.vtt'));
-        setTimeout(function() { VID.load();  console.log( VID.getDuration()); }, 300);
-        setTimeout(function() { console.log( VID.getDuration()); Config.lastTm = VID.getDuration()*1000;}, 800);
         $('#workArea').show();
-        
+        VID.Init();
+}
+
+function PlayerReady() {
+        if (Config.autoLoad) {
+            //loadFromParams();
+            if (Config.autoPlay) togglePlay();
+            VID.volume(Config.volume);
+        }
+        setAutoPlay();
+        Parse(localStorage.getItem('subTool:::' + $("#vidName").val() + ":::" + $("#baseName").val() + '.vtt'));
+}
+
+
+function loadConfig(subKey) {
+    var baseName = subKey.substr(0, subKey.length-4).split(':::').pop();
+    var vidName = subKey.split(':::')[1];
+    saveConfig('baseName', baseName);
+    saveConfig('vidName', vidName);
+    $('#baseName').val(baseName);
+    $('#vidName').val(vidName);
 }
 
 function saveConfig(key, value) {
@@ -140,49 +125,34 @@ function saveConfig(key, value) {
         }
     }
 
-    $('#rollBackVal').text("Roll Back:" + Config.rollBack);
+    $('#rollBackVal').text(Config.rollBack);
 
     Config.lI = lI;
     localStorage.setItem('subTool:::Config', JSON.stringify(Config));
 }
-
-
-
-function frameChange(arg) {
-    switch (typeof arg) {
-        case 'number'   : lI += parseInt(arg); break;
-        case 'boolean'  : lI = arg ? 0 : lines.length - 1; break;
-        default         : lI = parseInt(arg.value);
+function loadProjs() {
+    // TODO SET initial value from config
+    var laS = '';
+    for ( var i in localStorage) {
+        if (i.substr(0, 7) == 'subTool') {
+            key = i.substr(10);
+            
+            if (key != "Config")
+                laS += '<li><input name="projs" type="radio" value="' + i + '" onclick="loadConfig(\'' + i + '\')">' 
+                    + key.replace(':::','/').substr(0, key.length-6)
+                    + '<button onclick="delProj(\'' + i + '\')">Del</button>'
+                    + '</li>';
+        }
     }
-
-    if (lI < 0)             lI = 0;
-    if (lI >= lines.length) lI = lines.length - 1;
-    if (lines[lI][0] >= 0)   VID.setCT(lines[lI][0]/1000, 0.001);
-    setFrame();
-
+    return laS;
 }
 
-function inFrameCT(ct)     { 
-    return inFrame = lI>=0 && lines[lI][0]<=ct && lines[lI][1]>=ct; 
+function delProj(projName) {
+    localStorage.removeItem(projName);
+    $('#storedProjs >  *').remove();
+    $('#storedProjs').append(loadProjs());
 }
 
-function findFrame(currentTm) {
-        if (!inFrameCT(currentTm)) {
-            if (lines[lI][1] < currentTm)
-                while (lI < lines.length && lines[lI][1] < currentTm) lI++;
-            if (lines.length<=lI) {
-                appendFrame();
-            } else {
-                if (lI>0 && lines[lI-1][0] > currentTm)
-                    while (lI >= 0 && lines[lI][0] > currentTm) lI--;
-
-                if (lI<0) lI = 0; 
-            }
-        } 
-
-        setFrame();
-        setOverlaps();
-}
 
 function appendFrame() {
     if (lines[lI-1][0] > 0) {
@@ -193,6 +163,27 @@ function appendFrame() {
         lI--;
     }
     return false;
+}
+
+function findFrame(currentTm) {
+        inFrame = inFrameCT(currentTm);
+
+        if (!inFrame) {
+            if (lines[lI][1] < currentTm)
+                while (lI < lines.length && lines[lI][1] < currentTm) lI++;
+            if (lines.length<=lI) {
+                appendFrame();
+            } else {
+                if (lI>0 && lines[lI-1][0] > currentTm)
+                    while (lI >= 0 && lines[lI][0] > currentTm) lI--;
+
+                if (lI<0) lI = 0; 
+            }
+            inFrame = inFrameCT(currentTm);
+        } 
+
+        setFrame();
+        setOverlaps();
 }
 
 function updateFrame() {
@@ -210,8 +201,28 @@ function updateFrame() {
     lines[lI][3] = $('#timeArgs').val();
 }
 
-function setFrame(newLI) {
-    if (typeof newLI != 'undefined') lI = newLI;
+function inFrameCT(ct, frameNbr)     { 
+    if (typeof frameNbr == 'undefined') frameNbr = lI;
+    return frameNbr >=0 && lines[frameNbr][0]<=ct && lines[frameNbr][1]>=ct; 
+}
+
+function frameChange(arg) {
+    switch (typeof arg) {
+        case 'number'   : lI += parseInt(arg); break;
+        case 'boolean'  : lI = arg ? 0 : lines.length - 1; break;
+        default         : lI = parseInt(arg.value);
+    }
+
+    if (lI < 0)             lI = 0;
+    if (lI >= lines.length) lI = lines.length - 1;
+    if (lines[lI][0] >= 0)   VID.setCT(lines[lI][0]/1000, 0.001);
+    setFrame();
+
+}
+
+function setFrame(jumpTo) {
+    if (typeof jumpTo != 'undefined') lI = jumpTo;
+    if (typeof lI == 'undefined' ) lI = 0;
 
     ta.value        = lines[lI][2];
     start.value     = fromMs(lines[lI][0]);
@@ -226,9 +237,17 @@ function setFrame(newLI) {
 
     $('.timers').attr('class', timerClass);
         
-   $('#activeCaption').html(inFrame ? lines[lI][2] : "");
+    var out = '';
+    var i=lI+1;
 
-   updateSlider();
+    while (lines.length > i && inFrameCT(1000*VID.getCT(), i))
+        { out += lines[i++][2]; }
+
+    if (out != '') out += "<br />";
+
+    $('#activeCaption').html(inFrame ? out + lines[lI][2] : "");
+
+    updateSlider();
 }
 
 function setOverlaps() {
@@ -277,7 +296,6 @@ function jump(jumpInt, which) {
 
 function setAutoPlay( el ) {
 
-    console.log(Config.playOnSync, el);
     $('#autoPlayBtn').text('Auto Play ' + (Config.playOnSync ? 'Off' : 'On'));
     Config.playOnSync = !Config.playOnSync;
 }
@@ -306,7 +324,6 @@ function syncTm(which) {
         end.value = curEl.innerText;
     } else {
         start.value = fromMs(VID.getCT()*1000 - Config.rollBack);
-        console.log( which, VID.getCT(), start.value );
         VID.setCT(toMs(start.value)/1000,0);
     }
     updateFrame();
@@ -314,23 +331,28 @@ function syncTm(which) {
 }
 
 function Parse(cont) {
-    lines = [];
     if (typeof cont != 'undefined' && cont != null && cont.trim() != '') {
+        lines = [];
         var byLine = cont.split('\n\n');
         var line = '';
         var idx  = -1;
-        var isNote = false;
         for (var i=0; i<byLine.length; i++) {
             line = byLine[i].trim();
             if (line.trim() != '' && line.trim() != 'WEBVTT' ) {
-                var parts = line.match(/(^.*\d\d:\d\d[,.]\d\d\d.*-->.*\d\d:\d\d[,.]\d\d\d)(.*\r?\n)((.|\r?\n)*)/);
+                var index = i.toString();
+                var parts = line.match(/(.*\r?\n)(.*\d\d:\d\d[,.]\d\d\d.*-->.*\d\d:\d\d[,.]\d\d\d)(.*\r?\n)((.|\r?\n)*)/);
+                if( parts != null ) {
+                    parts.shift();
+                    index = parts.shift();
+                } else {
+                    parts = line.match(/(^.*\d\d:\d\d[,.]\d\d\d.*-->.*\d\d:\d\d[,.]\d\d\d)(.*\r?\n)((.|\r?\n)*)/);
+                    parts.shift();
+                }
                 if ( parts ) {
-                    var times = parts[1].split('-->');
-                    lines[++idx] = [toMs(times[0]), toMs(times[1]), parts[3], parts[2].trim()];
-                    isNote = false;
+                    var times = parts[0].split('-->');
+                    lines[++idx] = [toMs(times[0]), toMs(times[1]), parts[2], parts[1].trim(), index.trim()];
                 } else {
                     if (line.indexOf('NOTE') > -1) {
-                        isNote = true;
                         lines[++idx] = [-1, -1, line, ''];
                     } else {
                         lines[++idx] = [0, Config.lastTm, line, ''];
@@ -339,7 +361,7 @@ function Parse(cont) {
                 }
             }
         }
-        console.log("Loaded Subs");
+        console.log("Loaded Subs", cont.substr(0,100));
     } else {
         if (confirm( "This will create a new subtitles file and overwrite existing work if any.\nPlease confirm/cancel."
                    )) {
@@ -481,17 +503,21 @@ function save(localOnly){
     var outSrt = "";
     for (var i=0; i<lines.length; i++)
     {
-        if (lines[i][0] != 0 && lines[i][1] != 0 && lines[i][2] != '') {
+        if (lines[i][0] != 0 && lines[i][2] != '') {
             outVtt += getLine(i, true);
             outSrt += getLine(i, false);
         }
     }
 
-    if (typeof localOnly != 'undefined' && localOnly) {
-        localStorage.setItem("subTool:::" + Config.vidName + ":::" + Config.baseName + '.vtt', outVtt);
+    if (outSrt != '') {
+        if (typeof localOnly != 'undefined' && localOnly) {
+            localStorage.setItem("subTool:::" + Config.vidName + ":::" + Config.baseName + '.vtt', outVtt);
+        } else {
+            download(Config.baseName, "vtt", outVtt);
+            download(Config.baseName, "srt", outSrt);
+        }
     } else {
-        download(Config.baseName, "vtt", outVtt);
-        download(Config.baseName, "srt", outSrt);
+        console.log("Empty Subtitles file...aborting");
     }
 }
 
@@ -504,11 +530,9 @@ function download(filename, fType, text) {
 
 function togglePlay() {
     if (VID.isPaused()) {
-        console.log( ' is paused ' );
         VID.play();
         $("#bigPlayButton").text("Pause");
     } else {
-        console.log( ' is not paused ' );
         VID.pause();
         $("#bigPlayButton").text("Play");
     }
@@ -520,23 +544,24 @@ function infEnd() {
 }
 
 function goToFrame() {
-    if ($('#frameSel button').length == 0)
+    if ($('#frameSel button').length < lines.length) {
         for (var i=0; i< lines.length; i++) {
             $('#frameSel').append(
                     '<button onclick="setFrame(' + i + '); syncCT(true); $(\'#frameSel\').slideUp();">' + i.toString() + '</button>'
                     );
         }
+    }
     $('#frameSel:visible').slideUp();
     $('#frameSel:hidden').slideDown();
 }
 
 V5S = {
-    player       : null,
+    player      : null,
+    load        : function() { return this.player.load();  },
     getDuration : function() { return this.player.duration;},
     isPaused    : function() { return this.player.paused;  },
     pause       : function() { return this.player.pause(); },
     play        : function() { return this.player.play();  },
-    load        : function() { return this.player.load();  },
     getCT       : function() { return this.player.currentTime;           },
     getCTInt    : function() { return this.player.currentTime * 1000;    },
     jumpCT      : function(offset)  { this.player.currentTime += offset; },
@@ -562,10 +587,14 @@ V5S = {
         });
 
         $('#player5').show().attr('src', Config.vidName);
+        V5S.load();
+        PlayerReady();
     },
-    hide: function() { $('#player5').hide(); }
+    hide: function() { $('#player5').hide(); },
+    unload: function() {
+        $('#player5').show().attr('src', '');
+    }
 }
-VID = V5S;
 
 YTS = {
     player : null,
@@ -573,7 +602,6 @@ YTS = {
     paused : true,
     onYouTubeIframeAPIReady : function() {
         YTS.player = new YT.Player('player', {
-        height: '390',
         width: '640',
         videoId: YTS.vidId,
         events: {
@@ -583,60 +611,60 @@ YTS = {
       });
     },
 
-    onPlayerReady : function(event) {},
+    load :          function() { YTS.onYouTubeIframeAPIReady(); },
+    onPlayerReady : function(event) { PlayerReady(); },
 
-    done : false,
     onPlayerStateChange : function (event) {
-      if (event.data == YT.PlayerState.PLAYING && !YTS.done) {
-      }
-
       YTS.paused = event.data == YT.PlayerState.PAUSED;
+      console.log( event );
     },
 
-    getDuration : function() { return this.getDuration();       },
-    isPaused    : function() { return this.paused;              },
-    pause       : function() { console.log('PA'); return this.player.pauseVideo(); },
-    play        : function() { console.log('PL'); return this.player.playVideo();  },
-    getCT       : function() { return this.player.getCurrentTime();      },
-    getCTInt    : function() { return this.player.getCurrentTime() * 1000;},
-    jumpCT      : function(offset)  { 
-        this.player.seekTo(this.player.getCurrentTime() + offset); 
-    },
+    getDuration : function() { return this.getDuration(); },
+    isPaused    : function() { return YTS.paused;              },
+    pause       : function() { return YTS.player.pauseVideo(); },
+    play        : function() { return YTS.player.playVideo();  },
+    getCT       : function() { return YTS.player.getCurrentTime();      },
+    getCTInt    : function() { return YTS.player.getCurrentTime() * 1000;},
+    jumpCT      : function(offset)  { this.player.seekTo(this.player.getCurrentTime() + offset); },
     setCT : function (stamp, offset)   { 
         if (typeof offset == 'undefined') offset = 0;
-        
-        console.log( stamp, offset);
         this.player.seekTo(stamp + offset); 
     },
     volume : function(arg) { 
-        if (typeof arg == 'undefined') return this.player.getVolume();
+        if (typeof arg == 'undefined')  return this.player.getVolume();
         else                            this.player.getVolume(arg); 
     },
 
-    stopVideo : function() { this.player.stopVideo(); },
-    startVideo : function() { this.player.playVideo(); },
-    pauseVideo : function () { this.player.pauseVideo(); },
-    seek: function (pos) { this.player.seekTo(pos); },
+    stopVideo   : function()     { this.player.stopVideo(); },
+    startVideo  : function()     { this.player.playVideo(); },
+    pauseVideo  : function ()    { this.player.pauseVideo(); },
+    seek        : function (pos) { this.player.seekTo(pos); },
 
-    Init: function(){},
-    load : function() {
-        onYouTubeIframeAPIReady = YTS.onYouTubeIframeAPIReady;
-        var tag = document.createElement('script');
+    Init: function(){
+        if (YTS.player == null) {
+            console.log('new yt pl');
+            window.onYouTubeIframeAPIReady = YTS.onYouTubeIframeAPIReady;
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
 
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-
-        tag.src = "https://www.youtube.com/iframe_api",
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        setInterval(function() { 
-            if (!YTS.paused) 
-                if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
-                    findFrame(YTS.getCT() * 1000);
-                    $("#current").text(fromMs(YTS.getCT()*1000));
-                }
-        } , 300);
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            setInterval(function() { 
+                if (!YTS.paused) 
+                    if (typeof lines != 'undefined' && typeof lines[0] != 'undefined') {
+                        findFrame(YTS.getCT() * 1000);
+                        $("#current").text(fromMs(YTS.getCT()*1000));
+                    }
+            } , 300);
+        } else {
+            console.log('old yt pl');
+            YTS.player.loadVideoById(Config.vidName);
+            PlayerReady();
+            YTS.show();
+        }
     },
+    unload: function() { if (YTS.player != null) YTS.pause(); },
 
-    hide: function() { $('#player').hide(); }
+    hide: function() { $('#player').hide(); },
+    show: function() { $('#player').show(); }
 }
-setTimeout(function() { console.log( YTS.player, ' player ' ); } , 1000);
-//YTS.Init();

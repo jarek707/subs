@@ -8,9 +8,9 @@
                 <div id="configWrap">
                     <div id='loadVid'>
                         <label for="vidName">Video/Subs:</label>
-                        <input id="vidName" type="text" value="bench.mp4" onchange="saveConfig('vidName', this);"/>
+                        <input id="vidName" type="text" value="" onchange="saveConfig('vidName', this);"/>
                         <span>/</span>
-                        <input type="text" id="baseName"  onchange="saveConfig('baseName', this);"/>
+                        <input id="baseName" type="text" value="" onchange="saveConfig('baseName', this);"/>
                         <button id="loadVid" onclick="loadFromParams()">Load</button>
                     </div>
                     <div id='subWrap'class='stickTop'> 
@@ -33,7 +33,7 @@
                             <label for="volume">Volume</label>
                             <input type="text" id='volume' onchange="saveConfig('volume', this)" />
                             <label for="storedSubs">Stored Subs</label>
-                            <select id='storedSubs' onchange="loadSubs(this.value);"></select>
+                            <ul id='storedProjs'></ul>
                         </div>
                     </div>
                 </div>
@@ -41,11 +41,8 @@
 
         <div id='workArea'>
             <div id='vidContainer'>
-                <div id="player"></div>
-                <video id="player5" controls style="display:none;">
-                    <source src="" />
-                    <track src="" default kind="subtitles" srclang="en"/>
-                </video>
+                <div   id="player"></div>
+                <video id="player5" controls></video>
             </div>
             <div id='panel'>
 
@@ -62,6 +59,7 @@
                     <button onclick="jump(5)">5s</button>
                 </div>
 
+
                 <div class="timeControls transfer">
                     <div id="rollBackVal"></div>
                     <button id="startUpd" onclick="syncTm(true)">&#8601;</button>
@@ -72,6 +70,7 @@
                     <button id="toEnd" onclick="syncCT(false)">&#8598;</button>
                     <button id="endUpd" onclick="syncTm()">&#8600;</button>
                 </div>
+
 
                 <div class="timeControls">
                     <div id="prevEnd">00,000</div>
