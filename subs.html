@@ -43,11 +43,15 @@
             <div id='vidContainer'>
                 <div   id="player"></div>
                 <video id="player5" controls></video>
+                <div id='activeCaption' disabled draggable="true" 
+                    onmousedown="DRAG.drop(event,'mousedown');"
+                    ondrag="DRAG.drop(event,'dragend');"
+                    ondragend="DRAG.end(event,'dragend');"
+                ></div>
             </div>
             <div id='panel'>
 
                 <div id="controls">
-                    <div id='activeCaption'></div>
                     <button onclick="jump(-5)">-5s</button>
                     <button onclick="jump(-1)">-1s</button>
                     <button onclick="jump(-0.3)">-300ms</button>
@@ -121,7 +125,7 @@
                     <input type="text" class='timers' id="timeArgs" onblur="updateFrame()"/>
 
                     <button onclick='Parse(Config.baseName + ".vtt");'>Load From Browser</button>
-                    <button onclick='save(true)'>Save To Browser</button>
+                    <button onclick='save()'>Save To Browser</button>
                     <button onclick='save()'>Save To File</button>
                     <button onclick="Parse();">Clear Subs And Start New Subs</button>
                 </div>

@@ -32,6 +32,30 @@ var Config = {
 
 function LG() { console.log(JSON.stringify(arguments)); }
 
+DRAG = {
+    x:0,
+    y:0,
+    fx:0,
+    fy:0,
+    target: null,
+    drop: function (ev, arg) {
+        if (arg == 'mousedown') {
+            DRAG.x = ev.x;
+            DRAG.y = ev.y;
+            DRAG.target = ev.target;
+        }
+        if (arg == 'dragend') 
+            if (ev.y != 0 ) {
+                DRAG.fx=ev.x;
+                DRAG.fy=ev.y;
+            }
+    },
+
+    end: function(ev) {
+        $(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
+        $(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
+    }
+}
 
 $(document).ready(function(){
     V5S.player  = document.getElementById('player5');
@@ -77,7 +101,6 @@ function loadFromParams() {
             YTS.hide();
             YTS.unload();
         } else {
-    console.log($('#vidName').val(), Config.vidName );
             V5S.unload();
             VID = YTS;
             V5S.hide();
@@ -244,8 +267,9 @@ function setFrame(jumpTo) {
         { out += lines[i++][2]; }
 
     if (out != '') out += "<br />";
+    out.trim();
 
-    $('#activeCaption').html(inFrame ? out + lines[lI][2] : "");
+    $('#activeCaption').html(inFrame ? (out + lines[lI][2]).replace(/\r?\n/g, '<br />') : "");
 
     updateSlider();
 }
@@ -300,21 +324,13 @@ function setAutoPlay( el ) {
     Config.playOnSync = !Config.playOnSync;
 }
 
-function flashBg(targetEl, cond) {
-    $(targetEl).css({"background" : (cond ? "#afd" : "#faa")});
-    setTimeout( 
-        function() { $(targetEl).css({"background" : "transparent"}); }
-   , 300);
-}
-
 function syncCT(arg) {
     var isStart     = typeof arg != 'undefined' && arg;
 
     VID.setCT(toMs(isStart ? start.value : end.value)/1000, 0);
 
     if (Config.playOnSync) {
-        flashBg(isStart ? '#toStart' : '#toEnd', VID.isPaused());
-        togglePlay();
+        togglePlay(true);
     }
 }
 
@@ -528,14 +544,25 @@ function download(filename, fType, text) {
     pom.click();
 }
 
-function togglePlay() {
-    if (VID.isPaused()) {
+function togglePlay(arg) {
+    
+    if (typeof arg != 'undefined' && arg || VID.isPaused()) {
         VID.play();
-        $("#bigPlayButton").text("Pause");
+        flashBg('#bigPlayButton', true, function() { $("#bigPlayButton").text("Pause");} );
     } else {
         VID.pause();
-        $("#bigPlayButton").text("Play");
+        flashBg('#bigPlayButton', false, function() { $("#bigPlayButton").text("Play");} );
     }
+}
+
+function flashBg(targetEl, cond, cb) {
+    $(targetEl).css({"background" : (cond ? "#afd" : "#faa")});
+    setTimeout( 
+        function() { 
+            $(targetEl).css({"background" : "transparent"}); 
+            cb();
+        }
+   , 300);
 }
 
 function infEnd() {
