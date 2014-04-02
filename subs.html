@@ -41,13 +41,14 @@
 
         <div id='workArea'>
             <div id='vidContainer'>
+                <div   id="playerCover"></div>
                 <div   id="player"></div>
                 <video id="player5" controls></video>
                 <div id='activeCaption' disabled draggable="true" 
                     onmousedown="DRAG.drop(event,'mousedown');"
                     ondrag="DRAG.drop(event,'dragend');"
                     ondragend="DRAG.end(event,'dragend');"
-                ></div>
+                    ></div>
             </div>
             <div id='panel'>
 
@@ -125,9 +126,10 @@
                     <input type="text" class='timers' id="timeArgs" onblur="updateFrame()"/>
 
                     <button onclick='Parse(Config.baseName + ".vtt");'>Load From Browser</button>
-                    <button onclick='save()'>Save To Browser</button>
+                    <button onclick='save(true)'>Save To Browser</button>
                     <button onclick='save()'>Save To File</button>
                     <button onclick="Parse();">Clear Subs And Start New Subs</button>
+                    <button onclick='localStorage.clear()'>Clear Loc Stor</button>
                 </div>
             </div>
         </div>

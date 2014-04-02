@@ -52,13 +52,12 @@ input {
 
 #activeCaption {
     position:absolute;
-    top:20px;
+    top:5px;
     left:16px;
     border:none;
     margin:-68px 0 0;
     margin:0;
-    opacity:0.6;
-    background:#000;
+    background:transparent;
     color:white;
     font-size:1.2em;
     min-height:24px;
@@ -67,6 +66,16 @@ input {
     border-radius:6px;
     max-width:600px;
     text-align:center;
+    width:auto;
+    background:#000;
+    opacity:0.6;
+}
+ 
+#playerCover {
+    background:transparent;
+    width:640px;
+    z-index:1000;
+    position:absolute;
 }
 
 video,
@@ -302,7 +311,7 @@ div.projectParams input[type="file"] { width:320px; }
 
 #configWrap #subWrap {
     position:absolute;
-    z-index:1000;
+    z-index:3000;
     width:auto;
     position:relative;
     float:right;

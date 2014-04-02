@@ -1,4 +1,5 @@
 // Globall DOM Els
+//
 var video       = null;
 var fileInput   = null
 var ta          = null;
@@ -643,7 +644,6 @@ YTS = {
 
     onPlayerStateChange : function (event) {
       YTS.paused = event.data == YT.PlayerState.PAUSED;
-      console.log( event );
     },
 
     getDuration : function() { return this.getDuration(); },
@@ -669,7 +669,6 @@ YTS = {
 
     Init: function(){
         if (YTS.player == null) {
-            console.log('new yt pl');
             window.onYouTubeIframeAPIReady = YTS.onYouTubeIframeAPIReady;
             var tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api";
@@ -684,13 +683,20 @@ YTS = {
                     }
             } , 300);
         } else {
-            console.log('old yt pl');
             YTS.player.loadVideoById(Config.vidName);
             PlayerReady();
             YTS.show();
         }
+        setTimeout( function() {
+        console.log($('#player').css('height'));
+        console.log($('#player').css('width'));
+        $('#playerCover').css({'height' : '324px'}).show();
+        }, 300);
     },
-    unload: function() { if (YTS.player != null) YTS.pause(); },
+    unload: function() { 
+        if (YTS.player != null) YTS.pause(); 
+        $('#playerCover').hide();
+    },
 
     hide: function() { $('#player').hide(); },
     show: function() { $('#player').show(); }
