@@ -49,12 +49,15 @@ DRAG = {
             if (ev.y != 0 ) {
                 DRAG.fx=ev.x;
                 DRAG.fy=ev.y;
+            } else {
+                $(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
+                $(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
             }
     },
 
     end: function(ev) {
-        $(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
-        $(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
+        //$(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
+        //$(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
     }
 }
 
@@ -130,6 +133,8 @@ function loadConfig(subKey) {
     saveConfig('vidName', vidName);
     $('#baseName').val(baseName);
     $('#vidName').val(vidName);
+    $('#configContent').hide();
+    loadFromParams();
 }
 
 function saveConfig(key, value) {
@@ -239,14 +244,15 @@ function frameChange(arg) {
 
     if (lI < 0)             lI = 0;
     if (lI >= lines.length) lI = lines.length - 1;
-    if (lines[lI][0] >= 0)   VID.setCT(lines[lI][0]/1000, 0.001);
-    setFrame();
-
+    if (lines[lI][0] >= 0)   { 
+        VID.setCT(lines[lI][0]/1000, 0.001);
+    }
+    setTimeout ( function() { setFrame(); }, 300);
 }
 
 function setFrame(jumpTo) {
-    if (typeof jumpTo != 'undefined') lI = jumpTo;
     if (typeof lI == 'undefined' ) lI = 0;
+    if (typeof jumpTo != 'undefined') lI = jumpTo;
 
     ta.value        = lines[lI][2];
     start.value     = fromMs(lines[lI][0]);

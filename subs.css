@@ -61,7 +61,7 @@ input {
     color:white;
     font-size:1.2em;
     min-height:24px;
-    z-index:40000;
+    z-index:2000;
     padding:5px;
     border-radius:6px;
     max-width:600px;
