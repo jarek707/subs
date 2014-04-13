@@ -50,9 +50,12 @@ DRAG = {
                 DRAG.fx=ev.x;
                 DRAG.fy=ev.y;
             } else {
-                $(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
-                $(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
-            }
+                var el = $(DRAG.target);
+                el.css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
+                el.css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
+                if (parseInt(el.css('left')) < 0) el.css({'left' : '2px'});
+                if (parseInt(el.css('top')) < 0) el.css({'top' : '4px'}); 
+            };
     },
 
     end: function(ev) {
@@ -96,6 +99,7 @@ function Init() {
         $('#autoPlay').attr('checked', Config.autoPlay);
         $('#playOnSync').attr('checked', Config.playOnSync);
         $('#liveUpdate').attr('checked', Config.liveUpdate);
+        loadFromParams();
     }
 }
 
@@ -354,6 +358,7 @@ function syncTm(which) {
 }
 
 function Parse(cont) {
+    console.log( cont , ' cont ');
     if (typeof cont != 'undefined' && cont != null && cont.trim() != '') {
         lines = [];
         var byLine = cont.split('\n\n');
@@ -526,7 +531,7 @@ function save(localOnly){
     var outSrt = "";
     for (var i=0; i<lines.length; i++)
     {
-        if (lines[i][0] != 0 && lines[i][2] != '') {
+        if (lines[i][2] != '') {
             outVtt += getLine(i, true);
             outSrt += getLine(i, false);
         }
@@ -691,12 +696,12 @@ YTS = {
         } else {
             YTS.player.loadVideoById(Config.vidName);
             PlayerReady();
-            YTS.show();
         }
+        YTS.show();
         setTimeout( function() {
-        console.log($('#player').css('height'));
-        console.log($('#player').css('width'));
-        $('#playerCover').css({'height' : '324px'}).show();
+            console.log($('#player').css('height'));
+            console.log($('#player').css('width'));
+            $('#playerCover').css({'height' : '324px'}).show();
         }, 300);
     },
     unload: function() { 
