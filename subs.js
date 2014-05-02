@@ -33,6 +33,49 @@ var Config = {
 
 function LG() { console.log(JSON.stringify(arguments)); }
 
+if(window.FileReader) { 
+  addEventHandler(window, 'load', function() {
+      var status = document.getElementById('status');
+      var drop   = document.getElementById('drop');
+      var list   = document.getElementById('list');
+    
+      function cancel(e) {
+        	if (e.preventDefault) { console.log('preventing'); e.preventDefault(); }
+			//alert('wait');
+      		return false;
+      }
+    
+      // Tells the browser that we *can* drop on this target
+      addEventHandler(drop, 'dragover', cancel);
+	  addEventHandler(drop, 'drop', function(e) { console.log('dropped');  
+        	if (e.preventDefault) { console.log('preventing'); e.preventDefault(); }
+			var fileName = e.dataTransfer.files[0].name;
+        	Config.vidName = fileName;
+			$('#drop').text(fileName + "  " + document.location.href);
+			$('#vidName').val(fileName);
+			loadFromParams();
+
+      		return false;
+	  });
+      //addEventHandler(drop, 'dragenter', cancel);
+    });
+}
+
+
+function addEventHandler(obj, evt, handler) {
+    if(obj.addEventListener) {
+        // W3C method
+  	  console.log(handler);
+        obj.addEventListener(evt, handler, false);
+    } else if(obj.attachEvent) {
+        // IE method.
+        obj.attachEvent('on'+evt, handler);
+    } else {
+        // Old school method.
+        obj['on'+evt] = handler;
+    }
+}
+
 DRAG = {
     x:0,
     y:0,
@@ -52,15 +95,10 @@ DRAG = {
             } else {
                 var el = $(DRAG.target);
                 el.css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
-                el.css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
+                el.css({'top'  : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
                 if (parseInt(el.css('left')) < 0) el.css({'left' : '2px'});
                 if (parseInt(el.css('top')) < 0) el.css({'top' : '4px'}); 
             };
-    },
-
-    end: function(ev) {
-        //$(DRAG.target).css({'left' : DRAG.fx - DRAG.x + parseInt($(DRAG.target).css('left'))});
-        //$(DRAG.target).css({'top'   : DRAG.fy - DRAG.y + parseInt($(DRAG.target).css('top'))});
     }
 }
 
@@ -117,6 +155,13 @@ function loadFromParams() {
 
         $('#workArea').show();
         VID.Init();
+		setTimeout(function() { 
+				//console.log(document.getElementById('player5').textTrack);
+				document.querySelector('video').mode='showing';
+				console.log(document.querySelector('video').mode);
+				console.log(document.querySelector('video').textTracks);
+				console.log(document.querySelector('video'));
+		}, 1000);
 }
 
 function PlayerReady() {
@@ -125,6 +170,7 @@ function PlayerReady() {
             if (Config.autoPlay) togglePlay();
             VID.volume(Config.volume);
         }
+        console.log( VID );
         setAutoPlay();
         Parse(localStorage.getItem('subTool:::' + $("#vidName").val() + ":::" + $("#baseName").val() + '.vtt'));
 }
@@ -358,7 +404,7 @@ function syncTm(which) {
 }
 
 function Parse(cont) {
-    console.log( cont , ' cont ');
+    console.log( cont , ' cont ', localStorage);
     if (typeof cont != 'undefined' && cont != null && cont.trim() != '') {
         lines = [];
         var byLine = cont.split('\n\n');
@@ -551,8 +597,9 @@ function save(localOnly){
 
 function download(filename, fType, text) {
     var pom = document.createElement('a');
-    pom.setAttribute('href', 'data:text/' + fType + ';charset=utf-8,' + encodeURIComponent(text));
-    pom.setAttribute('download', filename + '.' +  fType);
+    pom.setAttribute('href', 'data:text//' + fType + ';charset=utf-8,' + encodeURIComponent(text));
+    filename = 'subs/' + filename + '.' + fType;
+    pom.setAttribute('download', filename);
     pom.click();
 }
 
@@ -625,7 +672,11 @@ V5S = {
             V5S.onTrackedVideoFrame(this.currentTime); 
         });
 
+		$("#player5").find("track").attr('src', document.location.href.substr(0, document.location.href.length-9) + "subs-bench.vtt");
+		
+
         $('#player5').show().attr('src', Config.vidName);
+        console.log( 'loading' );
         V5S.load();
         PlayerReady();
     },

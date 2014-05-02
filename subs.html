@@ -4,6 +4,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="subs.js" type="text/javascript"></script>
     <body>
+        <div id='drop' style="width:640px; height:30px; background:#def">drop files here</div>
             <div class='projectParams'>
                 <div id="configWrap">
                     <div id='loadVid'>
@@ -43,7 +44,9 @@
             <div id='vidContainer'>
                 <div   id="playerCover"></div>
                 <div   id="player"></div>
-                <video id="player5" controls></video>
+				<video id="player5" controls>
+					<track kind="subtitles" src="subs-bench.vtt" srclang="en" default></track>
+				</video>
                 <div id='activeCaption' disabled draggable="true" 
                     onmousedown="DRAG.drop(event,'mousedown');"
                     ondrag="DRAG.drop(event,'dragend');"
